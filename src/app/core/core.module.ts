@@ -1,0 +1,34 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './component/header/header.component';
+import { LeftnavComponent } from './component/leftnav/leftnav.component';
+import { MainLayoutComponent } from './component/main-layout/main-layout.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { GlobalAlertComponent } from './component/global-alert/global-alert.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { AlertModule } from 'ngx-bootstrap/alert';
+
+@NgModule({
+  declarations: [
+    HeaderComponent,
+    LeftnavComponent,
+    MainLayoutComponent,
+    FooterComponent,
+    GlobalAlertComponent
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TooltipModule,
+    AlertModule.forRoot(),
+  ],
+  exports: [
+    HeaderComponent,
+    LeftnavComponent,
+    MainLayoutComponent,
+    FooterComponent,
+    GlobalAlertComponent
+  ],
+})
+export class CoreModule { }

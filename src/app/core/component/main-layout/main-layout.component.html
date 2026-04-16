@@ -1,0 +1,11 @@
+<app-global-alert></app-global-alert>
+<div>
+  <app-header></app-header>
+  <app-leftnav></app-leftnav>
+  <div id="bodyContainer">
+    <router-outlet></router-outlet>
+  </div>
+  <div *ngIf="service?.isLoading" class="loading-indicator">
+    <img style="width: 80px;" src="../../../../assets/images/knowella-loader.gif">
+  </div>
+</div>

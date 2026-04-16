@@ -1,0 +1,30 @@
+<!-- <header class="header">
+  <a class="humber" (click)="toggle()"></a>
+  <a>
+    <img src="{{ service.getFilePath()+companyLogoData?.desktopLogo }}" class="desktopcustomlogo" />
+  </a>
+  <div class="menu fade-in" (click)="toggleMenu()">
+    <label class="profile-dropdown toggleButton" [ngClass]="{ 'menuActive': isMenuOpen }">
+      <div class="flex toggleButton">
+        <div class="linedivider"></div>
+        <div class="toggleButton">
+          <img *ngIf="service.currentUser()?.image" class="profile toggleButton"
+            src="{{service.getFilePath()+service.currentUser()?.image}}">
+          <span *ngIf="!service.currentUser()?.image" class="emptylogoUser toggleButton">C</span>
+        </div>
+        <div class="toggleButton">
+          <h2 class="username toggleButton">Chithu</h2>
+          <h3 class="rolename toggleButton">USER</h3>
+        </div>
+        <label class="cursor toggleButton"><img class="arrow toggleButton"
+            src="../../../../assets//images/arrow.svg" /></label>
+      </div>
+      <ul class="dropdown toggleButton" #menu *ngIf="isMenuOpen">
+        <li routerLink="/profile"><a><span class="iconmenuuser"><i class="fa fa-user"
+                aria-hidden="true"></i></span>Profile</a></li>
+        <li (click)="logout()"><a><span class="iconmenulogout"><i class="fa fa-sign-out"
+                aria-hidden="true"></i></span>Logout</a></li>
+      </ul>
+    </label>
+  </div>
+</header> -->

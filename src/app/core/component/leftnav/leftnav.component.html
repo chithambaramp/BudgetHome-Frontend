@@ -1,0 +1,100 @@
+<!-- <div class="main">
+  <div #scrollMenu class="left2" id="mySidebar" (click)="removedBackStoreDatas()">
+    <div class="d-flex align-items-center p-1">
+      <h4 *ngIf="textHide ==  'show'" class="menu-heading">
+        <span class="quickview">Quick View</span>
+      </h4>
+      <div class="menu-heading-divider divider1"></div>
+    </div>
+    <ul [ngClass]="{ 'leftpadframe': textHide ==  'hide' }">
+      <ng-container *ngFor="let items of navigationList; let i=index;">
+        <li *ngIf="items.isEnabled" [routerLinkActive]="['active']" routerLink={{items.link}}
+          (click)="setIconActive(items,i)" [queryParams]="items?.query" title={{items.name}}>
+          <a [ngClass]="{ 'lefttxtpad': textHide ==  'hide' }">
+            <img src={{baseUrl}}{{items.activeIcon}} *ngIf="items.active" />
+            <img src={{baseUrl}}{{items.icon}} *ngIf="!items.active" />
+            <span class="text-truncate" *ngIf="textHide ==  'show' && !items.active">{{items.name}}</span>
+            <span class="text-truncate" *ngIf="textHide ==  'show' && items.active "
+              style="color: #6e63ff;">{{items.name}}</span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+
+    <div class="d-flex align-items-center p-1">
+      <h4 *ngIf="textHide ==  'show'" class="menu-heading">
+        <span>Solutions</span>
+      </h4>
+      <div class="menu-heading-divider divider2"></div>
+    </div>
+    <ul id="accordion" class="accordion"
+      [ngClass]="{ 'leftpadframe': textHide ==  'hide', 'accordaftrcolps': textHide ==  'hide'}">
+      <li *ngFor="let menu of productMenus; let i = index">
+        <ul *ngIf="menu.submenu.length == 0">
+          <li *ngIf="menu.isEnabled" [ngClass]="{ 'active': menu.active ==  true }" (click)="setIconActive(menu, i)"
+            title={{menu.name}}>
+            <a [ngClass]="{ 'lefttxtpad': textHide ==  'hide' }">
+              <img src={{menu.activeIconClass}} [ngClass]="{ 'issuetypeiconimg': menu?.isDynamicIconImg }"
+                *ngIf="menu.active" />
+              <img src={{menu.iconClass}} [ngClass]="{ 'issuetypeiconimg': menu?.isDynamicIconImg }"
+                *ngIf="!menu.active" />
+
+              <span class="text-truncate" *ngIf="textHide ==  'show' && !menu.active">{{menu.name}}</span>
+              <span class="text-truncate" *ngIf="textHide ==  'show' && menu.active "
+                style="color: #6e63ff;">{{menu.name}}</span>
+            </a>
+          </li>
+        </ul>
+
+        <div *ngIf="menu.submenu.length !==0 && menu.isEnabled">
+          <div class="menu" (click)="toggle(i)">
+            <img src={{menu.iconClass}} class="fa" [ngClass]="{ 'issuetypeiconimg': menu?.isDynamicIconImg }"
+              title={{menu.name}} *ngIf="!menu.active" />
+            <img src={{menu.activeIconClass}} class="fa" [ngClass]="{ 'issuetypeiconimg': menu?.isDynamicIconImg }"
+              title={{menu.name}} *ngIf="menu.active" />
+            <span class="text-truncate" *ngIf="textHide ==  'show'" class="mt2"
+              [ngClass]="{ 'activetxtcolor': menu.active }">{{ menu.name }}
+              <img class="arrow" src="../../../../assets/images/arrow.svg"
+                [ngClass]="{ 'arrow-active': menu.active }" />
+            </span>
+
+          </div>
+          <ul *ngIf="textHide ==  'show'" class="submenu" #submenu [style.height]="menu.active ? 'auto' : 0">
+            <ng-container *ngFor="let submenu of menu.submenu">
+              <li *ngIf="submenu?.isEnabled" [routerLinkActive]="['active']" routerLink={{submenu.url}}
+                [queryParams]="submenu?.query" (click)="deselectMenu()">
+                <a *ngIf="textHide ==  'show' && !submenu.active">{{ submenu.name }}</a>
+                <span class="text-truncate" *ngIf="textHide ==  'show' && submenu.active "
+                  style="color: #6e63ff;">{{submenu.name}}</span>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <div class="d-flex align-items-center p-1">
+      <h4 *ngIf="textHide == 'show'" class="menu-heading mt-3">
+        <span>Admin</span>
+      </h4>
+      <div class="menu-heading-divider divider3" [ngClass]="{ 'divider3br': textHide ==  'hide' }"></div>
+    </div>
+
+    <ul [ngClass]="{ 'leftpadframe': textHide ==  'hide' }">
+      <ng-container *ngFor="let items of adminMenus; let i=index;">
+        <li *ngIf="items.isEnabled" [ngClass]="{ 'active': items.active ==  true }" (click)="setIconActive(items, i)"
+          title={{items.name}}>
+          <a [ngClass]="{ 'lefttxtpad': textHide ==  'hide' }">
+            <img src={{baseUrl}}{{items.activeIcon}} *ngIf="items.active" />
+            <img src={{baseUrl}}{{items.icon}} *ngIf="!items.active" />
+            <span class="text-truncate" *ngIf="textHide ==  'show' && !items.active">{{items.name}}</span>
+            <span class="text-truncate" *ngIf="textHide ==  'show' && items.active "
+              style="color: #6e63ff;">{{items.name}}</span>
+          </a>
+        </li>
+      </ng-container>
+
+    </ul>
+  </div>
+
+</div> -->

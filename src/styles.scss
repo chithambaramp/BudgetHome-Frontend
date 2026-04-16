@@ -1,1 +1,519 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/core/styles/variable";
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url("../src/assets/fonts/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: Poppins-MediumItalic;
+    src: url("../src/assets/fonts/Poppins-MediumItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-SemiBold;
+    src: url("../src/assets/fonts/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url("../src/assets/fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Black;
+    src: url("../src/assets/fonts/Poppins-Black.ttf");
+}
+
+@font-face {
+    font-family: Poppins-BlackItalic;
+    src: url("../src/assets/fonts/Poppins-BlackItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-BoldItalic;
+    src: url("../src/assets/fonts/Poppins-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-ExtraBold;
+    src: url("../src/assets/fonts/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: Poppins-ExtraBoldItalic;
+    src: url("../src/assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-ExtraLight;
+    src: url("../src/assets/fonts/Poppins-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: Poppins-ExtraLightItalic;
+    src: url("../src/assets/fonts/Poppins-ExtraLightItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Italic;
+    src: url("../src/assets/fonts/Poppins-Italic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url("../src/assets/fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: Poppins-LightItalic;
+    src: url("../src/assets/fonts/Poppins-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url("../src/assets/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: Poppins-SemiBoldItalic;
+    src: url("../src/assets/fonts/Poppins-SemiBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: Poppins-Thin;
+    src: url("../src/assets/fonts/Poppins-Thin.ttf");
+}
+
+@font-face {
+    font-family: Poppins-ThinItalic;
+    src: url("../src/assets/fonts/Poppins-ThinItalic.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../src/assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: Rubik-Regular;
+    src: url("../src/assets/fonts/Rubik-Regular.ttf");
+}
+
+@font-face {
+    font-family: Rubik-Light;
+    src: url("../src/assets/fonts/Rubik-Light.ttf");
+}
+
+@font-face {
+    font-family: Rubik-Medium;
+    src: url("../src/assets/fonts/Rubik-Medium.ttf");
+}
+
+@font-face {
+    font-family: Karla-Medium;
+    src: url("../src/assets/fonts/Karla-Medium.ttf");
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f4f7fa;
+    overflow-x: hidden;
+}
+
+html {
+    font-family: Poppins-Regular;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(230, 236, 241, 1);
+    //border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 165, 181, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    //margin-bottom: 0px;
+}
+
+::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    //margin-top: 0px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.fright {
+    float: right;
+}
+
+.fleft {
+    float: left;
+}
+
+button {
+    outline-style: none !important;
+    text-align: center;
+}
+
+button:active {
+    outline: none;
+    border: none;
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+.btn-check:focus+.btn-primary,
+.btn-primary:focus {
+    box-shadow: none !important;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+    box-shadow: none !important;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+textarea:focus,
+input:focus {
+    outline: none !important;
+}
+
+.is-invalid {
+    border: 1px solid $error-color !important;
+}
+
+.field-error {
+    color: $error-color;
+    font-family: Poppins-Regular;
+    font-size: 12px;
+}
+
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="textarea"]:disabled {
+    background: #e6ecf1 !important;
+    cursor: auto !important;
+}
+
+.model-450px {
+    max-width: 450px !important;
+}
+
+.model-600px {
+    max-width: 600px !important;
+}
+
+.model-700px {
+    max-width: 700px !important;
+}
+
+.model-800px {
+    max-width: 800px !important;
+}
+
+.model-900px {
+    max-width: 900px !important;
+}
+
+.model-1020px {
+    max-width: 70% !important;
+}
+
+.modal-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: hidden !important;
+    min-height: 110vh
+}
+
+.modal-content {
+    border-radius: 10px;
+}
+
+.add-btn,
+.add-btn:hover {
+    border-radius: 8px;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    font-family: Poppins-Medium;
+    text-align: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $white;
+    width: 155px;
+}
+
+.cancel-btn,
+.cancel-btn:hover {
+    border-radius: 8px;
+    background-color: $white;
+    border-color: $primary-color;
+    font-family: Poppins-Medium;
+    text-align: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary-color;
+    width: 155px;
+}
+
+/* custom checkbox Start*/
+.containerChkBox {
+    display: block;
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containerChkBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background: #ffffff;
+    border: 1px solid #a2a8b2;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+/* On mouse-over, add a grey background color */
+.containerChkBox:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerChkBox input:checked~.checkmark {
+    background-color: $primary-color;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerChkBox input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerChkBox .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* custom checkbox End*/
+
+/* custom radiobtn Start*/
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $primary-color;
+    border-radius: 100%;
+    background: $white;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: $primary-color;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* custom radiobtn End*/
+
+/* custom toggle Start*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 12.5px;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 23px;
+    left: -9px;
+    bottom: 5px;
+    top: -6px;
+    background-color: $white;
+    box-shadow: 0 0 6px 0 rgb(0 0 0 / 16%);
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #c4c1ee;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px $primary-color;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked+.slider:before {
+    background: $primary-color;
+}
+
+/* custom toggle End*/
+
+
+.nodata {
+    font-size: 14px !important;
+    color: $secondary-font-color !important;
+    text-align: center !important;
+}
+
+.dcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dflex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//loader
+.loading-indicator {
+    position: fixed;
+    z-index: 99999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 50%;
+    left: 0;
+    bottom: 66%;
+    right: 110px;
+    display: block;
+}
+
+/* Transparent Overlay */
+.loading-indicator:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 10%);
+}

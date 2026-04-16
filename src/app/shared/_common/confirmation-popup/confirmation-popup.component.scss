@@ -1,0 +1,45 @@
+@import "../../../../app/core/styles/variable";
+
+.heading {
+    font-family: Poppins-Regular;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    align-items: center;
+    color: $primary-font-color;
+    text-transform: capitalize;
+}
+
+.question {
+    font-family: Poppins-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #17263F;
+}
+
+.description {
+    font-family: Poppins-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 19px;
+    color: $secondary-font-color;
+}
+
+.form-area {
+    padding: 35px;
+}
+
+img.closeicon {
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    button {
+        width: 165px !important;
+    }
+}

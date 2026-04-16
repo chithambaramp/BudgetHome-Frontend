@@ -1,0 +1,24 @@
+<div class="commonalert">
+  <alert type="success" (onClosed)="close($event)" [dismissible]="dismissible" [isOpen]="currentAlert().successOpen"
+    [dismissOnTimeout]="currentAlert().timeout">
+    <div class="alerticon">
+      <span class="alert-success-icon"><i class="fa fa-check" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="alerttext">
+      <h4 class="alert-heading">Success</h4>
+      <p class="alert-sub-heading">{{currentAlertText()}}</p>
+    </div>
+  </alert>
+  <alert type="danger" (onClosed)="close($event)" [dismissible]="dismissible" [isOpen]="currentAlert().dangerOpen"
+    [dismissOnTimeout]="currentAlert().timeout">
+    <div class="alerticon">
+      <span class="alert-danger-icon"><i class="fa fa-times" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="alerttext">
+      <h4 class="alert-heading">Error</h4>
+      <p class="alert-sub-heading">{{currentAlertText()}}</p>
+    </div>
+  </alert>
+</div>
