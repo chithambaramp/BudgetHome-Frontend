@@ -9,193 +9,27 @@ import { BaseService } from "../../../shared/_services/baseStore.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // isToggle: boolean = false;
-  // @Output() toggleChanged = new EventEmitter<boolean>();
-  // isMenuOpen = false;
-  // isNotifyMenuOpen = false;
-  // constructor(public auth: AuthService, private renderer: Renderer2, public service: BaseService, private router: Router) {
-  //   this.renderer.listen('window', 'click', (e: any) => {
-  //     if (e.target && e.target.className.indexOf('toggleButton') == -1) {
-  //       this.isMenuOpen = false;
-  //     }
-  //   });
-  //   this.renderer.listen('window', 'click', (e: any) => {
-  //     if (e.target && e.target.className.indexOf('toggleNotifyButton') == -1) {
-  //       this.isNotifyMenuOpen = false;
-  //     }
-  //   });
-  // }
+  constructor(public auth: AuthService, private renderer: Renderer2, public service: BaseService, private router: Router) {
 
-  ngOnInit(): void {
-  //   const sidebarElement = document.getElementById('mySidebar') as HTMLElement;
-  //   const mainElement = document.getElementById('bodyContainer') as HTMLElement;
-
-  //   // Side Nav Width Matching Mobile Small
-  //   if (window.matchMedia("(max-width: 375px)").matches) {
-  //     if (this.isToggle) {
-  //       sidebarElement.style.width = "75%";
-
-  //     } else {
-  //       sidebarElement.style.width = "0%";
-  //     }
-  //   }
-  //   // Side Nav Width Matching Mobile Standard
-  //   else if (window.matchMedia("(max-width: 500px)").matches) {
-  //     if (this.isToggle) {
-  //       sidebarElement.style.width = "65%";
-
-  //     } else {
-  //       sidebarElement.style.width = "0%";
-  //     }
-  //   }
-  //   // Side Nav Width Matching Tablet
-  //   else if (window.matchMedia("(max-width: 768px)").matches) {
-  //     if (this.isToggle) {
-  //       sidebarElement.style.width = "35%";
-
-  //     } else {
-  //       sidebarElement.style.width = "0%";
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Tablet Landscape
-  //   else if (window.matchMedia("(max-width: 1200px)").matches) {
-  //     if (localStorage.getItem('text-hide') == 'hide') {
-  //       sidebarElement.style.width = "6%";
-  //       mainElement.style.marginLeft = '6%';
-  //     } else {
-  //       sidebarElement.style.width = "28%";
-  //       mainElement.style.marginLeft = '28%';
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Laptop Medium
-  //   else if (window.matchMedia("(max-width: 1440px)").matches) {
-  //     if (localStorage.getItem('text-hide') == 'hide') {
-  //       sidebarElement.style.width = "5%";
-  //       mainElement.style.marginLeft = '5%';
-  //     } else {
-  //       sidebarElement.style.width = "19%";
-  //       mainElement.style.marginLeft = '19%';
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Laptop Standard
-  //   else if (window.matchMedia("(max-width: 1600px)").matches) {
-  //     if (localStorage.getItem('text-hide') == 'hide') {
-  //       sidebarElement.style.width = "4%";
-  //       mainElement.style.marginLeft = '4%';
-  //     } else {
-  //       sidebarElement.style.width = "18%";
-  //       mainElement.style.marginLeft = '18%';
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Desktop & Above
-  //   else {
-  //     if (localStorage.getItem('text-hide') == 'hide') {
-  //       sidebarElement.style.width = "5%";
-  //       mainElement.style.marginLeft = '5%';
-  //     } else {
-  //       sidebarElement.style.width = "16%";
-  //       mainElement.style.marginLeft = '16%';
-  //     }
-  //   }
   }
 
+  @Output() sidebarToggle = new EventEmitter<void>();
+  isOpen = false;
 
+  ngOnInit(): void {
 
-  // logout() {
-  //   this.auth.logout();
-  // }
+  }
 
-  // toggleMenu() {
-  //   this.isMenuOpen = !this.isMenuOpen;
-  //   this.toggleChanged.emit(this.isMenuOpen);
-  // }
+  toggleSidebar() {
+    this.sidebarToggle.emit();
+  }
 
-  // toggle() {
-  //   this.isToggle = !this.isToggle;
-  //   const sidebarElement = document.getElementById('mySidebar') as HTMLElement;
-  //   const mainElement = document.getElementById('bodyContainer') as HTMLElement;
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
 
-  //   if (window.matchMedia("(max-width: 375px)").matches) {
-  //     if (this.isToggle) {
-  //       sidebarElement.style.width = "75%";
+  logout() {
+    console.log('Logout clicked');
+  }
 
-  //     } else {
-  //       sidebarElement.style.width = "0%";
-  //     }
-  //   }
-  //   // Side Nav Width Matching Mobile Standard
-  //   else if (window.matchMedia("(max-width: 500px)").matches) {
-  //     if (this.isToggle) {
-  //       sidebarElement.style.width = "65%";
-
-  //     } else {
-  //       sidebarElement.style.width = "0%";
-  //     }
-  //   }
-  //   // Side Nav Width Matching Tablet
-  //   else if (window.matchMedia("(max-width: 768px)").matches) {
-  //     if (this.isToggle) {
-  //       sidebarElement.style.width = "35%";
-
-  //     } else {
-  //       sidebarElement.style.width = "0%";
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Tablet Landscape
-  //   else if (window.matchMedia("(max-width: 1200px)").matches) {
-  //     if (this.isToggle || sidebarElement.style.width == '28%') {
-  //       localStorage.setItem('text-hide', 'hide')
-  //       sidebarElement.style.width = "6%";
-  //       mainElement.style.marginLeft = '6%';
-  //     } else {
-  //       localStorage.setItem('text-hide', 'show')
-  //       sidebarElement.style.width = "28%";
-  //       mainElement.style.marginLeft = '28%';
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Laptop Medium
-  //   else if (window.matchMedia("(max-width: 1440px)").matches) {
-  //     if (this.isToggle || sidebarElement.style.width == '19%') {
-  //       localStorage.setItem('text-hide', 'hide')
-  //       sidebarElement.style.width = "5%";
-  //       mainElement.style.marginLeft = '5%';
-  //     } else {
-  //       localStorage.setItem('text-hide', 'show')
-  //       sidebarElement.style.width = "19%";
-  //       mainElement.style.marginLeft = '19%';
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Laptop Standard
-  //   else if (window.matchMedia("(max-width: 1600px)").matches) {
-  //     if (this.isToggle || sidebarElement.style.width == '18%') {
-  //       localStorage.setItem('text-hide', 'hide')
-  //       sidebarElement.style.width = "4%";
-  //       mainElement.style.marginLeft = '4%';
-  //     } else {
-  //       localStorage.setItem('text-hide', 'show')
-  //       sidebarElement.style.width = "18%";
-  //       mainElement.style.marginLeft = '18%';
-  //     }
-  //   }
-
-  //   // Side Nav Width Matching Desktop & Above
-  //   else {
-  //     if (this.isToggle || sidebarElement.style.width == '16%') {
-  //       localStorage.setItem('text-hide', 'hide')
-  //       sidebarElement.style.width = "4%";
-  //       mainElement.style.marginLeft = '4%';
-  //     } else {
-  //       localStorage.setItem('text-hide', 'show')
-  //       sidebarElement.style.width = "16%";
-  //       mainElement.style.marginLeft = '16%';
-  //     }
-  //   }
-  // }
 }

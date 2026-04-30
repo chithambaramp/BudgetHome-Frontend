@@ -1,11 +1,22 @@
 <app-global-alert></app-global-alert>
-<div>
-  <app-header></app-header>
-  <app-leftnav></app-leftnav>
-  <div id="bodyContainer">
-    <router-outlet></router-outlet>
+<div class="layout">
+
+  <!-- Full width header -->
+  <app-header (sidebarToggle)="toggleSidebar()"></app-header>
+
+  <!-- Below header -->
+  <div class="body">
+    <app-leftnav [collapsed]="isCollapsed"></app-leftnav>
+
+    <div class="content" [ngClass]="{ collapsed: isCollapsed }">
+      <div class="content-inner">
+        <h1>Component Test</h1>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
-  <div *ngIf="service?.isLoading" class="loading-indicator">
-    <img style="width: 80px;" src="../../../../assets/images/knowella-loader.gif">
-  </div>
+
+</div>
+<div *ngIf="service?.isLoading" class="loading-indicator">
+  <img style="width: 80px;" src="../../../../assets/images/knowella-loader.gif">
 </div>

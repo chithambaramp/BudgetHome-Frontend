@@ -14,4 +14,9 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  isCollapsed = false;
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }

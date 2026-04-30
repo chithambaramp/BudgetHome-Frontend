@@ -1,12 +1,45 @@
-#bodyContainer {
-  margin-left: 18%;
-  padding-top: 70px;
-  transition: all .5s;
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-@media only screen and (max-width: 768px) {
-  #bodyContainer {
-    margin-left: 0% !important;
+/* Sidebar + content row */
+.body {
+  display: flex;
+  flex: 1;
+}
 
+/* Content area */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #f3f4f6;
+  margin-left: 220px;
+  margin-top: 50px;
+  transition: margin-left 0.3s ease;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* When sidebar collapsed */
+.content.collapsed {
+  margin-left: 70px;
+}
+
+.content-inner {
+  /* ✅ perfect center */
+  margin: 0 auto;
+  height: calc(100vh - 60px);
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+  }
+
+  .content.collapsed {
+    margin-left: 0;
   }
 }
