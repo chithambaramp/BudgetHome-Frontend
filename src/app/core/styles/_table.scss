@@ -108,3 +108,178 @@ table {
   }
 
 }
+
+// /* ================= Sample Table UI ================= */
+//     <table class="expense-table">
+//           <thead>
+//             <tr>
+//               <th>#</th>
+//               <th>Date</th>
+//               <th>Category</th>
+//               <th>Title</th>
+//               <th>Amount (₹)</th>
+//             </tr>
+//           </thead>
+
+//           <tbody>
+//             <tr *ngFor="let item of expenses">
+//               <td>{{ item.id }}</td>
+//               <td>{{ item.date }}</td>
+//               <td>{{ item.category }}</td>
+//               <td>{{ item.title }}</td>
+//               <td>{{ item.amount }}</td>
+//             </tr>
+//           </tbody>
+//         </table>
+
+
+//   .expense-table {
+//   width: 100%;
+//   border-collapse: collapse;
+//   background: white;
+//   border-radius: 10px;
+//   overflow: hidden;
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+// }
+
+// .expense-table thead {
+//   background: linear-gradient(90deg, #1e3a8a, #2563eb);
+//   color: white;
+// }
+
+// .expense-table th,
+// .expense-table td {
+//   padding: 12px 15px;
+//   text-align: left;
+// }
+
+// .expense-table tbody tr {
+//   border-bottom: 1px solid #eee;
+// }
+
+// .expense-table tbody tr:hover {
+//   background: #f9fafb;
+// }
+
+// .expense-table td:last-child {
+//   font-weight: bold;
+//   color: #16a34a;
+// }
+
+// expenses = [
+//   { id: 1, date: '2026-04-01', category: 'Food', title: 'Lunch', amount: 250 },
+//   { id: 2, date: '2026-04-01', category: 'Transport', title: 'Bus', amount: 50 },
+//   { id: 3, date: '2026-04-02', category: 'Shopping', title: 'Clothes', amount: 1200 },
+//   { id: 4, date: '2026-04-02', category: 'Bills', title: 'Electricity', amount: 1800 },
+//   { id: 5, date: '2026-04-03', category: 'Food', title: 'Dinner', amount: 400 },
+//   { id: 6, date: '2026-04-03', category: 'Health', title: 'Medicine', amount: 300 },
+//   { id: 7, date: '2026-04-04', category: 'Transport', title: 'Auto', amount: 120 },
+//   { id: 8, date: '2026-04-04', category: 'Entertainment', title: 'Movie', amount: 500 },
+//   { id: 9, date: '2026-04-05', category: 'Food', title: 'Snacks', amount: 150 },
+//   { id: 10, date: '2026-04-05', category: 'Bills', title: 'Internet', amount: 800 },
+//   { id: 11, date: '2026-04-06', category: 'Shopping', title: 'Groceries', amount: 2200 },
+//   { id: 12, date: '2026-04-06', category: 'Transport', title: 'Fuel', amount: 1000 },
+//   { id: 13, date: '2026-04-07', category: 'Health', title: 'Doctor', amount: 700 },
+//   { id: 14, date: '2026-04-07', category: 'Food', title: 'Breakfast', amount: 120 },
+//   { id: 15, date: '2026-04-08', category: 'Entertainment', title: 'OTT', amount: 299 },
+//   { id: 16, date: '2026-04-08', category: 'Bills', title: 'Water', amount: 300 },
+//   { id: 17, date: '2026-04-09', category: 'Shopping', title: 'Shoes', amount: 1500 },
+//   { id: 18, date: '2026-04-09', category: 'Transport', title: 'Cab', amount: 350 },
+//   { id: 19, date: '2026-04-10', category: 'Food', title: 'Dinner', amount: 450 },
+//   { id: 20, date: '2026-04-10', category: 'Others', title: 'Gift', amount: 1000 }
+// ];
+
+
+// /* ================= Sample Card UI ================= */
+//     <div class="card-grid">
+//           <div class="card" *ngFor="let card of cards">
+
+//             <div class="card-header">
+//               <span class="icon">{{ card.icon }}</span>
+//               <span class="title">{{ card.title }}</span>
+//             </div>
+
+//             <div class="card-value">
+//               ₹ {{ card.value }}
+//             </div>
+
+//           </div>
+//         </div>
+
+
+//         /* Card */
+// .card-grid {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   gap: 20px;
+// }
+
+// .card {
+//   background: white;
+//   border-radius: 16px;
+//   padding: 20px;
+
+//   box-shadow:
+//     0 2px 6px rgba(0, 0, 0, 0.1),
+//     0 8px 20px rgba(0, 0, 0, 0.08);
+
+//   transition: transform 0.2s ease, box-shadow 0.2s ease;
+//   cursor: pointer;
+// }
+
+// /* Hover effect */
+// .card:hover {
+//   transform: translateY(-5px);
+//   box-shadow:
+//     0 4px 10px rgba(0, 0, 0, 0.15),
+//     0 12px 25px rgba(0, 0, 0, 0.15);
+// }
+
+// /* Header */
+// .card-header {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+
+// /* Icon */
+// .icon {
+//   font-size: 24px;
+// }
+
+// /* Title */
+// .title {
+//   font-size: 14px;
+//   color: #6b7280;
+// }
+
+// /* Value */
+// .card-value {
+//   margin-top: 15px;
+//   font-size: 24px;
+//   font-weight: bold;
+// }
+
+// @media (max-width: 1024px) {
+//   .card-grid {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
+
+// @media (max-width: 600px) {
+//   .card-grid {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// cards = [
+//   { title: 'Total Balance', value: 45000, icon: '💰', color: '#16a34a' },
+//   { title: 'Total Income', value: 75000, icon: '📈', color: '#2563eb' },
+//   { title: 'Total Expenses', value: 30000, icon: '📉', color: '#dc2626' },
+//   { title: 'Savings', value: 15000, icon: '💎', color: '#7c3aed' },
+
+//   { title: 'Food Expense', value: 5000, icon: '🍔', color: '#f59e0b' },
+//   { title: 'Transport', value: 3000, icon: '🚗', color: '#0ea5e9' },
+//   { title: 'Shopping', value: 7000, icon: '🛍️', color: '#ec4899' },
+//   { title: 'Bills', value: 6000, icon: '📄', color: '#6b7280' }
+// ];

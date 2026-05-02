@@ -10,7 +10,6 @@
 
     <div class="content" [ngClass]="{ collapsed: isCollapsed }">
       <div class="content-inner">
-        <h1>Component Test</h1>
         <router-outlet></router-outlet>
       </div>
     </div>
@@ -18,5 +17,5 @@
 
 </div>
 <div *ngIf="service?.isLoading" class="loading-indicator">
-  <img style="width: 80px;" src="../../../../assets/images/knowella-loader.gif">
+  <div class="spinner"></div>
 </div>

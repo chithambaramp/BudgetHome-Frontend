@@ -17,7 +17,7 @@
   position: fixed;
   top: 12px;
   right: 12px;
-  z-index: 9999;
+  z-index: 10;
   transition: all .5s;
 }
 
@@ -69,8 +69,21 @@
 }
 
 .alerticon {
-  padding-right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: 10px;
+}
+
+.alerttext {
+  padding-left: 32px;
+  padding-right: 30px;
+}
+
+::ng-deep .btn-close:focus,
+::ng-deep .btn-close:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .alert-dismissible .btn-close {
+  font-size: 12px !important;
 }
