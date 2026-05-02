@@ -6,8 +6,8 @@
     left: 0;
     width: 220px;
     height: calc(100vh - 60px);
-    background: #111827;
-    color: white;
+    background: linear-gradient(-100deg, #9010a9, #3134b1);
+    color: $white;
     overflow-y: auto;
     overflow-x: hidden;
     transition: width 0.3s ease;
@@ -18,16 +18,6 @@
     width: 70px;
 }
 
-/* Smooth scroll look */
-.sidebar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-    background: #374151;
-    border-radius: 10px;
-}
-
 .sidebar ul {
     list-style: none;
     padding: 0;
@@ -35,22 +25,38 @@
 
 .sidebar li {
     padding: 15px;
+    margin: 10px;
     cursor: pointer;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    transition: background 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
 }
 
 .sidebar li:hover {
-    background: #1f2937;
+    background: $white;
+    color: #3134b1;
+    border-radius: 10px;
+    transform: translateX(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Smooth scroll look */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    // background: #374151;
+    background: linear-gradient(-100deg, #9010a9, #3134b1);
+    border-radius: 10px;
+}
 
 // /* ================= Mobile RESPONSIVE ================= */
 
 @media (max-width: 768px) {
     .sidebar {
-        // position: fixed;
-        // top: 60px;
-        /* adjust based on header height */
-        // left: 0;
         height: calc(100% - 60px);
         transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
