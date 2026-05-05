@@ -1,28 +1,28 @@
 <div class="sidebar" [class.collapsed]="collapsed">
   <ul>
-    <li>
-      <i class="fa-solid fa-house"></i>
-      <span class="menu-text">Dashboard</span>
+
+    <li *ngFor="let item of menu" [class.open]="item.open">
+
+      <!-- MAIN MENU ROW -->
+      <div class="main-menu" (click)="toggle(item)" [routerLink]="!item.children ? item.route : null"
+        routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+
+        <i [class]="item.icon"></i>
+        <span class="menu-text">{{ item.title }}</span>
+
+        <!-- Arrow -->
+        <i *ngIf="item.children" class="fa-solid arrow" [ngClass]="item.open ? 'fa-chevron-down' : 'fa-chevron-right'">
+        </i>
+      </div>
+
+      <!-- SUBMENU BELOW -->
+      <ul class="sub-menu" [class.open]="item.open && item.children">
+        <li *ngFor="let sub of item.children" [routerLink]="sub.route" routerLinkActive="active-sub">
+          {{ sub.title }}
+        </li>
+      </ul>
+
     </li>
-    <li>
-      <i class="fa-solid fa-chart-line"></i>
-      <span class="menu-text">Report</span>
-    </li>
-    <li>
-      <i class="fa-solid fa-gear"></i>
-      <span class="menu-text">Settings</span>
-    </li>
-    <li>
-      <i class="fa-solid fa-list"></i>
-      <span class="menu-text">Category</span>
-    </li>
-    <li>
-      <i class="fa-solid fa-wallet"></i>
-      <span class="menu-text">Income</span>
-    </li>
-    <li>
-      <i class="fa-solid fa-money-bill"></i>
-      <span class="menu-text">Expenses</span>
-    </li>
+
   </ul>
 </div>
