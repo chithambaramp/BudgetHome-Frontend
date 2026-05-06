@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnChanges, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, Input, ViewChild, HostListener } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
@@ -47,18 +47,36 @@ export class LeftnavComponent implements OnInit {
       route: '/report',
     },
     {
-      title: 'Settings',
+      title: 'Settings 1',
       icon: 'fa-solid fa-gear',
       open: false,
       route: '/settings', // ✅ parent route (important)
       children: [
         {
-          title: 'Profile',
+          title: 'Profile 1',
           route: '/settings/profile',
           icon: 'fa-solid fa-user'
         },
         {
-          title: 'Preferences',
+          title: 'Preferences 1',
+          route: '/settings/preferences',
+          icon: 'fa-solid fa-sliders'
+        }
+      ]
+    },
+    {
+      title: 'Settings 2',
+      icon: 'fa-solid fa-gear',
+      open: false,
+      route: '/settings', // ✅ parent route (important)
+      children: [
+        {
+          title: 'Profile 2',
+          route: '/settings/profile',
+          icon: 'fa-solid fa-user'
+        },
+        {
+          title: 'Preferences 2',
           route: '/settings/preferences',
           icon: 'fa-solid fa-sliders'
         }
@@ -81,7 +99,15 @@ export class LeftnavComponent implements OnInit {
     }
   ];
 
-  toggle(item: MenuItem) {
+  autoExpandWhenChildActive() {
+    this.menu.forEach(item => {
+      if (item.children?.some(c => c.route && this.router.url.startsWith(c.route))) {
+        item.open = true;
+      }
+    });
+  }
+
+  openMenu(item: MenuItem, event: MouseEvent) {
     this.menu.forEach(m => {
       if (m !== item) m.open = false;
     });
@@ -89,13 +115,59 @@ export class LeftnavComponent implements OnInit {
     if (item.children) {
       item.open = !item.open;
     }
+
+    // Collapse View Sidebar Sub Menu
+    if (this.collapsed) {
+      const overlay = document.getElementById('leftnav-submenu-overlay');
+      if (!overlay) return;
+      if (!item.children) {
+        overlay.innerHTML = ''; // ✅ close submenu
+        return;
+      }
+      const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+      const currentUrl = this.router.url;
+      overlay.innerHTML = `
+      <div class="leftnav-submenu-popup" style="
+       position: fixed;
+      top: ${rect.top}px;
+      left: ${rect.right}px;">
+      ${item.children?.map(c => {
+        const isActive = currentUrl.startsWith(c.route || '');
+        return `
+        <div class="leftnav-submenu-item ${isActive ? 'active-collapse-submenu' : ''}" data-route="${c.route}">
+        <i class="${c.icon || ''}"></i>
+        <span>${c.title}</span>
+        </div>
+      `;
+      }).join('')}
+  </div>
+`;
+
+      //Attach click listeners
+      overlay.querySelectorAll('.leftnav-submenu-item').forEach(el => {
+        el.addEventListener('click', (e: any) => {
+          const route = e.currentTarget.getAttribute('data-route');
+          if (route) {
+            this.router.navigate([route]);   // ✅ routing works
+            overlay.innerHTML = '';          // ✅ close submenu
+          }
+        });
+      });
+    }
   }
 
-  autoExpandWhenChildActive() {
-    this.menu.forEach(item => {
-      if (item.children?.some(c => c.route && this.router.url.startsWith(c.route))) {
-        item.open = true;
-      }
-    });
+  // Close SubMenu Outside Click
+  @HostListener('document:click', ['$event'])
+  handleOutsideClickSubMenuClose(event: MouseEvent) {
+    const overlay = document.getElementById('leftnav-submenu-overlay');
+
+    if (!overlay) return;
+
+    const clickedInsidePopup = (event.target as HTMLElement).closest('.leftnav-submenu-popup');
+    const clickedSidebar = (event.target as HTMLElement).closest('.sidebar');
+
+    if (!clickedInsidePopup && !clickedSidebar) {
+      overlay.innerHTML = '';   // ✅ close submenu
+    }
   }
 }
