@@ -186,11 +186,15 @@ export class LeftnavComponent implements OnInit {
         <span>${item?.title}</span>
         </div>
       </div>`;
-      // Hover Menu Close
-      const popup = overlay.querySelector('.leftnav-hover-tooltip');
-      popup?.addEventListener('mouseout', () => {
-        popup?.remove();
-      });
+    }
+  }
+
+  // Hover Menu Close
+  closeHoverMenu() {
+    if (this.collapsed) {
+      const overlay = document.getElementById('leftnav-submenu-overlay');
+      const popup = overlay?.querySelector('.leftnav-hover-tooltip');
+      popup?.remove();
     }
   }
 }

@@ -613,6 +613,7 @@ input:checked+.slider:before {
 }
 
 .leftnav-hover-tooltip {
+    pointer-events: auto;
     background: rgba(17, 24, 39, 0.95);
     backdrop-filter: blur(8px);
     width: 165px;

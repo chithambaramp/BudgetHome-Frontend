@@ -5,7 +5,7 @@
 
       <!-- MAIN MENU ROW -->
       <div class="main-menu" (click)="openMenu(item, $event)" (mouseenter)="openMenuHover(item, $event)"
-        [routerLink]="!item.children ? item.route : null" routerLinkActive="active"
+        (mouseleave)="closeHoverMenu()" [routerLink]="!item.children ? item.route : null" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }">
 
         <i [class]="item.icon"></i>
