@@ -147,14 +147,14 @@
 
 .sub-menu li:hover {
     background: rgba(255, 255, 255, 0.25);
-    color: #fff;
+    color: $white;
     border-radius: 8px;
     transform: translateX(3px);
 }
 
 .sub-menu li.active-sub {
     background: rgba(255, 255, 255, 0.25);
-    color: #fff;
+    color: $white;
     border-radius: 8px;
     transform: translateX(3px);
     font-weight: 500;

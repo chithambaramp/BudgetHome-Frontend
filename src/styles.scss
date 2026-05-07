@@ -553,6 +553,32 @@ input:checked+.slider:before {
     border-radius: 10px;
     padding: 10px 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: leftnavSubmenuPopupFade 0.3s ease;
+}
+
+@keyframes leftnavSubmenuPopupFade {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.leftnav-submenu-popup::before {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background: #3134b1;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .leftnav-submenu-item {
