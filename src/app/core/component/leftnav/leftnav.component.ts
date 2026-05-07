@@ -170,4 +170,27 @@ export class LeftnavComponent implements OnInit {
       overlay.innerHTML = '';   // ✅ close submenu
     }
   }
+
+  // Collapse View Hover Menu
+  openMenuHover(item: MenuItem, event: MouseEvent) {
+    if (this.collapsed) {
+      const overlay = document.getElementById('leftnav-submenu-overlay');
+      if (!overlay) return;
+      const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+      overlay.innerHTML = `
+      <div class="leftnav-hover-tooltip" style="
+       position: fixed;
+      top: ${rect.top}px;
+      left: ${rect.right}px;">
+        <div class="leftnav-hover-tooltip-item">
+        <span>${item?.title}</span>
+        </div>
+      </div>`;
+      // Hover Menu Close
+      const popup = overlay.querySelector('.leftnav-hover-tooltip');
+      popup?.addEventListener('mouseout', () => {
+        popup?.remove();
+      });
+    }
+  }
 }

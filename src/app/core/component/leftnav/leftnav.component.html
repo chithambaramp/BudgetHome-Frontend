@@ -4,7 +4,7 @@
     <li *ngFor="let item of menu" [class.open]="item.open">
 
       <!-- MAIN MENU ROW -->
-      <div class="main-menu" (click)="openMenu(item, $event)"
+      <div class="main-menu" (click)="openMenu(item, $event)" (mouseenter)="openMenuHover(item, $event)"
         [routerLink]="!item.children ? item.route : null" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }">
 
