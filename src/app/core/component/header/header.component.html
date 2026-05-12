@@ -5,12 +5,31 @@
   </div>
 
   <div class="right" (click)="toggleDropdown()">
-    <img src="https://i.pravatar.cc/40" class="avatar" />
-    <span class="username">Username</span>
+    <div class="user-profile">
+      <div class="profile-image">
+        <!-- <img src="https://i.pravatar.cc/40" class="avatar" /> -->
+        <!-- OR -->
+        <span class="userinitial">CU</span>
+      </div>
 
-    <div class="dropdown" *ngIf="isOpen">
-      <div>Profile</div>
-      <div (click)="logout()">Logout</div>
+      <div class="profile-info">
+        <span class="username">Username</span>
+        <span class="userrole">Admin</span>
+      </div>
+      <!-- Dropdown Arrow -->
+      <i class="fa-solid fa-chevron-down dropdown-arrow" [class.rotate]="isOpen">
+      </i>
     </div>
+    <!-- Custom Dropdown -->
+    <ul class="dropdown-header-profile" [class.open]="isOpen">
+      <li>
+        <i class="fa-solid fa-circle-user"></i>
+        <span class="titletext">Profile</span>
+      </li>
+      <li (click)="logout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="titletext">Logout</span>
+      </li>
+    </ul>
   </div>
 </header>

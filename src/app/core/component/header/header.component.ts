@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    console.log('Logout clicked');
+    this.auth.logout();
   }
 
 }
