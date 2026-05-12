@@ -4,7 +4,7 @@
     <div class="logo">ERGS</div>
   </div>
 
-  <div class="right" (click)="toggleDropdown()">
+  <div class="right" (click)="toggleDropdown()" (appOutsideClick)="closeDropdown()">
     <div class="user-profile">
       <div class="profile-image">
         <!-- <img src="https://i.pravatar.cc/40" class="avatar" /> -->

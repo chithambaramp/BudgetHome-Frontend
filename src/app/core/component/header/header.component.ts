@@ -32,4 +32,7 @@ export class HeaderComponent implements OnInit {
     this.auth.logout();
   }
 
+  closeDropdown() {
+    this.isOpen = false;
+  }
 }

@@ -8,6 +8,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { GlobalAlertComponent } from './component/global-alert/global-alert.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     RouterModule,
     TooltipModule,
     AlertModule.forRoot(),
+    SharedModule,
   ],
   exports: [
     HeaderComponent,
