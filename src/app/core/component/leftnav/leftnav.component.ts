@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnChanges, OnInit, Input, ViewChild, HostListener } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, Input, Output, ViewChild, HostListener, EventEmitter } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
@@ -26,7 +26,7 @@ interface ChildMenu {
 export class LeftnavComponent implements OnInit {
   baseUrl: string = "../../../../assets/images/";
   @Input() collapsed = false;
-
+  @Output() closeSidebarEvent = new EventEmitter<void>();
   constructor(public auth: AuthService, public service: BaseService, private router: Router, public route: ActivatedRoute) {
 
   }
@@ -195,6 +195,13 @@ export class LeftnavComponent implements OnInit {
       const overlay = document.getElementById('leftnav-submenu-overlay');
       const popup = overlay?.querySelector('.leftnav-hover-tooltip');
       popup?.remove();
+    }
+  }
+
+  menuClick(item: any) {
+    // close mobile sidebar after routing
+    if (!item?.children && window.innerWidth <= 768) {
+      this.closeSidebarEvent.emit();
     }
   }
 }

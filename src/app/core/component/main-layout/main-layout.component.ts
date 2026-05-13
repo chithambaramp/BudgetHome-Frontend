@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, HostListener } from '@angular/core';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
 @Component({
@@ -18,5 +18,15 @@ export class MainLayoutComponent implements OnInit {
   isCollapsed = false;
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  closeSidebar() {
+    this.isCollapsed = false;
+  }
+
+  isMobile = window.innerWidth <= 768;
+  @HostListener('window:resize')
+  onResize() {
+    this.isMobile = window.innerWidth <= 768;
   }
 }

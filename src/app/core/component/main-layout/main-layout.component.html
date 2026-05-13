@@ -1,12 +1,14 @@
 <app-global-alert></app-global-alert>
 <div class="layout">
-
+  <!-- Overlay only when Mobile Sidebar open -->
+  <div class="sidebar-overlay-mobile" *ngIf="isCollapsed && isMobile" (click)="closeSidebar()">
+  </div>
   <!-- Full width header -->
   <app-header (sidebarToggle)="toggleSidebar()"></app-header>
 
   <!-- Below header -->
   <div class="body">
-    <app-leftnav [collapsed]="isCollapsed"></app-leftnav>
+    <app-leftnav [collapsed]="isCollapsed" (closeSidebarEvent)="closeSidebar()"></app-leftnav>
 
     <div class="content" [ngClass]="{ collapsed: isCollapsed }">
       <div class="content-inner">

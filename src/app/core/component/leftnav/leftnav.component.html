@@ -4,8 +4,9 @@
     <li *ngFor="let item of menu" [class.open]="item.open">
 
       <!-- MAIN MENU ROW -->
-      <div class="main-menu" (click)="openMenu(item, $event)" (mouseenter)="openMenuHover(item, $event)"
-        (mouseleave)="closeHoverMenu()" [routerLink]="!item.children ? item.route : null" routerLinkActive="active"
+      <div class="main-menu" (click)="openMenu(item, $event); menuClick(item)"
+        (mouseenter)="openMenuHover(item, $event)" (mouseleave)="closeHoverMenu()"
+        [routerLink]="!item.children ? item.route : null" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }">
 
         <i [class]="item.icon"></i>
@@ -19,7 +20,8 @@
 
       <!-- SUBMENU BELOW -->
       <ul class="sub-menu" [class.open]="item.open && item.children">
-        <li *ngFor="let sub of item.children" [routerLink]="sub.route" routerLinkActive="active-sub">
+        <li *ngFor="let sub of item.children" [routerLink]="sub.route" routerLinkActive="active-sub"
+          (click)="menuClick(sub)">
           <i [class]="sub.icon"></i>
           <span class="menu-text">{{ sub.title }}</span>
         </li>
