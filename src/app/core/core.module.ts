@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './component/header/header.component';
 import { LeftnavComponent } from './component/leftnav/leftnav.component';
 import { MainLayoutComponent } from './component/main-layout/main-layout.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { GlobalAlertComponent } from './component/global-alert/global-alert.component';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { SharedModule } from '../shared/shared.module';
 
@@ -19,9 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     GlobalAlertComponent
   ],
   imports: [
-    CommonModule,
     RouterModule,
-    TooltipModule,
     AlertModule.forRoot(),
     SharedModule,
   ],

@@ -1,0 +1,81 @@
+<div class="container-fluid login-wrapper">
+  <div class="top-header">
+    <a href="https://knowella.com/" alt="Knowella Website">
+      <div class="knowellalogo"></div>
+    </a>
+    <div class="line"></div>
+    <div class="workplace hidelogintxt">Your Platform for Operational Excellence</div>
+  </div>
+
+  <div class="row rowcustom">
+    <!--Image Container-->
+    <div class="col-sm-12 col-md-12 col-xl-7 col-xxl-7 px-0 mx-0">
+      <div class="responsiveimg">
+      </div>
+      <div class="imagecontainer">
+      </div>
+      <div class="copyrightmobile">Copyright © Knowella AI Inc.</div>
+    </div>
+    <!--Form Container-->
+    <div class="col-sm-12 col-md-12 col-xl-5 col-xxl-5 px-0 mx-0 login-banner-one">
+      <div class="loginuserimg">
+      </div>
+      <section class="userlogin">
+        <div class="formdivforlogin">
+          <h1>Login</h1>
+          <p>Welcome back. Please login to your account</p>
+          <!--Form-->
+          <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" autocomplete="off" class="userloginform">
+            <div class="emailbox">
+              <input type="text" formControlName="email" autocomplete="off"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email or Username">
+            </div>
+            <div class="passwordbox">
+              <input [type]="password" placeholder="Password" autocomplete="off" formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+              <img (click)="onClickPassword(false)" *ngIf="!show" src="../../../assets/images/hideeye.svg"
+                class="field-icon-hide cursor">
+              <img (click)="onClickPassword(true)" *ngIf="show" src="../../../assets/images/showeye.svg"
+                class="field-icon-show cursor">
+            </div>
+            <div class="loginerror">
+              <span class="field-error" *ngIf="submitted && (!isEmailValid() || !isPassValid())">E-mail or password
+                entered is not valid.
+                <br>Please check and try
+                again.
+              </span>
+              <!-- <span class="field-error"
+                *ngIf="submitted && (isEmailValid() || isPassValid() && !isPrivacyPolicyValid())">Please Accept for
+                Privacy Policy & Terms
+              </span> -->
+              <span *ngIf="isValid()" class="">
+                {{error}}
+              </span>
+            </div>
+            <div class="forgotpass" routerLink="/auth/forgot-password">Forgot password?</div>
+            <!-- <div class="remember">
+
+              <div class="d-flex " style="margin-top: 15px;">
+                <label class="containerChkBox">
+                  <input type="checkbox" formControlName="privacypolicy">
+                  <span class="checkmark2"></span>
+                </label>
+                <div class="remembertxt">Accept <span (click)="openPrivacyPolicy('terms')" class="addunderline">Terms &
+                    Conditions</span> & <span (click)="openPrivacyPolicy('policy')" class="addunderline">Privacy
+                    Policy</span></div>
+              </div>
+            </div> -->
+            <button type="submit" [disabled]="isLoading" class="btn btn-primary login-btn">{{getLoading()}}</button>
+            <!-- <div class="signup_link"> <small class="text-sm">Don't have an account? <a class="sighUptxt">Sign Up
+                Here</a></small> </div> -->
+            <div class="SignupLink d-flex justify-content-center mt-4 ">
+              <p> Do not have an account? Signup <span class="signhere" routerLink="/auth/signup"> here</span> </p>
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="copyrighttext">Copyright © Knowella AI Inc.</div>
+    </div>
+  </div>
+</div>
+<app-global-alert></app-global-alert>

@@ -1,0 +1,262 @@
+<div class="container-fluid login-wrapper main-content">
+  <div class="top-header">
+    <a href="https://knowella.com/" alt="Knowella Website">
+      <div class="knowellalogo"></div>
+    </a>
+    <div class="line"></div>
+    <div class="workplace hidelogintxt">Your Platform for Operational Excellence</div>
+  </div>
+
+  <!--  
+  <div class="logodivheadlogin" style="background-color: #F4F7FA;">
+    <img src="../../../assets/images/logo-medium.png" class="logowidth">
+    <div class="line"></div>
+    <div class="mt-4 automated">  Your Platform for Operational Excellence</div>
+    <div class="line"></div>
+    <div class="workpalce2 ">  Your Platform for Operational Excellence</div>
+
+  </div>
+-->
+  <div class="row rowcustom">
+
+    <div class="col-sm-12 col-md-12 col-xl-5 col-xxl-5 px-0 login-banner-one ">
+      <section class="">
+      <div class="usersignup">
+        <div class="signupiamgaeperson">
+          <!-- <img src="../../../assets/images/userloginimg.png" class=" logowidth2"> -->
+        </div>
+        <div class=" mt-42" style="margin-top: 62px;">
+          <h1 class="text-center mt-2">Signup</h1>
+          <p class="mb-3 text-center mt-2">Please enter the details to create an account</p>
+          <!--Form-->
+          <form autocomplete="off" class="userloginform" #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+            <div class="row ">
+              <div class="col-md-6 pb-3">
+                <!-- <label class="pb-2 pt-3">First name*</label> -->
+                <div>
+                  <!-- <label>First Name</label> -->
+                  <input type="text" formControlName="firstname" autocomplete="off" placeholder="First name"
+                    [ngClass]="{ 'is-invalid': formControl.firstname.touched && formControl.firstname.errors }">
+                </div>
+                <div class="error-height" *ngIf="formControl.firstname.touched && formControl.firstname.errors">
+                  <span class="field-error">
+                    *Enter your name details
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-md-6 pb-3">
+                <!-- <label class="pb-2 pt-3">Last name*</label> -->
+                <div>
+                  <!-- <label>Last Name</label> -->
+                  <input type="text" formControlName="lastname" autocomplete="off" placeholder="Last name"
+                    [ngClass]="{ 'is-invalid': formControl.lastname.touched && formControl.lastname.errors }">
+                </div>
+                <div class="error-height" *ngIf="formControl.lastname.touched && formControl.lastname.errors">
+                  <span class="field-error">
+                    *Enter your name details
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 pb-3">
+              <!-- <label class="pb-2">Email*</label> -->
+              <input type="text" formControlName="email" autocomplete="off" placeholder="Email"
+                [ngClass]="{ 'is-invalid': formControl.email.touched && formControl.email.errors }">
+              <div class="error-height" *ngIf="formControl.email.touched && formControl.email.errors">
+                <span class="field-error">
+                  *Enter a valid email address
+                </span>
+              </div>
+              <div class="" *ngIf="formControl.email.touched && !formControl.email.errors && (!emailcodesent && !emailverified) ">
+                <button type="button" [disabled]="isLoading2" class="btn btn-primary verify-btn2" (click)="SendCode()">Send Code<span
+                  class="dotbtn"></span></button>
+              </div>
+              <div class="" *ngIf="formControl.email.touched && !formControl.email.errors && (emailcodesent || emailverified)">
+                <button type="button" [disabled]="isLoading2" class="btn btn-primary verify-btn2" (click)="changeEmail()">Change Email<span
+                  class="dotbtn"></span></button>
+              </div>
+            </div>
+            <div class="row " *ngIf="emailcodesent && !emailverified">
+              <div class="col-md-8 pb-3">
+                <div>
+                  <input type="text" formControlName="emailcode" autocomplete="off" placeholder="Verify code"
+                    [ngClass]="{ 'is-invalid': formControl.emailcode.errors }">
+                  <div class="error-height" *ngIf="formControl.emailcode.errors">
+                    <span class="field-error">
+                      *Enter a valid code
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 pb-3">
+                
+                <div class="">
+                  <button type="button" [disabled]="isLoading2" class="btn btn-primary verify-btn" (click)="verifyCode()">Verify<span
+                    class="dotbtn"></span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 pb-3" *ngIf="false">
+              <!-- <label class="pb-2">Phone number*</label> -->
+              <ngx-intl-tel-input [cssClass]="'custom phonenumber'" [preferredCountries]="preferredCountries"
+                [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+                [selectedCountryISO]="CountryISO.Canada" [maxLength]="15" [phoneValidation]="true"
+                [customPlaceholder]="'Phone number'" [separateDialCode]="separateDialCode"
+                [numberFormat]="PhoneNumberFormat.National" name="phone"
+                [ngClass]="{ 'phone-invalid': formControl.phone.touched && formControl.phone.errors }"
+                formControlName="phone">
+              </ngx-intl-tel-input>
+              <div class="error-height" *ngIf="formControl.phone.touched && formControl.phone.errors">
+                <span class="field-error">
+                  *Enter a valid phone number
+                </span>
+              </div>
+            </div>
+
+            <div class="row " *ngIf="false">
+              <div class="col-md-6 pb-3">
+                <!-- <label class="pb-2">Company name*</label> -->
+                <div>
+                  <input type="text" formControlName="companyname" autocomplete="off" placeholder="Company Name"
+                    [ngClass]="{ 'is-invalid': formControl.companyname.touched && formControl.companyname.errors }">
+                </div>
+                <div class="error-height" *ngIf="formControl.companyname.touched && formControl.companyname.errors">
+                  <span class="field-error">
+                    *Enter company name
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-md-6 pb-3">
+                <!-- <label class="pb-2">Industry*</label> -->
+                <div>
+                  <select class="select-padding form-select form-field animation a4 form-control"
+                    formControlName="industry" id="industry"
+                    [ngClass]="{ 'is-invalid': formControl.industry.touched && formControl.industry.errors }">
+                    <option value=''>Select Industry</option>
+                    <option *ngFor="let items of industriesList" (click)="selectIndustryList(items)" [value]="items">
+                      {{items}}</option>
+                  </select>
+                  <!-- <input type="text" formControlName="industry">
+                <button (click)="openIndustryList()" type="button"
+                  class="btn btn-primary filter-btns filterButton sel companyclass">
+                  <span *ngIf="!industriesListSelected" class="companyclass">Select Industry</span>
+                  <span *ngIf="industriesListSelected" class="companyclass"
+                    [tooltip]="industriesListSelected">{{industriesListSelected.length>17?industriesListSelected.substring(0,17)+'...':industriesListSelected}}</span>
+                  <img src="../../../../assets/images/icons-down.png" class="down-ico companyclass">
+                </button>
+                <ul *ngIf="isIndustryListOpen" class="iscompanyfilter filterButton companyclass">
+                  <li class="lis-itm" *ngFor="let item of industriesList; let i=index"
+                    (click)="selectIndustryList(item)">
+                    <span class="disp-name">
+                      {{item}}
+                    </span>
+                  </li> -->
+                  <!-- <div *ngIf="companyList.length==0" class="nodata">No records</div> -->
+                  <!-- </ul> -->
+                  <div class="error-height" *ngIf="formControl.industry.touched && formControl.industry.errors">
+                    <!-- <span class="field-error">
+                    *Select industry
+                  </span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 pb-3" *ngIf="false">
+              <!-- <label class="pb-2">Timezone*</label> -->
+              <div>
+                <select class="select-padding form-select form-field animation a4 form-control"
+                  formControlName="timezone" id="timezone"
+                  [ngClass]="{ 'is-invalid': formControl.timezone.touched && formControl.timezone.errors }">
+                  <option value=''>Timezone</option>
+                  <option *ngFor="let items of timezoneList" [value]="items.abbr">{{items.text}}</option>
+                </select>
+                <!-- <div *ngIf="submitted && fs.timezone.errors" class="field-error">
+                  <div *ngIf="fs.timezone.errors.required">Timezone is required</div>
+              </div> -->
+              </div>
+
+              <div class="error-height" *ngIf="formControl.timezone.touched && formControl.timezone.errors">
+                <span class="field-error">
+                  *Select time zone
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <div class="d-flex">
+                <label class="containerChkBox">
+                  <input type="checkbox" formControlName="privacypolicy">
+                  <span class="checkmark"></span>
+                </label>
+                <div class="remembertxt">By creating a Knowella AI Inc. account, you are agreeing to accept the
+                  <span (click)="openPrivacyPolicy('terms')" class="addunderline">Terms &
+                    Conditions</span> & <span (click)="openPrivacyPolicy('policy')" class="addunderline">Privacy
+                    Policy</span>
+                  <div class="error-height"
+                    *ngIf="formControl.privacypolicy.touched && formControl.privacypolicy.errors">
+                    <span class="field-error">
+                      *Please agree to the terms & conditions
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="text-danger">{{errorMessage}}</div>
+            </div>
+
+            <div class="text-center divfordot">
+              <button type="submit" [disabled]="isLoading" class="btn btn-primary login-btn">{{getLoading()}} <span
+                  class="dotbtn"></span></button><br>
+                <p class="mb-1 text-center mt-2">Or continue with</p>
+            <button type="button" (click)="loginWithGoogle()" class="btn btn-primary gsingup-btn mt-2">
+              <img src="/assets/images/google_logo.png" width="21"/> Google</button>
+            <button type="button" (click)="loginWithMicroSoft()" class="btn btn-primary gsingup-btn mt-2">              
+              <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"><path fill="#f25022" d="M1 1h9v9H1z"/><path fill="#00a4ef" d="M1 11h9v9H1z"/><path fill="#7fba00" d="M11 1h9v9h-9z"/><path fill="#ffb900" d="M11 11h9v9h-9z"/></svg>
+              Microsoft</button>
+
+              <div class="remembertxt pt-3">Already a User? Click <span routerLink="/auth" class="addunderline"> here
+                </span> to Login</div>
+            </div>
+
+          </form>
+        </div>
+        <div class="sectionend">
+
+        </div>
+        </div>
+        <div class="copyrighttext">Copyright © Knowella AI Inc.</div>
+      </section>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-xl-7 col-xxl-7 px-0">
+      <div class="responsiveimg">
+        <!--<div class="workerimage"><img src= class="img-fluid customerimage"></div>-->
+      </div>
+      <div class="imagecontainer">
+        <!--<div class="workerimage"><img src= class="img-fluid customerimage"></div>-->
+      </div>
+      <div class="copyrightmobile">Copyright © Knowella AI Inc.</div>
+
+      <!-- <div class="imagecustomer2 ">
+        <div class="responsiveimg"></div>
+        <div class="imgdiov">
+          <img src="../../../assets/images/signup.png" class="img-fluid customerimage">
+        </div>
+        <div class="copyrighttext2">Copyright © Knowella AI Inc.</div>
+      </div> -->
+    </div>
+
+  </div>
+
+</div>
+<app-global-alert></app-global-alert>

@@ -1,0 +1,59 @@
+@import "../../../app/core/styles/variable";
+.messagepart{
+    text-align: center;
+    padding: 35px;
+    h6{
+        font-family: Poppins-Regular;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color: #64707C;
+    }
+    h4{
+        font-family: Poppins-Medium;
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $secondary-font-color;
+        padding-top: 8px;
+    }
+    .login-btn {
+        border-radius: 8px;
+        background-color: $primary-color;
+        border-color: $primary-color;
+        font-family: Poppins-Medium;
+        text-align: center;
+        margin-top: 6px;
+        height: 40px;
+        width: 320px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+      }
+      .text-sm{
+        font-family: Poppins-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: $primary-font-color;
+      }
+      .sighUptxt{
+        color: $primary-color;
+        font-size: 12px;
+        cursor: pointer;
+        font-family: Poppins-Regular;
+        font-weight: 500;
+        text-decoration: none;
+        padding-left: 5px;
+      }
+}
+@media only screen and (max-width: 767px) {
+    .login-btn{
+        width: 100% !important;
+    }
+}
+

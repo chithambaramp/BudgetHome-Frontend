@@ -1,0 +1,46 @@
+@import "./../../../app/core/styles/variable";
+
+.error-wrapper{
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-content{
+  h1{
+    font-family: Poppins-Medium;
+    font-size: 35px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.51;
+    letter-spacing: 1.05px;
+    color: $error-404;
+  }
+  h2{
+    font-family: Poppins-Regular;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    color: #565656;
+    margin: 10px 0 42px 0;
+  }
+  .add-btn{
+    height: 48px !important;
+  }
+  .errorlogo{
+    margin-bottom: 38px;
+  }
+}
+
+@media (max-width: 767px) {
+  .errorlogo{
+    width: 185px;
+  }
+}

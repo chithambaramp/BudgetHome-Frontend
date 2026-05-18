@@ -1,0 +1,21 @@
+<div>
+    <img src="../../../assets/images/cross.svg" class="closeicon" (click)="bsModalRef.hide()">
+</div>
+<div class="main-content-wrap">
+    <div class="messagepart">
+        <div class="acceptimg">
+            <img src="../../../assets/images/resetpass.svg" style="width: 30%;">
+        </div>
+        <h6 *ngIf="ID=='forgot'">Reset password link is on the way!</h6>
+        <h6 *ngIf="ID=='reset'">Password was successfully set</h6>
+        <h4 *ngIf="ID=='forgot'">
+            A unique link to reset your password has been generated for you and sent to your E-mail.
+        </h4>
+        <div class="mt-4 mb-4">
+            <button type="button" class="btn btn-primary login-btn" (click)="redirect()">Back to login</button>
+        </div>
+        <div *ngIf="ID=='forgot'"> <small class="text-sm">Didn't Receive email?<a class="sighUptxt"
+                    (click)="resendEmail()">Resend link</a></small>
+        </div>
+    </div>
+</div>
