@@ -34,7 +34,7 @@ jobs:
         run: npm run build -- --base-href=/BudgetHome-Frontend/
 
       - name: Copy index.html to 404.html
-        run: cp dist/budget-home/browser/index.html dist/budget-home/browser/404.html
+        run: cp dist/budget-home/index.html dist/budget-home/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
