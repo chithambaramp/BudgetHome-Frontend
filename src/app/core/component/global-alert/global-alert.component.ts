@@ -9,7 +9,8 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
 })
 export class GlobalAlertComponent implements OnInit {
 
-  constructor(private cdr: ChangeDetectorRef, public service: BaseService) {
+  constructor(public service: BaseService, private cdr: ChangeDetectorRef) {
+
   }
 
   dismissible: boolean = true;

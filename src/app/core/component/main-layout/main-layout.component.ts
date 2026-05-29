@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectorRef } from '@angular/core';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
 })
 export class MainLayoutComponent implements OnInit {
 
-  constructor(private cdr: ChangeDetectorRef, public service: BaseService) {
+  constructor(public service: BaseService, private cdr: ChangeDetectorRef) {
+
   }
 
   ngOnInit(): void {
@@ -29,4 +30,9 @@ export class MainLayoutComponent implements OnInit {
   onResize() {
     this.isMobile = window.innerWidth <= 768;
   }
+
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
+  }
+
 }

@@ -1,0 +1,21 @@
+<table class="expense-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Amount (₹)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of expenses">
+      <td>{{ item.id }}</td>
+      <td>{{ item.date }}</td>
+      <td>{{ item.category }}</td>
+      <td>{{ item.title }}</td>
+      <td>{{ item.amount }}</td>
+    </tr>
+  </tbody>
+</table>

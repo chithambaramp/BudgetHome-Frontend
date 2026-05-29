@@ -1,0 +1,185 @@
+// @import "../../../core//styles//variable";
+
+// .container {
+//   display: flex;
+// }
+
+// .left {
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: column;
+//   width: 100%;
+//   animation-name: left;
+//   animation-duration: 1s;
+//   animation-delay: 1s;
+// }
+
+// .header>h2 {
+//   font-family: Poppins-Regular;
+//   font-size: 16px;
+//   color: $cornflower;
+//   cursor: pointer;
+// }
+
+// .header>h4 {
+//   font-family: Poppins-Regular;
+//   font-size: 20px;
+//   font-weight: 600;
+//   text-align: left;
+//   color: $black;
+//   margin-top: 20px;
+// }
+
+// //form css 
+// .form {
+//   max-width: 95%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .form-field {
+//   width: 100%;
+//   height: 48px;
+//   //   padding: 13px 20.1px 14px 16px;
+//   border-radius: 10px;
+//   border: solid 1px $field-border;
+//   background-color: $white;
+//   outline: 0;
+//   transition: .2s;
+//   margin-top: 24px;
+//   color: $secondary-font-color;
+
+//   &::placeholder {
+//     font-family: Poppins-Regular;
+//     font-size: 15px;
+//     color: $secondary-font-color;
+//   }
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: none !important;
+//   }
+// }
+
+// .is-invalid {
+//   border: 1px solid $error-color !important;
+// }
+
+// .textareabox {
+//   padding: auto !important;
+//   height: 120px !important;
+// }
+
+// .form-field:focus {
+//   border-color: $cornflower;
+// }
+
+// .cancelleft {
+//   margin-left: 10px;
+// }
+
+// @media only screen and (max-width: 768px) {
+//   .container {
+//     display: initial;
+//   }
+
+//   .form {
+//     max-width: 100%;
+//   }
+
+//   .leftpad {
+//     padding: 0 20px 20px 20px;
+//   }
+
+//   .uploadImage {
+//     display: block !important;
+//   }
+
+//   h1,
+//   h2 {
+//     height: auto !important;
+//   }
+
+//   .uploadpad {
+//     padding: 6px 0 0 0 !important;
+//   }
+
+//   .cancelleft {
+//     margin-left: 0px;
+//   }
+// }
+
+// .uploadImage {
+//   display: flex;
+//   padding-top: 8px;
+
+//   span {
+//     cursor: pointer;
+//     color: $cornflower;
+//     position: relative;
+//   }
+
+//   h1 {
+//     width: 300px;
+//     height: 40px;
+//     background-color: $white;
+//     padding: 9px 16px 8px;
+//     border-radius: 8px;
+//     font-family: 'Poppins-Regular';
+//     font-size: 16px;
+//     font-weight: normal;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: normal;
+//     letter-spacing: normal;
+//     text-align: center;
+//     color: $cornflower;
+//   }
+
+//   h2 {
+//     height: 30px;
+//     font-family: Poppins-Light;
+//     font-size: 14px;
+//     font-weight: 300;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: normal;
+//     letter-spacing: normal;
+//     text-align: left;
+//     color: $secondary-font-color;
+//     padding: 5px 8px;
+//     border-radius: 5px;
+//     border: solid 1px $fileborder;
+//     background-color: $fileuploadtxtbg;
+//   }
+
+//   .uploadpad {
+//     padding: 6px 0 0 17px;
+//   }
+// }
+
+// input[type="file"] {
+//   display: none;
+// }
+
+// .imgshow {
+//   border-radius: 50%;
+//   width: 100px;
+//   height: 100px;
+// }
+
+// .chkboxlabelname {
+//   font-family: Poppins-Regular;
+//   font-size: 14px;
+//   font-weight: normal;
+//   font-stretch: normal;
+//   font-style: normal;
+//   line-height: 1.5;
+//   letter-spacing: normal;
+//   text-align: left;
+//   color: $primary-font-color;
+// }
+
+// .infologowidth {
+//   height: auto !important;
+// }

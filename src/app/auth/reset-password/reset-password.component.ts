@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ForgotPopupComponent } from '../forgot-popup/forgot-popup.component';
-import { AuthService } from 'src/app/shared/_service/auth.service';
-import { BaseService } from 'src/app/shared/_service/baseStore.service';
+import { AuthService } from 'src/app/shared/_services/auth.service';
+import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -20,15 +20,8 @@ export class ResetPasswordComponent implements OnInit {
   password: string = '';
   confirmPassword: string = '';
   linkID: any;
-  constructor(private router: Router,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    public authenticationService: AuthService,
-    public store: BaseService
-  ) {
-    // if (this.authenticationService.currentUserValue) {
-    //   this.router.navigate(['/']);
-    // }
+  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {
+
   }
 
   ngOnInit(): void {
@@ -47,16 +40,16 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   checkPasswords(group: FormGroup) {
-    const password = group.get('password').value;
-    const confirmPassword = group.get('confirmPassword').value;
+    // const password = group.get('password').value;
+    // const confirmPassword = group.get('confirmPassword').value;
 
-    return password === confirmPassword ? null : { notSame: true }
+    // return password === confirmPassword ? null : { notSame: true }
   }
 
   get f() { return this.ResetPasswordForm.controls; }
 
   getLoading() {
-    // this.store.openModalWithComponent(ForgotPopupComponent, '', '', 'reset');
+    // this.service.openModalWithComponent(ForgotPopupComponent, '', '', 'reset');
     return this.isLoading ? 'Loading...' : 'Set New Password'
   }
 
@@ -93,12 +86,12 @@ export class ResetPasswordComponent implements OnInit {
       return;
     }
     this.isLoading = true;
-    this.authenticationService.resetPassword(this.ResetPasswordForm.value, this.linkID).subscribe(
+    this.auth.resetPassword(this.ResetPasswordForm.value, this.linkID).subscribe(
       (result: any) => {
         if (result.statusCode == 200) {
           this.isLoading = false;
           this.router.navigate(['auth/forgot-password']);
-          this.store.openModalWithComponent(ForgotPopupComponent, '', '', 'reset');
+          this.service.openModalWithComponent(ForgotPopupComponent, '', '', 'reset');
         } else {
           this.isLoading = false;
           this.error = result.message;

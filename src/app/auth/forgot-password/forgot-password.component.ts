@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/_service/auth.service';
-import { BaseService } from 'src/app/shared/_service/baseStore.service';
 import { ForgotPopupComponent } from '../forgot-popup/forgot-popup.component';
+import { AuthService } from 'src/app/shared/_services/auth.service';
+import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -17,7 +17,7 @@ export class ForgotPasswordComponent implements OnInit {
   submitted: boolean = false;
   isLoading!: boolean;
   error!: string;
-  constructor(private router: Router, private formBuilder: FormBuilder, public auth: AuthService, public service: BaseService) {
+  constructor(public service: BaseService, public auth: AuthService, private router: Router, private formBuilder: FormBuilder) {
     // if (this.auth.currentUserValue) {
     //   this.router.navigate(['/']);
     // }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../shared/_services/auth.service';
 import { BaseService } from "../../../shared/_services/baseStore.service";
@@ -9,7 +9,7 @@ import { BaseService } from "../../../shared/_services/baseStore.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(public auth: AuthService, private renderer: Renderer2, public service: BaseService, private router: Router) {
+  constructor(public service: BaseService, public auth: AuthService, private router: Router) {
 
   }
 

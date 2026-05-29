@@ -1,1597 +1,1674 @@
-@import "./../../../app/core/styles/variable";
-
-.login-wrapper {
-  padding: 0px 0px;
-  margin: 0;
-  background-color: #f4f7fa;
-}
-.top-header {
-  padding: 30px 0px 0px 40px;
-  display: flex;
-}
-.knowellalogo {
-  width: 250px;
-  height: 44.8px;
-  background-image: url("../../../assets/images/knowlla.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 32px;
-  margin-top: 8px;
-}
-.workplace {
-  height: 60px;
-  border-left: 1px solid #6e63ff;
-  padding-left: 32px;
-  padding-top: 15px;
-  color: #64707c;
-  font-family: "Poppins-Regular";
-  font-size: 24px;
-  line-height: 38px;
-  font-weight: 400;
-}
-
-.customerimage {
-  width: 92%;
-  height: 105vh;
-}
-
-button {
-  width: 100%;
-}
-
-.imagecontainer {
-  background-image: url("../../../assets/images/worker-pic-2-2x.jpg");
-  background-size: contain;
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  height: 1000px;
-}
-
-.copyrightmobile {
-  display: none;
-}
-
-.logodivheadlogin {
-  padding: 10px;
-  margin: 10px;
-  display: flex;
-}
-
-.remember input {
-  width: 10% !important;
-}
-.logowidth {
-  width: 150px !important;
-}
-.line {
-  display: none;
-}
-
-.mt-4 {
-  position: relative;
-  top: 6%;
-}
-
-.logowidth2 {
-  width: 60px;
-  height: 60px;
-}
-
-.imagecustomer2 {
-  padding-left: 20px;
-  height: 100vh;
-}
-.dotbtn {
-  width: 7px;
-  height: 7px;
-  border-radius: 10px;
-  background-color: white;
-  position: absolute;
-  top: 15%;
-  right: 5%;
-}
-.loginuserimg {
-  background-color: white;
-  border-radius: 50%;
-  padding: 20px;
-  position: relative;
-  top: -17%;
-  border: 10px solid #f4f7fa;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 17px;
-  width: 17px;
-  background: #ffffff;
-  border: 1px solid #d9e3ed;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-/* On mouse-over, add a grey background color */
-.containerChkBox:hover input ~ .checkmark {
-  background-color: #e6ecf1;
-}
-
-/* When the checkbox is checked, add a blue background */
-.containerChkBox input:checked ~ .checkmark {
-  background-color: $primary-color;
-  border: 1.5px solid $primary-color;
-}
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.containerChkBox input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.containerChkBox .checkmark:after {
-  left: 5px;
-  top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.usersignup {
-  background-image: url("../../../assets/images/form-signup-bg.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 385px;
-  height: 600px;
-  display: block;
-  margin-left: 90px;
-  h1 {
-    font-family: "Poppins-SemiBold";
-    font-size: 32px;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 38px;
-    letter-spacing: normal;
-    text-align: left;
-    color: $primary-font-color;
-  }
-
-  p {
-    font-family: "Poppins-Regular";
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    font-style: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: $secondary-font-color;
-  }
-
-  .google-btn {
-    border-radius: 8px;
-    border: solid 1px #e6ecf1;
-    background-color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: $secondary-font-color;
-    font-family: Poppins-Medium;
-    margin-top: 29px;
-  }
-
-  .google-logo {
-    max-width: 16px;
-    min-width: 16px;
-    margin-right: 9px;
-  }
-
-  .optionlogin {
-    padding-top: 25px;
-    padding-bottom: 42px;
-
-    .alignleft {
-      float: left;
-      width: 33.33333%;
-      text-align: left;
-      border: 1px solid #d1d1d1;
-      margin-top: 7px;
-    }
-
-    .aligncenter {
-      float: left;
-      width: 33.33333%;
-      font-family: Rubik-Regular;
-      font-size: 12px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: center;
-      color: #d1d1d1;
-    }
-
-    .alignright {
-      float: left;
-      width: 33.33333%;
-      text-align: right;
-      border: 1px solid #d1d1d1;
-      margin-top: 7px;
-    }
-  }
-
-  .userloginform {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-
-    input {
-      border-radius: 8px;
-      border: solid 1px #e6ecf1;
-      background-color: #fff !important;
-      width: 100%;
-      height: 48px;
-      padding: 12px 14px;
-      font-family: Poppins-Regular;
-      font-size: 14px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 20px;
-      letter-spacing: normal;
-      text-align: left;
-      text-decoration: none !important;
-      color: #6e63ff !important;
-    }
-
-    ::placeholder {
-      font-family: Poppins-Regular;
-      font-size: 14px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: #96a5b5 !important;
-      text-transform: capitalize;
-    }
-
-    select {
-      border-radius: 8px;
-      border: solid 1px #e6ecf1;
-      background-color: #fff !important;
-      width: 100%;
-      height: 48px;
-      padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-      color: #96a5b5 !important;
-
-      ::placeholder {
-        font-family: Poppins-Regular;
-        font-size: 15px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: left;
-        color: #6e63ff !important;
-        text-transform: capitalize;
-      }
-
-      :focus {
-        border: solid 1px #e6ecf1;
-        outline: none !important;
-        box-shadow: none !important;
-      }
-    }
-
-    .passwordbox {
-      padding-top: 30px;
-    }
-
-    /*
-    .loginerror {
-      padding: 6px 0 6px 0;
-      line-height: normal;
-    }
-    */
-
-    .field-error {
-      width: 220px;
-      padding: 8px 12px;
-      position: absolute;
-      background: antiquewhite;
-      top: -20;
-      border-right: 2px solid red;
-      z-index: 99;
-      left: -250px;
-      opacity: 0;
-      margin-top: -41px;
-      animation: showerror 500ms 2;
-      animation-direction: alternate;
-      animation-duration: 3s;
-    }
-    @keyframes showerror {
-      from {
-        left: -250px;
-        opacity: 0;
-      }
-      to {
-        left: 0px;
-        opacity: 1;
-      }
-    }
-
-    .field-icon-hide {
-      float: right;
-      margin-left: -40px;
-      margin-top: 16px;
-      right: 14px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .field-icon-show {
-      float: right;
-      margin-left: -40px;
-      margin-top: 14px;
-      right: 14px;
-      position: relative;
-      z-index: 2;
-      max-width: 22px;
-      min-width: 22px;
-    }
-
-    label.containerChkBox {
-      font-family: Poppins-Regular;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      color: $secondary-font-color;
-    }
-
-    .forgotpass {
-      font-family: Poppins-Regular;
-      font-size: 14px;
-      text-align: right;
-      color: $primary-color;
-      margin: 5px 0 9px 0;
-      cursor: pointer;
-      float: right;
-    }
-
-    .login-btn {
-      border-radius: 8px;
-      background-color: $primary-color;
-      border-color: $primary-color;
-      font-family: Poppins-Medium;
-      text-align: center;
-      margin-top: 6px;
-      height: 48px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      width: 200px;
-      position: relative;
-      &:hover {
-        background-color: #302d76;
-        border-color: #302d76;
-        transition: all 0.2s ease-in-out;
-      }
-    }
-  }
-}
-
-.signup_link {
-  padding-top: 10px;
-  .text-sm {
-    font-family: Poppins-Regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    color: $secondary-font-color;
-  }
-  .sighUptxt {
-    color: $primary-color;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: Poppins-Regular;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  .sighUptxt:hover {
-    text-decoration: underline;
-  }
-}
-
-.remembertxt {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  margin-bottom: 9px;
-  color: $secondary-font-color;
-}
-.addunderline {
-  text-decoration: underline !important;
-  cursor: pointer !important;
-  color: $primary-color !important;
-}
-
-::ng-deep ngx-intl-tel-input input {
-  border-radius: 8px !important;
-  border: solid 1px #e6ecf1 !important;
-  background-color: #fff !important;
-  width: 100% !important;
-  height: 48px !important;
-  color: #6e63ff !important;
-  &::placeholder {
-    font-family: Poppins-Regular;
-    font-size: 14px;
-    color: #96a5b5 !important;
-    text-transform: capitalize;
-  }
-}
-::ng-deep .iti {
-  width: 100% !important;
-}
-
-//userloginbycompany
-
-.filterButton {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-left: 0px;
-  box-shadow: none;
-}
-.filter-btns {
-  width: 100%;
-  height: 48px;
-  border-radius: 8px;
-  border: solid 1px #e6ecf1;
-  background-color: $white;
-  outline: 0;
-  transition: 0.2s;
-  color: $secondary-font-color;
-  text-align: left;
-  font-size: 15px;
-  font-family: Poppins-Regular;
-  font-weight: normal;
-  font-style: normal;
-  padding-right: 14px;
-}
-.phone-invalid {
-  ::ng-deep .custom {
-    border: 1px solid $error-color !important;
-  }
-}
-.down-ico {
-  width: 11px;
-  float: right;
-  position: relative;
-  top: 5px;
-}
-ul.iscompanyfilter {
-  list-style-type: none;
-  height: auto;
-  max-height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px 0 rgba(24, 38, 75, 0.16);
-  border: solid 1px #e6ecf1;
-  background-color: $white;
-  padding: 13px;
-  padding-left: 0px;
-  padding-right: 0px;
-  z-index: 1;
-  position: absolute;
-  width: 250px;
-  li {
-    color: $primary-font-color;
-    font-size: 14px;
-    padding: 7px;
-    font-weight: normal;
-    font-style: normal;
-    font-family: Poppins-Regular;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  li:hover {
-    box-shadow: 0 3px 12px 0 rgba(24, 38, 75, 0.16);
-  }
-}
-
-.lis-itm {
-  display: flex;
-  justify-content: space-between;
-}
-.disp-name {
-  padding-left: 6px;
-  align-self: center;
-}
-.nodatalayer {
-  height: 50px !important;
-  overflow: hidden !important;
-}
-.login-btn {
-  border-radius: 8px;
-  background-color: $primary-color;
-  border-color: $primary-color;
-  font-family: Poppins-Medium;
-  text-align: center;
-  margin-top: 6px;
-  height: 48px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #fff;
-  margin-top: 16px;
-}
-
-.form-group {
-  margin-bottom: 14px;
-}
-.imgdiov {
-  position: relative;
-  top: 0%;
-}
-
-.logowidth {
-  width: 250px;
-}
-
-//form css
-.form {
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-field {
-  width: 100%;
-  height: 48px;
-  border-radius: 10px;
-  border: solid 1px #e6ecf1;
-  background-color: $white;
-  outline: 0;
-  transition: 0.2s;
-  color: #96a5b5 !important;
-
-  &::placeholder {
-    font-family: Poppins-Regular;
-    font-size: 15px;
-  }
-  &:focus {
-    outline: none;
-    box-shadow: none !important;
-  }
-}
-
-.is-invalid {
-  border: 1px solid $error-color !important;
-}
-.textareabox {
-  padding: auto !important;
-  height: 120px !important;
-}
-.userlogin {
-  padding: 0 25px 0px 25px;
-}
-
-.main-content {
-  max-height: 100vh;
-}
-.left-side-content {
-  height: 800px;
-}
-
-.right-side-content {
-  height: 100vh;
-}
-.copyrighttext {
-  font-family: "Poppins-Regular";
-  font-size: 14px;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 105px;
-  color: #96a5b5;
-}
-
-@media only screen and (min-width: 1201px) {
-  // Desktop & Large Screens
-  .login-banner-one {
-    display: flex;
-    padding-top: 70px;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-  }
-  .login-banner-one::-webkit-scrollbar {
-    width: 0px !important;
-  }
-
-  .row.rowcustom {
-    display: flex;
-    //flex-wrap: wrap;
-    align-items: center;
-    height: 100vh;
-  }
-  .row.rowcustom > [class*="col-"] {
-    flex-grow: 1;
-  }
-
-  .signupiamgaeperson {
-    background-image: url("../../../assets/images/signup-icon.svg");
-    background-size: 70px 70px;
-    background-position: 59% 55%;
-    background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 100%;
-    width: 110px;
-    height: 110px;
-    box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
-    margin-bottom: -87px;
-    z-index: 10;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -57px;
-  }
-
-  .usersignup {
-    background-image: url("../../../assets/images/form-signup-bg.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 482px;
-    height: 797px;
-    display: block;
-    margin-left: 90px;
-  }
-
-  .pb-3 {
-    padding-bottom: 1.8rem !important;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
-  // Tablets Portrait Mode
-  .login-wrapper {
-    height: 100vh;
-    width: 100vw;
-    padding: 0px 0px;
-    margin: 0;
-    overflow: visible;
-    background-color: #f4f7fa;
-  }
-  .login-wrapper::-webkit-scrollbar {
-    display: none;
-    width: 0px;
-  }
-  .top-header {
-    padding: 30px 0px 0px 40px;
-  }
-  .workplace {
-    font-size: 21px;
-  }
-  .login-banner-one {
-    display: flex;
-    position: static;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    margin: 135px 0px 100px 0px;
-    flex-direction: column;
-  }
-  .usersignup {
-    margin-left: 0px;
-  }
-
-  .signupiamgaeperson {
-    background-image: url("../../../assets/images/signup-icon.svg");
-    background-size: 60px 60px;
-    background-position: 56% 55%;
-    background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 100%;
-    width: 110px;
-    height: 110px;
-    box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
-    margin-bottom: -87px;
-    z-index: 10;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -57px;
-  }
-
-  .pb-3 {
-    padding-bottom: 1.8rem !important;
-  }
-
-  .imagecontainer {
-    display: none;
-  }
-  .responsiveimg {
-    display: block;
-    background-image: url("../../../assets/images/worker-mobile-pic-2-2x.jpg");
-    background-color: #e6ecf1;
-    background-size: contain;
-    background-position: 150px bottom;
-    background-repeat: no-repeat;
-    height: 92vh;
-  }
-
-  .copyrighttext {
-    display: none;
-  }
-  .copyrightmobile {
-    font-family: "Poppins-Regular";
-    font-size: 16px;
-    line-height: 20px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0px 20px 0px;
-    color: #96a5b5;
-    background-color: #fff;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: auto;
-  }
-}
-
-@media only screen and (max-width: 767px) and (min-width: 361px) {
-  // Standard Mobile Portrait Screens
-  .login-wrapper {
-    padding: 0px;
-    overflow: visible;
-  }
-  .top-header {
-    display: block;
-    padding: 30px 0px 0px 0px;
-  }
-  .knowellalogo {
-    margin: 20px auto 20px auto;
-  }
-  .line {
-    width: 60px;
-    height: 1px;
-    background-color: #6e63ff;
-    display: block;
-    margin: 20px auto 20px auto;
-  }
-  .workplace {
-    border: 0px;
-    padding: 0px;
-    text-align: center;
-    color: #64707c;
-    font-family: "Poppins-Regular";
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-  }
-  .login-banner-one {
-    padding: 16px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-  }
-
-  .usersignup {
-    background-image: url("../../../assets/images/form-signup-bg-mobile.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 376px;
-    height: 824px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    h1 {
-      font-family: "Poppins-SemiBold";
-      font-size: 24px;
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 30px;
-      letter-spacing: normal;
-      text-align: center;
-      color: $primary-font-color;
-    }
-
-    p {
-      font-family: "Poppins-Regular";
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
-      font-style: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: $secondary-font-color;
-      width: 64%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .google-btn {
-      border-radius: 8px;
-      border: solid 1px #e6ecf1;
-      background-color: #fff;
-      font-size: 14px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: $secondary-font-color;
-      font-family: Poppins-Medium;
-      margin-top: 29px;
-    }
-
-    .google-logo {
-      max-width: 16px;
-      min-width: 16px;
-      margin-right: 9px;
-    }
-
-    .optionlogin {
-      padding-top: 25px;
-      padding-bottom: 42px;
-
-      .alignleft {
-        float: left;
-        width: 33.33333%;
-        text-align: left;
-        border: 1px solid #d1d1d1;
-        margin-top: 7px;
-      }
-
-      .aligncenter {
-        float: left;
-        width: 33.33333%;
-        font-family: Rubik-Regular;
-        font-size: 12px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #d1d1d1;
-      }
-
-      .alignright {
-        float: left;
-        width: 33.33333%;
-        text-align: right;
-        border: 1px solid #d1d1d1;
-        margin-top: 7px;
-      }
-    }
-
-    .userloginform {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 20px;
-
-      .pb-3 {
-        padding-bottom: 1rem;
-      }
-
-      input {
-        border-radius: 8px;
-        border: solid 1px #e6ecf1;
-        background-color: #fff !important;
-        width: 100%;
-        height: 48px;
-        padding: 12px 14px;
-        font-family: Poppins-Regular;
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: left;
-        text-decoration: none !important;
-        color: #6e63ff !important;
-      }
-
-      ::placeholder {
-        font-family: Poppins-Regular;
-        font-size: 14px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: left;
-        color: #96a5b5 !important;
-        text-transform: capitalize;
-      }
-
-      select {
-        border-radius: 8px;
-        border: solid 1px #e6ecf1;
-        background-color: #fff !important;
-        width: 100%;
-        height: 48px;
-        padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-        color: #96a5b5 !important;
-
-        ::placeholder {
-          font-family: Poppins-Regular;
-          font-size: 14px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: normal;
-          text-align: left;
-          color: #96a5b5 !important;
-        }
-
-        :focus {
-          border: solid 1px #e6ecf1;
-          outline: none !important;
-          box-shadow: none !important;
-        }
-      }
-
-      .passwordbox {
-        padding-top: 30px;
-      }
-
-      .field-error {
-        width: 220px;
-        padding: 8px 12px;
-        position: absolute;
-        background: antiquewhite;
-        top: -20;
-        border-right: 2px solid red;
-        z-index: 99;
-        left: -250px;
-        opacity: 0;
-        margin-top: -41px;
-        animation: showerror 500ms 2;
-        animation-direction: alternate;
-        animation-duration: 3s;
-      }
-      @keyframes showerror {
-        from {
-          left: -250px;
-          opacity: 0;
-        }
-        to {
-          left: 0px;
-          opacity: 1;
-        }
-      }
-
-      .field-icon-hide {
-        float: right;
-        margin-left: -40px;
-        margin-top: 16px;
-        right: 14px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .field-icon-show {
-        float: right;
-        margin-left: -40px;
-        margin-top: 14px;
-        right: 14px;
-        position: relative;
-        z-index: 2;
-        max-width: 22px;
-        min-width: 22px;
-      }
-
-      label.containerChkBox {
-        font-family: Poppins-Regular;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        color: $secondary-font-color;
-      }
-
-      .forgotpass {
-        font-family: Poppins-Regular;
-        font-size: 14px;
-        text-align: right;
-        color: $primary-color;
-        margin: 5px 0 9px 0;
-        cursor: pointer;
-        float: right;
-      }
-
-      .login-btn {
-        border-radius: 8px;
-        background-color: $primary-color;
-        border-color: $primary-color;
-        font-family: Poppins-Medium;
-        text-align: center;
-        margin-top: 6px;
-        height: 48px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #fff;
-        width: 200px;
-        position: relative;
-      }
-    }
-  }
-
-  .signupiamgaeperson {
-    background-image: url("../../../assets/images/signup-icon.svg");
-    background-size: 48px 48px;
-    background-position: 59% 56%;
-    background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 100%;
-    width: 92px;
-    height: 92px;
-    box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
-    margin-bottom: -87px;
-    z-index: 10;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -40px;
-  }
-
-  .imagecontainer {
-    display: none;
-  }
-  .responsiveimg {
-    display: block;
-    background-image: url("../../../assets/images/worker-mobile-pic-2-2x.jpg");
-    background-color: #e6ecf1;
-    background-size: 125%;
-    background-position: 0px bottom;
-    background-repeat: no-repeat;
-    height: 75vh;
-  }
-
-  .copyrighttext {
-    display: none;
-  }
-  .copyrightmobile {
-    font-family: "Poppins-Regular";
-    font-size: 16px;
-    line-height: 20px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0px 20px 0px;
-    color: #96a5b5;
-    background-color: #fff;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: auto;
-  }
-}
-
-@media only screen and (max-width: 360px) and (min-width: 320px) {
-  // Small Mobile Portrait Screens
-  .login-wrapper {
-    padding: 0px;
-    overflow: visible;
-  }
-  .top-header {
-    display: block;
-    padding: 30px 0px 0px 0px;
-  }
-  .knowellalogo {
-    margin: 20px auto 20px auto;
-  }
-  .line {
-    width: 60px;
-    height: 1px;
-    background-color: #6e63ff;
-    display: block;
-    margin: 20px auto 20px auto;
-  }
-  .workplace {
-    border: 0px;
-    padding: 0px;
-    text-align: center;
-    color: #64707c;
-    font-family: "Poppins-Regular";
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-  }
-  .login-banner-one {
-    padding: 16px;
-    margin-top: 30px;
-  }
-
-  .mt-4 {
-    position: relative;
-    top: 6.5%;
-  }
-
-  .remembertxt {
-    font-family: Poppins-Regular;
-    font-size: 12px;
-    margin-bottom: 9px;
-    color: #64707c;
-  }
-
-  .signupiamgaeperson {
-    background-image: url("../../../assets/images/signup-icon.svg");
-    background-size: 48px 48px;
-    background-position: 59% 56%;
-    background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 100%;
-    width: 84px;
-    height: 84px;
-    box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
-    margin-bottom: -87px;
-    z-index: 10;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -37px;
-  }
-
-  .usersignup {
-    background-image: url("../../../assets/images/form-signup-bg-mobile.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 320px;
-    height: 750px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    h1 {
-      font-family: "Poppins-SemiBold";
-      font-size: 24px;
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 30px;
-      letter-spacing: normal;
-      text-align: left;
-      color: $primary-font-color;
-    }
-
-    p {
-      font-family: "Poppins-Regular";
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 20px;
-      font-style: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: $secondary-font-color;
-      width: 64%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .google-btn {
-      border-radius: 8px;
-      border: solid 1px #e6ecf1;
-      background-color: #fff;
-      font-size: 14px;
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: $secondary-font-color;
-      font-family: Poppins-Medium;
-      margin-top: 29px;
-    }
-
-    .google-logo {
-      max-width: 16px;
-      min-width: 16px;
-      margin-right: 9px;
-    }
-
-    .optionlogin {
-      padding-top: 25px;
-      padding-bottom: 42px;
-
-      .alignleft {
-        float: left;
-        width: 33.33333%;
-        text-align: left;
-        border: 1px solid #d1d1d1;
-        margin-top: 7px;
-      }
-
-      .aligncenter {
-        float: left;
-        width: 33.33333%;
-        font-family: Rubik-Regular;
-        font-size: 12px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #d1d1d1;
-      }
-
-      .alignright {
-        float: left;
-        width: 33.33333%;
-        text-align: right;
-        border: 1px solid #d1d1d1;
-        margin-top: 7px;
-      }
-    }
-
-    .userloginform {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 0px !important;
-
-      .pb-3 {
-        padding-bottom: 0.5rem !important;
-      }
-
-      input {
-        border-radius: 8px;
-        border: solid 1px #e6ecf1;
-        background-color: #fff !important;
-        width: 100%;
-        height: 48px;
-        padding: 12px 14px;
-        font-family: Poppins-Regular;
-        font-size: 12px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: left;
-        text-decoration: none !important;
-        color: #6e63ff !important;
-      }
-
-      ::placeholder {
-        font-family: Poppins-Regular;
-        font-size: 12px;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: left;
-        color: #96a5b5 !important;
-        text-transform: capitalize;
-      }
-
-      ::ng-deep ngx-intl-tel-input input {
-        border-radius: 8px !important;
-        border: solid 1px #e6ecf1 !important;
-        background-color: #fff !important;
-        width: 100% !important;
-        height: 48px !important;
-        color: #6e63ff !important;
-        &::placeholder {
-          font-family: Poppins-Regular;
-          font-size: 12px;
-          color: #96a5b5 !important;
-          text-transform: capitalize;
-        }
-      }
-      ::ng-deep .iti {
-        width: 100% !important;
-      }
-
-      select {
-        border-radius: 8px;
-        border: solid 1px #e6ecf1;
-        background-color: #fff !important;
-        width: 100%;
-        height: 48px;
-        padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-        color: #96a5b5 !important;
-
-        ::placeholder {
-          font-family: Poppins-Regular;
-          font-size: 12px;
-          font-weight: normal;
-          font-stretch: normal;
-          font-style: normal;
-          line-height: normal;
-          letter-spacing: normal;
-          text-align: left;
-          color: #96a5b5 !important;
-        }
-
-        :focus {
-          border: solid 1px #e6ecf1;
-          outline: none !important;
-          box-shadow: none !important;
-        }
-      }
-
-      .form-select {
-        font-size: 12px !important;
-        text-transform: capitalize;
-      }
-
-      .form-select option:nth-child(odd) {
-        color: #6e63ff !important;
-      }
-
-      .passwordbox {
-        padding-top: 30px;
-      }
-
-      /*
-      .loginerror {
-      padding: 6px 0 6px 0;
-      line-height: normal;
-      }
-      */
-      .field-error {
-        width: 220px;
-        padding: 8px 12px;
-        position: absolute;
-        background: antiquewhite;
-        top: -20;
-        border-right: 2px solid red;
-        z-index: 99;
-        left: -250px;
-        opacity: 0;
-        margin-top: -41px;
-        animation: showerror 500ms 2;
-        animation-direction: alternate;
-        animation-duration: 3s;
-      }
-      @keyframes showerror {
-        from {
-          left: -250px;
-          opacity: 0;
-        }
-        to {
-          left: 0px;
-          opacity: 1;
-        }
-      }
-
-      .field-icon-hide {
-        float: right;
-        margin-left: -40px;
-        margin-top: 16px;
-        right: 14px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .field-icon-show {
-        float: right;
-        margin-left: -40px;
-        margin-top: 14px;
-        right: 14px;
-        position: relative;
-        z-index: 2;
-        max-width: 22px;
-        min-width: 22px;
-      }
-
-      label.containerChkBox {
-        font-family: Poppins-Regular;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        color: $secondary-font-color;
-      }
-
-      .forgotpass {
-        font-family: Poppins-Regular;
-        font-size: 14px;
-        text-align: right;
-        color: $primary-color;
-        margin: 5px 0 9px 0;
-        cursor: pointer;
-        float: right;
-      }
-
-      .d-flex {
-        display: flex !important;
-        margin-top: 2px;
-      }
-
-      .login-btn {
-        border-radius: 8px;
-        background-color: $primary-color;
-        border-color: $primary-color;
-        font-family: Poppins-Medium;
-        text-align: center;
-        margin-top: 6px;
-        height: 38px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #fff;
-        width: 160px;
-        position: relative;
-      }
-
-      .pt-3 {
-        padding-top: 0.7rem !important;
-      }
-    }
-  }
-
-  .imagecontainer {
-    display: none;
-  }
-  .responsiveimg {
-    display: block;
-    background-image: url("../../../assets/images/worker-mobile-pic-2-2x.jpg");
-    background-color: #e6ecf1;
-    //background-size: contain;
-    background-size: 125%;
-    background-position: 0px bottom;
-    background-repeat: no-repeat;
-    height: 84vh;
-  }
-
-  .copyrighttext {
-    display: none;
-  }
-  .copyrightmobile {
-    font-family: "Poppins-Regular";
-    font-size: 14px;
-    line-height: 20px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    color: #96a5b5;
-    background-color: #fff;
-    width: 100%;
-  }
-}
-
-@media only screen and (orientation: landscape) and (max-width: 1366px) and (min-height: 1024px) {
-  // iPad-Pro Landscape Mode
-  .login-banner-one {
-    margin-top: 50px;
-    height: 840px;
-  }
-}
-
-@media only screen and (orientation: landscape) and (max-width: 1138px) and (min-height: 712px) {
-  // Galaxy-Tab S4 & iPad Landscape Mode
-  .login-banner-one {
-    display: block;
-    position: absolute;
-    padding-top: 70px;
-    margin-top: 60px;
-  }
-  .login-banner-one::-webkit-scrollbar {
-    width: 0px !important;
-  }
-  .signupiamgaeperson {
-    background-image: url("../../../assets/images/signup-icon.svg");
-    background-size: 60px 60px;
-    background-position: 56% 55%;
-    background-repeat: no-repeat;
-    background-color: white;
-    border-radius: 100%;
-    width: 110px;
-    height: 110px;
-    box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
-    margin-bottom: -87px;
-    z-index: 10;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    top: -57px;
-  }
-
-  .usersignup {
-    background-image: url("../../../assets/images/form-signup-bg.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 477px;
-    height: 797px;
-    display: block;
-    margin-left: 90px;
-  }
-
-  .pb-3 {
-    padding-bottom: 1.8rem !important;
-  }
-
-  .responsiveimg {
-    display: none;
-  }
-  .imagecontainer {
-    display: block;
-    background-image: url("../../../assets/images/worker-pic-2-2x.jpg");
-    background-size: cover;
-    background-position: 340px -20px;
-    background-repeat: no-repeat;
-    height: 1000px;
-  }
-
-  .copyrightmobile {
-    display: none;
-  }
-  .copyrighttext {
-    font-family: "Poppins-Regular";
-    font-size: 14px;
-    line-height: 20px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 120px;
-    color: #96a5b5;
-    padding-bottom: 40px;
-  }
-}
-
-.gsingup-btn{
-  border-radius: 8px;
-  background-color: #fff;
-  border-color: #6e63ff;
-  font-family: Poppins-Medium;
-  text-align: center;
-  margin-top: 6px;
-  height: 48px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #6e63ff;
-  width: 200px;
-  position: relative;
-}
-.verify-btn{
-  border-radius: 8px;
-  background-color: #6e63ff;
-  border-color: #6e63ff;
-  font-family: Poppins-Medium;
-  text-align: center;
-  height: 48px;
-  font-size: 14px;
-  font-weight: 500;
-  width: 100%;
-}
-.verify-btn2{
-  border-radius: 8px;
-  background-color: #6e63ff;
-  border-color: #6e63ff;
-  font-family: Poppins-Medium;
-  text-align: center;
-  height: 48px;
-  font-size: 14px;
-  font-weight: 500;
-  width: 200px;
-  margin: 10px auto 0 auto;
-  display: block;
-}
+// @import "./../../../app/core/styles/variable";
+
+// .login-wrapper {
+//   padding: 0px 0px;
+//   margin: 0;
+//   background-color: #f4f7fa;
+// }
+
+// .top-header {
+//   padding: 30px 0px 0px 40px;
+//   display: flex;
+// }
+
+// .knowellalogo {
+//   width: 250px;
+//   height: 44.8px;
+//   background-image: url("../../../assets/images/knowlla.svg");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   margin-right: 32px;
+//   margin-top: 8px;
+// }
+
+// .workplace {
+//   height: 60px;
+//   border-left: 1px solid #6e63ff;
+//   padding-left: 32px;
+//   padding-top: 15px;
+//   color: #64707c;
+//   font-family: "Poppins-Regular";
+//   font-size: 24px;
+//   line-height: 38px;
+//   font-weight: 400;
+// }
+
+// .customerimage {
+//   width: 92%;
+//   height: 105vh;
+// }
+
+// button {
+//   width: 100%;
+// }
+
+// .imagecontainer {
+//   background-image: url("../../../assets/images/worker-pic-2-2x.jpg");
+//   background-size: contain;
+//   background-position: bottom right;
+//   background-repeat: no-repeat;
+//   height: 1000px;
+// }
+
+// .copyrightmobile {
+//   display: none;
+// }
+
+// .logodivheadlogin {
+//   padding: 10px;
+//   margin: 10px;
+//   display: flex;
+// }
+
+// .remember input {
+//   width: 10% !important;
+// }
+
+// .logowidth {
+//   width: 150px !important;
+// }
+
+// .line {
+//   display: none;
+// }
+
+// .mt-4 {
+//   position: relative;
+//   top: 6%;
+// }
+
+// .logowidth2 {
+//   width: 60px;
+//   height: 60px;
+// }
+
+// .imagecustomer2 {
+//   padding-left: 20px;
+//   height: 100vh;
+// }
+
+// .dotbtn {
+//   width: 7px;
+//   height: 7px;
+//   border-radius: 10px;
+//   background-color: white;
+//   position: absolute;
+//   top: 15%;
+//   right: 5%;
+// }
+
+// .loginuserimg {
+//   background-color: white;
+//   border-radius: 50%;
+//   padding: 20px;
+//   position: relative;
+//   top: -17%;
+//   border: 10px solid #f4f7fa;
+// }
+
+// .checkmark {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 17px;
+//   width: 17px;
+//   background: #ffffff;
+//   border: 1px solid #d9e3ed;
+//   box-sizing: border-box;
+//   border-radius: 5px;
+// }
+
+// /* On mouse-over, add a grey background color */
+// .containerChkBox:hover input~.checkmark {
+//   background-color: #e6ecf1;
+// }
+
+// /* When the checkbox is checked, add a blue background */
+// .containerChkBox input:checked~.checkmark {
+//   background-color: $primary-color;
+//   border: 1.5px solid $primary-color;
+// }
+
+// /* Create the checkmark/indicator (hidden when not checked) */
+// .checkmark:after {
+//   content: "";
+//   position: absolute;
+//   display: none;
+// }
+
+// /* Show the checkmark when checked */
+// .containerChkBox input:checked~.checkmark:after {
+//   display: block;
+// }
+
+// /* Style the checkmark/indicator */
+// .containerChkBox .checkmark:after {
+//   left: 5px;
+//   top: 1px;
+//   width: 5px;
+//   height: 10px;
+//   border: solid white;
+//   border-width: 0 2px 2px 0;
+//   -webkit-transform: rotate(45deg);
+//   -ms-transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }
+
+// .usersignup {
+//   background-image: url("../../../assets/images/form-signup-bg.svg");
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   width: 385px;
+//   height: 600px;
+//   display: block;
+//   margin-left: 90px;
+
+//   h1 {
+//     font-family: "Poppins-SemiBold";
+//     font-size: 32px;
+//     font-weight: 600;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: 38px;
+//     letter-spacing: normal;
+//     text-align: left;
+//     color: $primary-font-color;
+//   }
+
+//   p {
+//     font-family: "Poppins-Regular";
+//     font-size: 14px;
+//     font-weight: 400;
+//     line-height: 20px;
+//     font-style: normal;
+//     letter-spacing: normal;
+//     text-align: left;
+//     color: $secondary-font-color;
+//   }
+
+//   .google-btn {
+//     border-radius: 8px;
+//     border: solid 1px #e6ecf1;
+//     background-color: #fff;
+//     font-size: 14px;
+//     font-weight: 500;
+//     font-stretch: normal;
+//     font-style: normal;
+//     line-height: normal;
+//     letter-spacing: normal;
+//     text-align: left;
+//     color: $secondary-font-color;
+//     font-family: Poppins-Medium;
+//     margin-top: 29px;
+//   }
+
+//   .google-logo {
+//     max-width: 16px;
+//     min-width: 16px;
+//     margin-right: 9px;
+//   }
+
+//   .optionlogin {
+//     padding-top: 25px;
+//     padding-bottom: 42px;
+
+//     .alignleft {
+//       float: left;
+//       width: 33.33333%;
+//       text-align: left;
+//       border: 1px solid #d1d1d1;
+//       margin-top: 7px;
+//     }
+
+//     .aligncenter {
+//       float: left;
+//       width: 33.33333%;
+//       font-family: Rubik-Regular;
+//       font-size: 12px;
+//       font-weight: normal;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       text-align: center;
+//       color: #d1d1d1;
+//     }
+
+//     .alignright {
+//       float: left;
+//       width: 33.33333%;
+//       text-align: right;
+//       border: 1px solid #d1d1d1;
+//       margin-top: 7px;
+//     }
+//   }
+
+//   .userloginform {
+//     width: 80%;
+//     margin-left: auto;
+//     margin-right: auto;
+//     margin-top: 20px;
+
+//     input {
+//       border-radius: 8px;
+//       border: solid 1px #e6ecf1;
+//       background-color: #fff !important;
+//       width: 100%;
+//       height: 48px;
+//       padding: 12px 14px;
+//       font-family: Poppins-Regular;
+//       font-size: 14px;
+//       font-weight: normal;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: 20px;
+//       letter-spacing: normal;
+//       text-align: left;
+//       text-decoration: none !important;
+//       color: #6e63ff !important;
+//     }
+
+//     ::placeholder {
+//       font-family: Poppins-Regular;
+//       font-size: 14px;
+//       font-weight: normal;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: #96a5b5 !important;
+//       text-transform: capitalize;
+//     }
+
+//     select {
+//       border-radius: 8px;
+//       border: solid 1px #e6ecf1;
+//       background-color: #fff !important;
+//       width: 100%;
+//       height: 48px;
+//       padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+//       color: #96a5b5 !important;
+
+//       ::placeholder {
+//         font-family: Poppins-Regular;
+//         font-size: 15px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: left;
+//         color: #6e63ff !important;
+//         text-transform: capitalize;
+//       }
+
+//       :focus {
+//         border: solid 1px #e6ecf1;
+//         outline: none !important;
+//         box-shadow: none !important;
+//       }
+//     }
+
+//     .passwordbox {
+//       padding-top: 30px;
+//     }
+
+//     /*
+//     .loginerror {
+//       padding: 6px 0 6px 0;
+//       line-height: normal;
+//     }
+//     */
+
+//     .field-error {
+//       width: 220px;
+//       padding: 8px 12px;
+//       position: absolute;
+//       background: antiquewhite;
+//       top: -20;
+//       border-right: 2px solid red;
+//       z-index: 99;
+//       left: -250px;
+//       opacity: 0;
+//       margin-top: -41px;
+//       animation: showerror 500ms 2;
+//       animation-direction: alternate;
+//       animation-duration: 3s;
+//     }
+
+//     @keyframes showerror {
+//       from {
+//         left: -250px;
+//         opacity: 0;
+//       }
+
+//       to {
+//         left: 0px;
+//         opacity: 1;
+//       }
+//     }
+
+//     .field-icon-hide {
+//       float: right;
+//       margin-left: -40px;
+//       margin-top: 16px;
+//       right: 14px;
+//       position: relative;
+//       z-index: 2;
+//     }
+
+//     .field-icon-show {
+//       float: right;
+//       margin-left: -40px;
+//       margin-top: 14px;
+//       right: 14px;
+//       position: relative;
+//       z-index: 2;
+//       max-width: 22px;
+//       min-width: 22px;
+//     }
+
+//     label.containerChkBox {
+//       font-family: Poppins-Regular;
+//       font-style: normal;
+//       font-weight: normal;
+//       font-size: 14px;
+//       color: $secondary-font-color;
+//     }
+
+//     .forgotpass {
+//       font-family: Poppins-Regular;
+//       font-size: 14px;
+//       text-align: right;
+//       color: $primary-color;
+//       margin: 5px 0 9px 0;
+//       cursor: pointer;
+//       float: right;
+//     }
+
+//     .login-btn {
+//       border-radius: 8px;
+//       background-color: $primary-color;
+//       border-color: $primary-color;
+//       font-family: Poppins-Medium;
+//       text-align: center;
+//       margin-top: 6px;
+//       height: 48px;
+//       font-size: 14px;
+//       font-weight: 500;
+//       color: #fff;
+//       width: 200px;
+//       position: relative;
+
+//       &:hover {
+//         background-color: #302d76;
+//         border-color: #302d76;
+//         transition: all 0.2s ease-in-out;
+//       }
+//     }
+//   }
+// }
+
+// .signup_link {
+//   padding-top: 10px;
+
+//   .text-sm {
+//     font-family: Poppins-Regular;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 14px;
+//     color: $secondary-font-color;
+//   }
+
+//   .sighUptxt {
+//     color: $primary-color;
+//     font-size: 12px;
+//     cursor: pointer;
+//     font-family: Poppins-Regular;
+//     font-weight: 500;
+//     text-decoration: none;
+//   }
+
+//   .sighUptxt:hover {
+//     text-decoration: underline;
+//   }
+// }
+
+// .remembertxt {
+//   font-family: Poppins-Regular;
+//   font-size: 14px;
+//   margin-bottom: 9px;
+//   color: $secondary-font-color;
+// }
+
+// .addunderline {
+//   text-decoration: underline !important;
+//   cursor: pointer !important;
+//   color: $primary-color !important;
+// }
+
+// ::ng-deep ngx-intl-tel-input input {
+//   border-radius: 8px !important;
+//   border: solid 1px #e6ecf1 !important;
+//   background-color: #fff !important;
+//   width: 100% !important;
+//   height: 48px !important;
+//   color: #6e63ff !important;
+
+//   &::placeholder {
+//     font-family: Poppins-Regular;
+//     font-size: 14px;
+//     color: #96a5b5 !important;
+//     text-transform: capitalize;
+//   }
+// }
+
+// ::ng-deep .iti {
+//   width: 100% !important;
+// }
+
+// //userloginbycompany
+
+// .filterButton {
+//   border-top-right-radius: 8px;
+//   border-bottom-right-radius: 8px;
+//   border-top-left-radius: 0px;
+//   border-bottom-left-radius: 0px;
+//   border-left: 0px;
+//   box-shadow: none;
+// }
+
+// .filter-btns {
+//   width: 100%;
+//   height: 48px;
+//   border-radius: 8px;
+//   border: solid 1px #e6ecf1;
+//   background-color: $white;
+//   outline: 0;
+//   transition: 0.2s;
+//   color: $secondary-font-color;
+//   text-align: left;
+//   font-size: 15px;
+//   font-family: Poppins-Regular;
+//   font-weight: normal;
+//   font-style: normal;
+//   padding-right: 14px;
+// }
+
+// .phone-invalid {
+//   ::ng-deep .custom {
+//     border: 1px solid $error-color !important;
+//   }
+// }
+
+// .down-ico {
+//   width: 11px;
+//   float: right;
+//   position: relative;
+//   top: 5px;
+// }
+
+// ul.iscompanyfilter {
+//   list-style-type: none;
+//   height: auto;
+//   max-height: 300px;
+//   overflow-y: auto;
+//   overflow-x: hidden;
+//   border-radius: 8px;
+//   box-shadow: 0 3px 6px 0 rgba(24, 38, 75, 0.16);
+//   border: solid 1px #e6ecf1;
+//   background-color: $white;
+//   padding: 13px;
+//   padding-left: 0px;
+//   padding-right: 0px;
+//   z-index: 1;
+//   position: absolute;
+//   width: 250px;
+
+//   li {
+//     color: $primary-font-color;
+//     font-size: 14px;
+//     padding: 7px;
+//     font-weight: normal;
+//     font-style: normal;
+//     font-family: Poppins-Regular;
+//     cursor: pointer;
+//     transition: 0.2s;
+//   }
+
+//   li:hover {
+//     box-shadow: 0 3px 12px 0 rgba(24, 38, 75, 0.16);
+//   }
+// }
+
+// .lis-itm {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .disp-name {
+//   padding-left: 6px;
+//   align-self: center;
+// }
+
+// .nodatalayer {
+//   height: 50px !important;
+//   overflow: hidden !important;
+// }
+
+// .login-btn {
+//   border-radius: 8px;
+//   background-color: $primary-color;
+//   border-color: $primary-color;
+//   font-family: Poppins-Medium;
+//   text-align: center;
+//   margin-top: 6px;
+//   height: 48px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   color: #fff;
+//   margin-top: 16px;
+// }
+
+// .form-group {
+//   margin-bottom: 14px;
+// }
+
+// .imgdiov {
+//   position: relative;
+//   top: 0%;
+// }
+
+// .logowidth {
+//   width: 250px;
+// }
+
+// //form css
+// .form {
+//   max-width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .form-field {
+//   width: 100%;
+//   height: 48px;
+//   border-radius: 10px;
+//   border: solid 1px #e6ecf1;
+//   background-color: $white;
+//   outline: 0;
+//   transition: 0.2s;
+//   color: #96a5b5 !important;
+
+//   &::placeholder {
+//     font-family: Poppins-Regular;
+//     font-size: 15px;
+//   }
+
+//   &:focus {
+//     outline: none;
+//     box-shadow: none !important;
+//   }
+// }
+
+// .is-invalid {
+//   border: 1px solid $error-color !important;
+// }
+
+// .textareabox {
+//   padding: auto !important;
+//   height: 120px !important;
+// }
+
+// .userlogin {
+//   padding: 0 25px 0px 25px;
+// }
+
+// .main-content {
+//   max-height: 100vh;
+// }
+
+// .left-side-content {
+//   height: 800px;
+// }
+
+// .right-side-content {
+//   height: 100vh;
+// }
+
+// .copyrighttext {
+//   font-family: "Poppins-Regular";
+//   font-size: 14px;
+//   line-height: 20px;
+//   text-decoration: none;
+//   text-align: center;
+//   display: flex;
+//   justify-content: center;
+//   margin-top: 105px;
+//   color: #96a5b5;
+// }
+
+// @media only screen and (min-width: 1201px) {
+
+//   // Desktop & Large Screens
+//   .login-banner-one {
+//     display: flex;
+//     padding-top: 70px;
+//     align-items: center;
+//     justify-content: center;
+//     z-index: 999;
+//   }
+
+//   .login-banner-one::-webkit-scrollbar {
+//     width: 0px !important;
+//   }
+
+//   .row.rowcustom {
+//     display: flex;
+//     //flex-wrap: wrap;
+//     align-items: center;
+//     height: 100vh;
+//   }
+
+//   .row.rowcustom>[class*="col-"] {
+//     flex-grow: 1;
+//   }
+
+//   .signupiamgaeperson {
+//     background-image: url("../../../assets/images/signup-icon.svg");
+//     background-size: 70px 70px;
+//     background-position: 59% 55%;
+//     background-repeat: no-repeat;
+//     background-color: white;
+//     border-radius: 100%;
+//     width: 110px;
+//     height: 110px;
+//     box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
+//     margin-bottom: -87px;
+//     z-index: 10;
+//     margin-left: auto;
+//     margin-right: auto;
+//     position: relative;
+//     top: -57px;
+//   }
+
+//   .usersignup {
+//     background-image: url("../../../assets/images/form-signup-bg.svg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     width: 482px;
+//     height: 797px;
+//     display: block;
+//     margin-left: 90px;
+//   }
+
+//   .pb-3 {
+//     padding-bottom: 1.8rem !important;
+//   }
+// }
+
+// @media only screen and (min-width: 768px) and (max-width: 1200px) {
+
+//   // Tablets Portrait Mode
+//   .login-wrapper {
+//     height: 100vh;
+//     width: 100vw;
+//     padding: 0px 0px;
+//     margin: 0;
+//     overflow: visible;
+//     background-color: #f4f7fa;
+//   }
+
+//   .login-wrapper::-webkit-scrollbar {
+//     display: none;
+//     width: 0px;
+//   }
+
+//   .top-header {
+//     padding: 30px 0px 0px 40px;
+//   }
+
+//   .workplace {
+//     font-size: 21px;
+//   }
+
+//   .login-banner-one {
+//     display: flex;
+//     position: static;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 0px;
+//     margin: 135px 0px 100px 0px;
+//     flex-direction: column;
+//   }
+
+//   .usersignup {
+//     margin-left: 0px;
+//   }
+
+//   .signupiamgaeperson {
+//     background-image: url("../../../assets/images/signup-icon.svg");
+//     background-size: 60px 60px;
+//     background-position: 56% 55%;
+//     background-repeat: no-repeat;
+//     background-color: white;
+//     border-radius: 100%;
+//     width: 110px;
+//     height: 110px;
+//     box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
+//     margin-bottom: -87px;
+//     z-index: 10;
+//     margin-left: auto;
+//     margin-right: auto;
+//     position: relative;
+//     top: -57px;
+//   }
+
+//   .pb-3 {
+//     padding-bottom: 1.8rem !important;
+//   }
+
+//   .imagecontainer {
+//     display: none;
+//   }
+
+//   .responsiveimg {
+//     display: block;
+//     background-image: url("../../../assets/images/worker-mobile-pic-2-2x.jpg");
+//     background-color: #e6ecf1;
+//     background-size: contain;
+//     background-position: 150px bottom;
+//     background-repeat: no-repeat;
+//     height: 92vh;
+//   }
+
+//   .copyrighttext {
+//     display: none;
+//   }
+
+//   .copyrightmobile {
+//     font-family: "Poppins-Regular";
+//     font-size: 16px;
+//     line-height: 20px;
+//     text-decoration: none;
+//     display: flex;
+//     justify-content: center;
+//     padding: 20px 0px 20px 0px;
+//     color: #96a5b5;
+//     background-color: #fff;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: auto;
+//   }
+// }
+
+// @media only screen and (max-width: 767px) and (min-width: 361px) {
+
+//   // Standard Mobile Portrait Screens
+//   .login-wrapper {
+//     padding: 0px;
+//     overflow: visible;
+//   }
+
+//   .top-header {
+//     display: block;
+//     padding: 30px 0px 0px 0px;
+//   }
+
+//   .knowellalogo {
+//     margin: 20px auto 20px auto;
+//   }
+
+//   .line {
+//     width: 60px;
+//     height: 1px;
+//     background-color: #6e63ff;
+//     display: block;
+//     margin: 20px auto 20px auto;
+//   }
+
+//   .workplace {
+//     border: 0px;
+//     padding: 0px;
+//     text-align: center;
+//     color: #64707c;
+//     font-family: "Poppins-Regular";
+//     font-size: 16px;
+//     line-height: 28px;
+//     font-weight: 400;
+//   }
+
+//   .login-banner-one {
+//     padding: 16px;
+//     margin-top: 30px;
+//     margin-bottom: 50px;
+//   }
+
+//   .usersignup {
+//     background-image: url("../../../assets/images/form-signup-bg-mobile.svg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     width: 376px;
+//     height: 824px;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+
+//     h1 {
+//       font-family: "Poppins-SemiBold";
+//       font-size: 24px;
+//       font-weight: 600;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: 30px;
+//       letter-spacing: normal;
+//       text-align: center;
+//       color: $primary-font-color;
+//     }
+
+//     p {
+//       font-family: "Poppins-Regular";
+//       font-size: 14px;
+//       font-weight: 400;
+//       line-height: 20px;
+//       font-style: normal;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: $secondary-font-color;
+//       width: 64%;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+
+//     .google-btn {
+//       border-radius: 8px;
+//       border: solid 1px #e6ecf1;
+//       background-color: #fff;
+//       font-size: 14px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: $secondary-font-color;
+//       font-family: Poppins-Medium;
+//       margin-top: 29px;
+//     }
+
+//     .google-logo {
+//       max-width: 16px;
+//       min-width: 16px;
+//       margin-right: 9px;
+//     }
+
+//     .optionlogin {
+//       padding-top: 25px;
+//       padding-bottom: 42px;
+
+//       .alignleft {
+//         float: left;
+//         width: 33.33333%;
+//         text-align: left;
+//         border: 1px solid #d1d1d1;
+//         margin-top: 7px;
+//       }
+
+//       .aligncenter {
+//         float: left;
+//         width: 33.33333%;
+//         font-family: Rubik-Regular;
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: center;
+//         color: #d1d1d1;
+//       }
+
+//       .alignright {
+//         float: left;
+//         width: 33.33333%;
+//         text-align: right;
+//         border: 1px solid #d1d1d1;
+//         margin-top: 7px;
+//       }
+//     }
+
+//     .userloginform {
+//       width: 80%;
+//       margin-left: auto;
+//       margin-right: auto;
+//       margin-top: 20px;
+
+//       .pb-3 {
+//         padding-bottom: 1rem;
+//       }
+
+//       input {
+//         border-radius: 8px;
+//         border: solid 1px #e6ecf1;
+//         background-color: #fff !important;
+//         width: 100%;
+//         height: 48px;
+//         padding: 12px 14px;
+//         font-family: Poppins-Regular;
+//         font-size: 14px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: left;
+//         text-decoration: none !important;
+//         color: #6e63ff !important;
+//       }
+
+//       ::placeholder {
+//         font-family: Poppins-Regular;
+//         font-size: 14px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: left;
+//         color: #96a5b5 !important;
+//         text-transform: capitalize;
+//       }
+
+//       select {
+//         border-radius: 8px;
+//         border: solid 1px #e6ecf1;
+//         background-color: #fff !important;
+//         width: 100%;
+//         height: 48px;
+//         padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+//         color: #96a5b5 !important;
+
+//         ::placeholder {
+//           font-family: Poppins-Regular;
+//           font-size: 14px;
+//           font-weight: normal;
+//           font-stretch: normal;
+//           font-style: normal;
+//           line-height: normal;
+//           letter-spacing: normal;
+//           text-align: left;
+//           color: #96a5b5 !important;
+//         }
+
+//         :focus {
+//           border: solid 1px #e6ecf1;
+//           outline: none !important;
+//           box-shadow: none !important;
+//         }
+//       }
+
+//       .passwordbox {
+//         padding-top: 30px;
+//       }
+
+//       .field-error {
+//         width: 220px;
+//         padding: 8px 12px;
+//         position: absolute;
+//         background: antiquewhite;
+//         top: -20;
+//         border-right: 2px solid red;
+//         z-index: 99;
+//         left: -250px;
+//         opacity: 0;
+//         margin-top: -41px;
+//         animation: showerror 500ms 2;
+//         animation-direction: alternate;
+//         animation-duration: 3s;
+//       }
+
+//       @keyframes showerror {
+//         from {
+//           left: -250px;
+//           opacity: 0;
+//         }
+
+//         to {
+//           left: 0px;
+//           opacity: 1;
+//         }
+//       }
+
+//       .field-icon-hide {
+//         float: right;
+//         margin-left: -40px;
+//         margin-top: 16px;
+//         right: 14px;
+//         position: relative;
+//         z-index: 2;
+//       }
+
+//       .field-icon-show {
+//         float: right;
+//         margin-left: -40px;
+//         margin-top: 14px;
+//         right: 14px;
+//         position: relative;
+//         z-index: 2;
+//         max-width: 22px;
+//         min-width: 22px;
+//       }
+
+//       label.containerChkBox {
+//         font-family: Poppins-Regular;
+//         font-style: normal;
+//         font-weight: normal;
+//         font-size: 14px;
+//         color: $secondary-font-color;
+//       }
+
+//       .forgotpass {
+//         font-family: Poppins-Regular;
+//         font-size: 14px;
+//         text-align: right;
+//         color: $primary-color;
+//         margin: 5px 0 9px 0;
+//         cursor: pointer;
+//         float: right;
+//       }
+
+//       .login-btn {
+//         border-radius: 8px;
+//         background-color: $primary-color;
+//         border-color: $primary-color;
+//         font-family: Poppins-Medium;
+//         text-align: center;
+//         margin-top: 6px;
+//         height: 48px;
+//         font-size: 14px;
+//         font-weight: 500;
+//         color: #fff;
+//         width: 200px;
+//         position: relative;
+//       }
+//     }
+//   }
+
+//   .signupiamgaeperson {
+//     background-image: url("../../../assets/images/signup-icon.svg");
+//     background-size: 48px 48px;
+//     background-position: 59% 56%;
+//     background-repeat: no-repeat;
+//     background-color: white;
+//     border-radius: 100%;
+//     width: 92px;
+//     height: 92px;
+//     box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
+//     margin-bottom: -87px;
+//     z-index: 10;
+//     margin-left: auto;
+//     margin-right: auto;
+//     position: relative;
+//     top: -40px;
+//   }
+
+//   .imagecontainer {
+//     display: none;
+//   }
+
+//   .responsiveimg {
+//     display: block;
+//     background-image: url("../../../assets/images/worker-mobile-pic-2-2x.jpg");
+//     background-color: #e6ecf1;
+//     background-size: 125%;
+//     background-position: 0px bottom;
+//     background-repeat: no-repeat;
+//     height: 75vh;
+//   }
+
+//   .copyrighttext {
+//     display: none;
+//   }
+
+//   .copyrightmobile {
+//     font-family: "Poppins-Regular";
+//     font-size: 16px;
+//     line-height: 20px;
+//     text-decoration: none;
+//     display: flex;
+//     justify-content: center;
+//     padding: 20px 0px 20px 0px;
+//     color: #96a5b5;
+//     background-color: #fff;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     bottom: auto;
+//   }
+// }
+
+// @media only screen and (max-width: 360px) and (min-width: 320px) {
+
+//   // Small Mobile Portrait Screens
+//   .login-wrapper {
+//     padding: 0px;
+//     overflow: visible;
+//   }
+
+//   .top-header {
+//     display: block;
+//     padding: 30px 0px 0px 0px;
+//   }
+
+//   .knowellalogo {
+//     margin: 20px auto 20px auto;
+//   }
+
+//   .line {
+//     width: 60px;
+//     height: 1px;
+//     background-color: #6e63ff;
+//     display: block;
+//     margin: 20px auto 20px auto;
+//   }
+
+//   .workplace {
+//     border: 0px;
+//     padding: 0px;
+//     text-align: center;
+//     color: #64707c;
+//     font-family: "Poppins-Regular";
+//     font-size: 16px;
+//     line-height: 28px;
+//     font-weight: 400;
+//   }
+
+//   .login-banner-one {
+//     padding: 16px;
+//     margin-top: 30px;
+//   }
+
+//   .mt-4 {
+//     position: relative;
+//     top: 6.5%;
+//   }
+
+//   .remembertxt {
+//     font-family: Poppins-Regular;
+//     font-size: 12px;
+//     margin-bottom: 9px;
+//     color: #64707c;
+//   }
+
+//   .signupiamgaeperson {
+//     background-image: url("../../../assets/images/signup-icon.svg");
+//     background-size: 48px 48px;
+//     background-position: 59% 56%;
+//     background-repeat: no-repeat;
+//     background-color: white;
+//     border-radius: 100%;
+//     width: 84px;
+//     height: 84px;
+//     box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
+//     margin-bottom: -87px;
+//     z-index: 10;
+//     margin-left: auto;
+//     margin-right: auto;
+//     position: relative;
+//     top: -37px;
+//   }
+
+//   .usersignup {
+//     background-image: url("../../../assets/images/form-signup-bg-mobile.svg");
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     width: 320px;
+//     height: 750px;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+
+//     h1 {
+//       font-family: "Poppins-SemiBold";
+//       font-size: 24px;
+//       font-weight: 600;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: 30px;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: $primary-font-color;
+//     }
+
+//     p {
+//       font-family: "Poppins-Regular";
+//       font-size: 12px;
+//       font-weight: 400;
+//       line-height: 20px;
+//       font-style: normal;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: $secondary-font-color;
+//       width: 64%;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+
+//     .google-btn {
+//       border-radius: 8px;
+//       border: solid 1px #e6ecf1;
+//       background-color: #fff;
+//       font-size: 14px;
+//       font-weight: 500;
+//       font-stretch: normal;
+//       font-style: normal;
+//       line-height: normal;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: $secondary-font-color;
+//       font-family: Poppins-Medium;
+//       margin-top: 29px;
+//     }
+
+//     .google-logo {
+//       max-width: 16px;
+//       min-width: 16px;
+//       margin-right: 9px;
+//     }
+
+//     .optionlogin {
+//       padding-top: 25px;
+//       padding-bottom: 42px;
+
+//       .alignleft {
+//         float: left;
+//         width: 33.33333%;
+//         text-align: left;
+//         border: 1px solid #d1d1d1;
+//         margin-top: 7px;
+//       }
+
+//       .aligncenter {
+//         float: left;
+//         width: 33.33333%;
+//         font-family: Rubik-Regular;
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: center;
+//         color: #d1d1d1;
+//       }
+
+//       .alignright {
+//         float: left;
+//         width: 33.33333%;
+//         text-align: right;
+//         border: 1px solid #d1d1d1;
+//         margin-top: 7px;
+//       }
+//     }
+
+//     .userloginform {
+//       width: 80%;
+//       margin-left: auto;
+//       margin-right: auto;
+//       margin-top: 0px !important;
+
+//       .pb-3 {
+//         padding-bottom: 0.5rem !important;
+//       }
+
+//       input {
+//         border-radius: 8px;
+//         border: solid 1px #e6ecf1;
+//         background-color: #fff !important;
+//         width: 100%;
+//         height: 48px;
+//         padding: 12px 14px;
+//         font-family: Poppins-Regular;
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: left;
+//         text-decoration: none !important;
+//         color: #6e63ff !important;
+//       }
+
+//       ::placeholder {
+//         font-family: Poppins-Regular;
+//         font-size: 12px;
+//         font-weight: normal;
+//         font-stretch: normal;
+//         font-style: normal;
+//         line-height: normal;
+//         letter-spacing: normal;
+//         text-align: left;
+//         color: #96a5b5 !important;
+//         text-transform: capitalize;
+//       }
+
+//       ::ng-deep ngx-intl-tel-input input {
+//         border-radius: 8px !important;
+//         border: solid 1px #e6ecf1 !important;
+//         background-color: #fff !important;
+//         width: 100% !important;
+//         height: 48px !important;
+//         color: #6e63ff !important;
+
+//         &::placeholder {
+//           font-family: Poppins-Regular;
+//           font-size: 12px;
+//           color: #96a5b5 !important;
+//           text-transform: capitalize;
+//         }
+//       }
+
+//       ::ng-deep .iti {
+//         width: 100% !important;
+//       }
+
+//       select {
+//         border-radius: 8px;
+//         border: solid 1px #e6ecf1;
+//         background-color: #fff !important;
+//         width: 100%;
+//         height: 48px;
+//         padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+//         color: #96a5b5 !important;
+
+//         ::placeholder {
+//           font-family: Poppins-Regular;
+//           font-size: 12px;
+//           font-weight: normal;
+//           font-stretch: normal;
+//           font-style: normal;
+//           line-height: normal;
+//           letter-spacing: normal;
+//           text-align: left;
+//           color: #96a5b5 !important;
+//         }
+
+//         :focus {
+//           border: solid 1px #e6ecf1;
+//           outline: none !important;
+//           box-shadow: none !important;
+//         }
+//       }
+
+//       .form-select {
+//         font-size: 12px !important;
+//         text-transform: capitalize;
+//       }
+
+//       .form-select option:nth-child(odd) {
+//         color: #6e63ff !important;
+//       }
+
+//       .passwordbox {
+//         padding-top: 30px;
+//       }
+
+//       /*
+//       .loginerror {
+//       padding: 6px 0 6px 0;
+//       line-height: normal;
+//       }
+//       */
+//       .field-error {
+//         width: 220px;
+//         padding: 8px 12px;
+//         position: absolute;
+//         background: antiquewhite;
+//         top: -20;
+//         border-right: 2px solid red;
+//         z-index: 99;
+//         left: -250px;
+//         opacity: 0;
+//         margin-top: -41px;
+//         animation: showerror 500ms 2;
+//         animation-direction: alternate;
+//         animation-duration: 3s;
+//       }
+
+//       @keyframes showerror {
+//         from {
+//           left: -250px;
+//           opacity: 0;
+//         }
+
+//         to {
+//           left: 0px;
+//           opacity: 1;
+//         }
+//       }
+
+//       .field-icon-hide {
+//         float: right;
+//         margin-left: -40px;
+//         margin-top: 16px;
+//         right: 14px;
+//         position: relative;
+//         z-index: 2;
+//       }
+
+//       .field-icon-show {
+//         float: right;
+//         margin-left: -40px;
+//         margin-top: 14px;
+//         right: 14px;
+//         position: relative;
+//         z-index: 2;
+//         max-width: 22px;
+//         min-width: 22px;
+//       }
+
+//       label.containerChkBox {
+//         font-family: Poppins-Regular;
+//         font-style: normal;
+//         font-weight: normal;
+//         font-size: 14px;
+//         color: $secondary-font-color;
+//       }
+
+//       .forgotpass {
+//         font-family: Poppins-Regular;
+//         font-size: 14px;
+//         text-align: right;
+//         color: $primary-color;
+//         margin: 5px 0 9px 0;
+//         cursor: pointer;
+//         float: right;
+//       }
+
+//       .d-flex {
+//         display: flex !important;
+//         margin-top: 2px;
+//       }
+
+//       .login-btn {
+//         border-radius: 8px;
+//         background-color: $primary-color;
+//         border-color: $primary-color;
+//         font-family: Poppins-Medium;
+//         text-align: center;
+//         margin-top: 6px;
+//         height: 38px;
+//         font-size: 14px;
+//         font-weight: 500;
+//         color: #fff;
+//         width: 160px;
+//         position: relative;
+//       }
+
+//       .pt-3 {
+//         padding-top: 0.7rem !important;
+//       }
+//     }
+//   }
+
+//   .imagecontainer {
+//     display: none;
+//   }
+
+//   .responsiveimg {
+//     display: block;
+//     background-image: url("../../../assets/images/worker-mobile-pic-2-2x.jpg");
+//     background-color: #e6ecf1;
+//     //background-size: contain;
+//     background-size: 125%;
+//     background-position: 0px bottom;
+//     background-repeat: no-repeat;
+//     height: 84vh;
+//   }
+
+//   .copyrighttext {
+//     display: none;
+//   }
+
+//   .copyrightmobile {
+//     font-family: "Poppins-Regular";
+//     font-size: 14px;
+//     line-height: 20px;
+//     text-decoration: none;
+//     display: flex;
+//     justify-content: center;
+//     padding: 10px;
+//     color: #96a5b5;
+//     background-color: #fff;
+//     width: 100%;
+//   }
+// }
+
+// @media only screen and (orientation: landscape) and (max-width: 1366px) and (min-height: 1024px) {
+
+//   // iPad-Pro Landscape Mode
+//   .login-banner-one {
+//     margin-top: 50px;
+//     height: 840px;
+//   }
+// }
+
+// @media only screen and (orientation: landscape) and (max-width: 1138px) and (min-height: 712px) {
+
+//   // Galaxy-Tab S4 & iPad Landscape Mode
+//   .login-banner-one {
+//     display: block;
+//     position: absolute;
+//     padding-top: 70px;
+//     margin-top: 60px;
+//   }
+
+//   .login-banner-one::-webkit-scrollbar {
+//     width: 0px !important;
+//   }
+
+//   .signupiamgaeperson {
+//     background-image: url("../../../assets/images/signup-icon.svg");
+//     background-size: 60px 60px;
+//     background-position: 56% 55%;
+//     background-repeat: no-repeat;
+//     background-color: white;
+//     border-radius: 100%;
+//     width: 110px;
+//     height: 110px;
+//     box-shadow: 0px 0px 16px 0px rgb(24 38 75 / 8%);
+//     margin-bottom: -87px;
+//     z-index: 10;
+//     margin-left: auto;
+//     margin-right: auto;
+//     position: relative;
+//     top: -57px;
+//   }
+
+//   .usersignup {
+//     background-image: url("../../../assets/images/form-signup-bg.svg");
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     width: 477px;
+//     height: 797px;
+//     display: block;
+//     margin-left: 90px;
+//   }
+
+//   .pb-3 {
+//     padding-bottom: 1.8rem !important;
+//   }
+
+//   .responsiveimg {
+//     display: none;
+//   }
+
+//   .imagecontainer {
+//     display: block;
+//     background-image: url("../../../assets/images/worker-pic-2-2x.jpg");
+//     background-size: cover;
+//     background-position: 340px -20px;
+//     background-repeat: no-repeat;
+//     height: 1000px;
+//   }
+
+//   .copyrightmobile {
+//     display: none;
+//   }
+
+//   .copyrighttext {
+//     font-family: "Poppins-Regular";
+//     font-size: 14px;
+//     line-height: 20px;
+//     text-decoration: none;
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 120px;
+//     color: #96a5b5;
+//     padding-bottom: 40px;
+//   }
+// }
+
+// .gsingup-btn {
+//   border-radius: 8px;
+//   background-color: #fff;
+//   border-color: #6e63ff;
+//   font-family: Poppins-Medium;
+//   text-align: center;
+//   margin-top: 6px;
+//   height: 48px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   color: #6e63ff;
+//   width: 200px;
+//   position: relative;
+// }
+
+// .verify-btn {
+//   border-radius: 8px;
+//   background-color: #6e63ff;
+//   border-color: #6e63ff;
+//   font-family: Poppins-Medium;
+//   text-align: center;
+//   height: 48px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   width: 100%;
+// }
+
+// .verify-btn2 {
+//   border-radius: 8px;
+//   background-color: #6e63ff;
+//   border-color: #6e63ff;
+//   font-family: Poppins-Medium;
+//   text-align: center;
+//   height: 48px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   width: 200px;
+//   margin: 10px auto 0 auto;
+//   display: block;
+// }

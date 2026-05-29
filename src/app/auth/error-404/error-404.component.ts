@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BaseService } from 'src/app/shared/_service/baseStore.service';
-import { AuthService } from "../../shared/_service/auth.service"
+import { AuthService } from 'src/app/shared/_services/auth.service';
+import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
 @Component({
   selector: 'app-error-404',
@@ -11,11 +11,11 @@ import { AuthService } from "../../shared/_service/auth.service"
 export class ErrorPageComponent implements OnInit {
 
   currentUser: any;
-  constructor(private router: Router, public auth: AuthService, public service: BaseService) {
+  constructor(public service: BaseService, public auth: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   onNavigate() {

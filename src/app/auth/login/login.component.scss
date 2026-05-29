@@ -8,10 +8,12 @@
   overflow: hidden;
   background-color: #f4f7fa;
 }
+
 .top-header {
   padding: 30px 0px 0px 0px;
   display: flex;
 }
+
 .knowellalogo {
   width: 250px;
   height: 44.8px;
@@ -21,6 +23,7 @@
   margin-right: 32px;
   margin-top: 8px;
 }
+
 .workplace {
   height: 60px;
   border-left: 1px solid #6e63ff;
@@ -32,10 +35,12 @@
   line-height: 38px;
   font-weight: 400;
 }
+
 .customerimage {
   width: 92%;
   height: 92vh;
 }
+
 .formdivforlogin {
   position: relative;
   top: 7%;
@@ -44,6 +49,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .copyrighttext {
   font-family: "Poppins-Regular";
   font-size: 14px;
@@ -54,9 +60,11 @@
   margin-top: 20px;
   color: #96a5b5;
 }
+
 .copyrightmobile {
   display: none;
 }
+
 .checkmark2 {
   position: absolute;
   top: 0;
@@ -70,15 +78,16 @@
 }
 
 /* On mouse-over, add a grey background color */
-.containerChkBox:hover input ~ .checkmark2 {
+.containerChkBox:hover input~.checkmark2 {
   background-color: #e6ecf1;
 }
 
 /* When the checkbox is checked, add a blue background */
-.containerChkBox input:checked ~ .checkmark2 {
+.containerChkBox input:checked~.checkmark2 {
   background-color: $primary-color;
   border: 1.5px solid $primary-color;
 }
+
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark2:after {
   content: "";
@@ -87,7 +96,7 @@
 }
 
 /* Show the checkmark when checked */
-.containerChkBox input:checked ~ .checkmark2:after {
+.containerChkBox input:checked~.checkmark2:after {
   display: block;
 }
 
@@ -103,11 +112,13 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 .signhere {
   color: #6e63ff;
   text-decoration: underline;
   cursor: pointer;
 }
+
 .login-banner-one {
   display: flex;
   flex-direction: column;
@@ -126,12 +137,15 @@ button {
   background-repeat: no-repeat;
   height: 92vh;
 }
+
 .workerimage {
   width: 100%;
 }
+
 .remember input {
   width: 10% !important;
 }
+
 .loginuserimg {
   background-image: url("../../../assets/images/login-icon.svg");
   background-size: 60px 60px;
@@ -146,9 +160,11 @@ button {
   margin-bottom: -63px;
   margin-right: 1px;
 }
+
 .line {
   display: none;
 }
+
 .automated {
   display: none;
 }
@@ -201,6 +217,7 @@ button {
 
 .signup_link {
   padding-top: 10px;
+
   .text-sm {
     font-family: Poppins-Regular;
     font-style: normal;
@@ -208,6 +225,7 @@ button {
     font-size: 14px;
     color: $secondary-font-color;
   }
+
   .sighUptxt {
     color: $primary-color;
     font-size: 12px;
@@ -216,23 +234,28 @@ button {
     font-weight: 500;
     text-decoration: none;
   }
+
   .sighUptxt:hover {
     text-decoration: underline;
   }
 }
+
 .logowidth {
   width: 150px;
 }
+
 .logowidth2 {
   width: 60px;
   height: 60px;
 }
+
 .remembertxt {
   font-family: Poppins-Regular;
   font-size: 14px;
   margin-bottom: 9px;
   color: $secondary-font-color;
 }
+
 .addunderline {
   text-decoration: underline !important;
   cursor: pointer !important;
@@ -250,6 +273,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h1 {
       font-family: "Poppins-SemiBold";
       font-size: 32px;
@@ -374,6 +398,7 @@ button {
         font-size: 10px;
         color: red;
       }
+
       .field-error {
         width: 100%;
         padding: 8px 12px;
@@ -386,10 +411,12 @@ button {
         animation-direction: alternate;
         animation-duration: 4s;
       }
+
       @keyframes showerror {
         from {
           right: -200%;
         }
+
         to {
           right: -55%;
         }
@@ -449,12 +476,14 @@ button {
         justify-content: center;
         align-items: center;
         margin: 10px auto;
+
         &:hover {
           background-color: #302d76;
           border-color: #302d76;
           transition: all 0.2s ease-in-out;
         }
       }
+
       .login-btn::before {
         content: "";
         width: 7px;
@@ -475,13 +504,16 @@ button {
     margin: 0px;
     overflow: visible;
   }
+
   .login-wrapper::-webkit-scrollbar {
     display: none;
     width: 0px;
   }
+
   .top-header {
     padding: 30px 0px 0px 40px;
   }
+
   .workplace {
     font-size: 21px;
   }
@@ -500,6 +532,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h1 {
       font-family: "Poppins-SemiBold";
       font-size: 32px;
@@ -638,10 +671,12 @@ button {
         animation-direction: alternate;
         animation-duration: 3s;
       }
+
       @keyframes fadeout {
         from {
           opacity: 0;
         }
+
         to {
           opacity: 1;
         }
@@ -702,6 +737,7 @@ button {
         align-items: center;
         margin: 10px auto;
       }
+
       .login-btn::before {
         content: "";
         width: 7px;
@@ -712,6 +748,7 @@ button {
         top: -38%;
         left: 65%;
       }
+
       .login-btn:hover {
         background-color: #302d76;
         border-color: #302d76;
@@ -723,9 +760,11 @@ button {
   .rowcustom {
     flex-direction: column-reverse;
   }
+
   .imagecontainer {
     display: none;
   }
+
   .responsiveimg {
     background-image: url("../../../assets/images/worker-mobile-pic-1-2x.jpg");
     background-color: #e6ecf1;
@@ -738,6 +777,7 @@ button {
   .copyrighttext {
     display: none;
   }
+
   .copyrightmobile {
     font-family: "Poppins-Regular";
     font-size: 16px;
@@ -758,16 +798,20 @@ button {
     overflow-x: hidden;
     overflow-y: visible;
   }
+
   .login-wrapper::-webkit-scrollbar {
     display: none;
     width: 0px;
   }
+
   .top-header {
     display: block;
   }
+
   .knowellalogo {
     margin: 20px auto 20px auto;
   }
+
   .line {
     width: 60px;
     height: 1px;
@@ -777,7 +821,7 @@ button {
   }
 
   .loginuserimg {
-    background-image: url("../../../assets/images/login-icon.svg");
+    // background-image: url("../../../assets/images/login-icon.svg");
     background-size: 40px 40px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -812,6 +856,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h1 {
       font-family: "Poppins-SemiBold";
       font-size: 24px;
@@ -951,10 +996,12 @@ button {
         animation-direction: alternate;
         animation-duration: 3s;
       }
+
       @keyframes fadeout {
         from {
           opacity: 0;
         }
+
         to {
           opacity: 1;
         }
@@ -1013,12 +1060,14 @@ button {
         justify-content: center;
         align-items: center;
         margin: 10px auto;
+
         &:hover {
           background-color: #302d76;
           border-color: #302d76;
           transition: all 0.2s ease-in-out;
         }
       }
+
       .login-btn::before {
         content: "";
         width: 7px;
@@ -1042,14 +1091,17 @@ button {
     line-height: 28px;
     font-weight: 400;
   }
+
   .login-banner-one {
     padding: 28px;
     margin-top: 30px;
     margin-bottom: 50px;
   }
+
   .copyrighttext {
     display: none;
   }
+
   .copyrightmobile {
     font-family: "Poppins-Regular";
     font-size: 14px;
@@ -1066,6 +1118,7 @@ button {
   .rowcustom {
     flex-direction: column-reverse;
   }
+
   .responsiveimg {
     background-image: url("../../../assets/images/worker-mobile-pic-1-2x.jpg");
     background-color: #e6ecf1;
@@ -1085,6 +1138,7 @@ button {
     align-items: center;
     flex-direction: column;
   }
+
   .logowidth {
     width: 220px !important;
   }
@@ -1097,6 +1151,7 @@ button {
     width: 100%;
     height: auto;
   }
+
   .remembertxt {
     font-family: Poppins-Regular;
     font-size: 14px;
@@ -1111,16 +1166,20 @@ button {
     overflow-x: hidden;
     overflow-y: visible;
   }
+
   .login-wrapper::-webkit-scrollbar {
     display: none;
     width: 0px;
   }
+
   .top-header {
     display: block;
   }
+
   .knowellalogo {
     margin: 20px auto 20px auto;
   }
+
   .line {
     width: 60px;
     height: 1px;
@@ -1130,7 +1189,7 @@ button {
   }
 
   .loginuserimg {
-    background-image: url("../../../assets/images/login-icon.svg");
+    // background-image: url("../../../assets/images/login-icon.svg");
     background-size: 40px 40px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1165,6 +1224,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     h1 {
       font-family: "Poppins-SemiBold";
       font-size: 24px;
@@ -1251,6 +1311,7 @@ button {
 
     .userloginform {
       width: 88%;
+
       input {
         border-radius: 8px;
         border: solid 1px #e6ecf1;
@@ -1312,10 +1373,12 @@ button {
         animation-direction: alternate;
         animation-duration: 3s;
       }
+
       @keyframes fadeout {
         from {
           opacity: 0;
         }
+
         to {
           opacity: 1;
         }
@@ -1388,6 +1451,7 @@ button {
         align-items: center;
         margin: auto;
       }
+
       .login-btn::before {
         content: "";
         width: 7px;
@@ -1398,6 +1462,7 @@ button {
         top: -35%;
         left: 68%;
       }
+
       .login-btn:hover {
         background-color: #302d76;
         border-color: #302d76;
@@ -1407,6 +1472,7 @@ button {
       .mt-4 {
         margin: 0px !important;
       }
+
       .mt-4 p {
         width: 100%;
         padding-top: 0rem !important;
@@ -1425,14 +1491,17 @@ button {
     line-height: 28px;
     font-weight: 400;
   }
+
   .login-banner-one {
     padding: 28px 0px 0px 0px;
     margin-top: 30px;
     margin-bottom: 0px;
   }
+
   .copyrighttext {
     display: none;
   }
+
   .copyrightmobile {
     font-family: "Poppins-Regular";
     font-size: 14px;
@@ -1449,6 +1518,7 @@ button {
   .rowcustom {
     flex-direction: column-reverse;
   }
+
   .responsiveimg {
     background-image: url("../../../assets/images/worker-mobile-pic-1-2x.jpg");
     background-color: #e6ecf1;
@@ -1468,6 +1538,7 @@ button {
     align-items: center;
     flex-direction: column;
   }
+
   .logowidth {
     width: 220px !important;
   }
@@ -1480,6 +1551,7 @@ button {
     width: 100%;
     height: auto;
   }
+
   .remembertxt {
     font-family: Poppins-Regular;
     font-size: 14px;

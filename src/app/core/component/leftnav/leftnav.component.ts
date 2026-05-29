@@ -27,7 +27,7 @@ export class LeftnavComponent implements OnInit {
   baseUrl: string = "../../../../assets/images/";
   @Input() collapsed = false;
   @Output() closeSidebarEvent = new EventEmitter<void>();
-  constructor(public auth: AuthService, public service: BaseService, private router: Router, public route: ActivatedRoute) {
+  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute) {
 
   }
 

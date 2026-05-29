@@ -28,11 +28,11 @@
           <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" autocomplete="off" class="userloginform">
             <div class="emailbox">
               <input type="text" formControlName="email" autocomplete="off"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email or Username">
+                 placeholder="Email or Username">
             </div>
             <div class="passwordbox">
               <input [type]="password" placeholder="Password" autocomplete="off" formControlName="password"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+               >
               <img (click)="onClickPassword(false)" *ngIf="!show" src="../../../assets/images/hideeye.svg"
                 class="field-icon-hide cursor">
               <img (click)="onClickPassword(true)" *ngIf="show" src="../../../assets/images/showeye.svg"
@@ -78,4 +78,4 @@
     </div>
   </div>
 </div>
-<app-global-alert></app-global-alert>
+<!-- <app-global-alert></app-global-alert> -->

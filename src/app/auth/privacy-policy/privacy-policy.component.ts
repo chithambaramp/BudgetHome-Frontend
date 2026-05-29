@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BaseService } from 'src/app/shared/_service/baseStore.service';
-import { AuthService } from "../../shared/_service/auth.service"
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { AuthService } from 'src/app/shared/_services/auth.service';
+import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -10,11 +10,11 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class PrivacyPolicyComponent implements OnInit {
 
-  constructor(public auth: AuthService, public service: BaseService, public bsModalRef: BsModalRef) {
+  constructor(public service: BaseService, public auth: AuthService, public bsModalRef: BsModalRef) {
 
   }
 
-  Data;
+  Data: any;
   ngOnInit(): void {
 
   }

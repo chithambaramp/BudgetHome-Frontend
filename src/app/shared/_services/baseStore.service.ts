@@ -21,13 +21,9 @@ export class BaseService extends AppInfo {
   alertData: any = { successOpen: false, dangerOpen: false, alertTxt: '', timeout: 4700 };
   private currentAlertSubject: BehaviorSubject<any> = new BehaviorSubject<any>({});
   public currentAlert$ = this.currentAlertSubject.asObservable();
-  constructor(
-    public service: ApiService,
-    public ds: DataService,
-    public route: ActivatedRoute,
-    private router: Router,
-    public modalService: BsModalService
-  ) {
+
+  constructor(public service: ApiService, public ds: DataService, private router: Router, private route: ActivatedRoute, public modalService: BsModalService) {
+
     super();
     // this.route.queryParams.subscribe((params: Params) => {
     //   if (params['page'])
@@ -35,6 +31,7 @@ export class BaseService extends AppInfo {
     //   else
     //     this.currentPage = 1;
     // });
+
   }
 
   fetchRecords(url: any, isLoad: boolean = true): Observable<any> {

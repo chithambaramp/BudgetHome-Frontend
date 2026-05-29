@@ -36,6 +36,9 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "google-libphonenumber"
             ]
           },
           "configurations": {

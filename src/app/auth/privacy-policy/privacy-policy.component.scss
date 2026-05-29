@@ -1,103 +1,117 @@
-@import "./../../../app/core/styles/variable";
+// @import "./../../../app/core/styles/variable";
 
-.terms{
-  padding: 3px 10px;
-  height: 500px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  .header{
-    display: flex;
-    h2{
-      font-family: Poppins-Regular;
-      font-size: 15px;
-      font-weight: normal;
-      color: $primary-font-color;
-      padding-left: 10px;
-      padding-top: 4px;
-    }
-  }
-  .content{
-    p{
-      font-family: Poppins-Regular;
-      font-size: 14px;
-      font-weight: normal;
-      color: $secondary-font-color;
-      margin: 0 0 14px 0;
-      padding: 0;
-      text-align: justify;
-    }
-  }
-}
-.toptitle{
-  margin: 0;
-  padding: 15px 0 10px 0;
-  font-family: Poppins-Medium;
-  text-align: center;
-  font-size: 16px;
-  font-weight: normal;
-  color: $primary-font-color;
-}
-.bottomtitle{
-  margin: 0;
-  padding: 15px 0 10px 0;
-  font-family: Poppins-Medium;
-  text-align: center;
-  font-size: 16px;
-  font-weight: normal;
-  color: $primary-font-color;
-}
-img.closeicon{
-  padding: 0;
-  float: right;
-  cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 7px;
-}
-.contactinfo{
-  .header{
-    display: flex;
-    margin-bottom: 10px;
-    h2{
-      font-family: Poppins-Regular;
-      font-size: 15px;
-      font-weight: normal;
-      color: $primary-font-color;
-      padding-left: 10px;
-      padding-top: 4px;
-    }
-    span{
-      color: $primary-color !important;
-      text-decoration: underline !important;
-      font-family: Poppins-Medium !important;
-      cursor: pointer;
-    }
-  }
-}
-span.weblink a{
-  color: $primary-color !important;
-  text-decoration: underline !important;
-  font-family: Poppins-Medium !important;
-  cursor: pointer;
-}
-.header{
-  display: flex;
-  h3{
-    font-family: Poppins-Regular;
-    font-size: 15px;
-    font-weight: normal;
-    color: $primary-font-color;
-    padding-top: 4px;
-  }
-}
-.lighttxthead{
-  color: #64707c !important;
-}
-.listcontent > li{
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  font-weight: normal;
-  color: $secondary-font-color;
-  text-align: justify;
-  line-height: 1.8em;
-}
+// .terms {
+//   padding: 3px 10px;
+//   height: 500px;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+
+//   .header {
+//     display: flex;
+
+//     h2 {
+//       font-family: Poppins-Regular;
+//       font-size: 15px;
+//       font-weight: normal;
+//       color: $primary-font-color;
+//       padding-left: 10px;
+//       padding-top: 4px;
+//     }
+//   }
+
+//   .content {
+//     p {
+//       font-family: Poppins-Regular;
+//       font-size: 14px;
+//       font-weight: normal;
+//       color: $secondary-font-color;
+//       margin: 0 0 14px 0;
+//       padding: 0;
+//       text-align: justify;
+//     }
+//   }
+// }
+
+// .toptitle {
+//   margin: 0;
+//   padding: 15px 0 10px 0;
+//   font-family: Poppins-Medium;
+//   text-align: center;
+//   font-size: 16px;
+//   font-weight: normal;
+//   color: $primary-font-color;
+// }
+
+// .bottomtitle {
+//   margin: 0;
+//   padding: 15px 0 10px 0;
+//   font-family: Poppins-Medium;
+//   text-align: center;
+//   font-size: 16px;
+//   font-weight: normal;
+//   color: $primary-font-color;
+// }
+
+// img.closeicon {
+//   padding: 0;
+//   float: right;
+//   cursor: pointer;
+//   position: absolute;
+//   top: 8px;
+//   right: 7px;
+// }
+
+// .contactinfo {
+//   .header {
+//     display: flex;
+//     margin-bottom: 10px;
+
+//     h2 {
+//       font-family: Poppins-Regular;
+//       font-size: 15px;
+//       font-weight: normal;
+//       color: $primary-font-color;
+//       padding-left: 10px;
+//       padding-top: 4px;
+//     }
+
+//     span {
+//       color: $primary-color !important;
+//       text-decoration: underline !important;
+//       font-family: Poppins-Medium !important;
+//       cursor: pointer;
+//     }
+//   }
+// }
+
+// span.weblink a {
+//   color: $primary-color !important;
+//   text-decoration: underline !important;
+//   font-family: Poppins-Medium !important;
+//   cursor: pointer;
+// }
+
+// .header {
+//   display: flex;
+
+//   h3 {
+//     font-family: Poppins-Regular;
+//     font-size: 15px;
+//     font-weight: normal;
+//     color: $primary-font-color;
+//     padding-top: 4px;
+//   }
+// }
+
+// .lighttxthead {
+//   color: #64707c !important;
+// }
+
+// .listcontent>li {
+//   font-family: Poppins-Regular;
+//   font-size: 14px;
+//   font-weight: normal;
+//   color: $secondary-font-color;
+//   text-align: justify;
+//   line-height: 1.8em;
+// }

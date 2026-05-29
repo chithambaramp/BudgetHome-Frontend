@@ -6,11 +6,11 @@ import { AuthService } from 'src/app/shared/_services/auth.service';
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
 
-    constructor(private authService: AuthService) { }
+    constructor(private auth: AuthService) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        const currentUser = this.authService.currentUserValue;
+        const currentUser = this.auth.currentUserValue;
 
         if (currentUser?.access_token) {
             request = request.clone({

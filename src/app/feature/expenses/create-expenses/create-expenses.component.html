@@ -1,0 +1,215 @@
+<!-- <div class="container">
+    <div class="left leftpad">
+        <div class="header mt-3">
+            <h2 class="animation a1" (click)="goBack()"><i class="fa fa-angle-left" aria-hidden="true"></i>
+                Back</h2>
+            <h4 *ngIf="!ID" class="animation a2">Add Company</h4>
+            <h4 *ngIf="ID" class="animation a2">Edit Company</h4>
+        </div>
+        <div class="form">
+            <form [formGroup]="merchantForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                <div class="row">
+                    <div class="mt-2 uploadImage col-md-6 animation a2">
+                        <input type="file" id="file-upload" accept=".jpg,.jpeg,.png" (change)="onSelectFile($event)" />
+                        <label for="file-upload">
+                            <span *ngIf="!fileName" class="mt-2">
+                                <img src="../../../../assets/images/uploadsvg.svg" />
+                            </span>
+                            <span *ngIf="fileName" class="mt-2">
+                                <img src="{{ service.getFilePath()+fileName }}" class="imgshow" />
+                            </span>
+                            <img src="../../../../assets/images/cross.svg" class="closerimg" (click)="removeFile()">
+                        </label>
+                        <div class="uploadpad">
+                            <h1>Add Company Logo</h1>
+                            <h2>Supported Format: jpeg, png - 2MB file limit</h2>
+                            <div *ngIf="fileError" class="field-error">{{ fileError }}</div>
+                        </div>
+                    </div>
+                    <div *ngIf="role=='PLATFORM_ADMIN' || role=='SUPER_ADMIN'" class="col-md-6 mt-5">
+                        <label class="containerChkBox chkboxlabelname">
+                            Enable Customize Appearance Logo
+                            <input type="checkbox" [checked]="isCustomCompanyLogo"
+                                (change)="isCustomLogoEnable($event)">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div *ngIf="isCustomCompanyLogo && (role=='PLATFORM_ADMIN' || role=='SUPER_ADMIN')"
+                        class="mt-2 uploadImage col-md-6 animation a2">
+                        <input type="file" id="file-upload-desktop" accept=".jpg,.jpeg,.png"
+                            (change)="onSelectFileDeskTopLogo($event)" />
+                        <label for="file-upload-desktop">
+                            <span *ngIf="!fileNameDeskTop" class="mt-2">
+                                <img src="../../../../assets/images/uploadsvg.svg" />
+                            </span>
+                            <span *ngIf="fileNameDeskTop" class="mt-2">
+                                <img src="{{ service.getFilePath()+fileNameDeskTop }}" class="imgshow" />
+                            </span>
+                            <img src="../../../../assets/images/cross.svg" class="closerimg" (click)="removeFile()">
+                        </label>
+                        <div class="uploadpad">
+                            <h1>Add Desktop Logo</h1>
+                            <h2 class="infologowidth">Supported Format: jpeg, png - 2MB file limit
+                                <div>Height:50px, Width:150px</div>
+                            </h2>
+                            <div *ngIf="fileErrorDeskTop" class="field-error">{{ fileErrorDeskTop }}</div>
+                        </div>
+                    </div>
+                    <div *ngIf="isCustomCompanyLogo && (role=='PLATFORM_ADMIN' || role=='SUPER_ADMIN')"
+                        class="mt-2 uploadImage col-md-6 animation a2">
+                        <input type="file" id="file-upload-mobile" accept=".jpg,.jpeg,.png"
+                            (change)="onSelectFileMobileLogo($event)" />
+                        <label for="file-upload-mobile">
+                            <span *ngIf="!fileNameMobile" class="mt-2">
+                                <img src="../../../../assets/images/uploadsvg.svg" />
+                            </span>
+                            <span *ngIf="fileNameMobile" class="mt-2">
+                                <img src="{{ service.getFilePath()+fileNameMobile }}" class="imgshow" />
+                            </span>
+                            <img src="../../../../assets/images/cross.svg" class="closerimg" (click)="removeFile()">
+                        </label>
+                        <div class="uploadpad">
+                            <h1>Add Mobile Logo</h1>
+                            <h2 class="infologowidth">Supported Format: jpeg, png - 2MB file limit
+                                <div>Height:50px, Width:50px</div>
+                            </h2>
+                            <div *ngIf="fileErrorMobile" class="field-error">{{ fileErrorMobile }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" class="form-field animation a2 form-control" id="pname"
+                                formControlName="name" placeholder="Company's Name*"
+                                [ngClass]="{ 'is-invalid': submitted && fs.name.errors }" maxlength="50">
+                            <div *ngIf="submitted && fs.name.errors" class="field-error">
+                                <div *ngIf="fs.name.errors.required">Company is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-field animation a3 form-control" id="fname"
+                                formControlName="firstname" placeholder="Customer First Name*"
+                                [ngClass]="{ 'is-invalid': submitted && fs.firstname.errors }" maxlength="50">
+                            <div *ngIf="submitted && fs.firstname.errors" class="field-error">
+                                <div *ngIf="fs.firstname.errors.required">Firstname is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-field animation a3 form-control" id="lname"
+                                formControlName="lastname" placeholder="Last Name*"
+                                [ngClass]="{ 'is-invalid': submitted && fs.lastname.errors }" maxlength="50">
+                            <div *ngIf="submitted && fs.lastname.errors" class="field-error">
+                                <div *ngIf="fs.lastname.errors.required">Lastname is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea class="form-field animation a4 form-control textareabox" maxlength="100"
+                                id="address" formControlName="address" placeholder="Address (Area and Street)*"
+                                [ngClass]="{ 'is-invalid': submitted && fs.address.errors }"></textarea>
+                            <div *ngIf="submitted && fs.address.errors" class="field-error">
+                                <div *ngIf="fs.address.errors.required">Address is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select class="form-select form-field animation a4 form-control" formControlName="country"
+                                id="country" (change)="changeCountry($event,false)"
+                                [ngClass]="{ 'is-invalid': submitted && fs.country.errors }">
+                                <option value=''>Country/Region*</option>
+                                <option *ngFor="let items of countryList" [value]="items._id">{{items.name}}</option>
+                            </select>
+                            <div *ngIf="submitted && fs.country.errors" class="field-error">
+                                <div *ngIf="fs.country.errors.required">Country is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select class="form-select form-field animation a4 form-control" formControlName="state"
+                                id="state" (change)="changeState($event,false)"
+                                [ngClass]="{ 'is-invalid': submitted && fs.state.errors }">
+                                <option value=''>States/Provinces</option>
+                                <option *ngFor="let items of stateList" [value]="items._id">{{items.name}}</option>
+                            </select>
+                            <div *ngIf="submitted && fs.state.errors" class="field-error">
+                                <div *ngIf="fs.state.errors.required">State is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select class="form-select form-field animation a4 form-control" formControlName="city"
+                                id="city" [ngClass]="{ 'is-invalid': submitted && fs.city.errors }">
+                                <option value=''>City</option>
+                                <option *ngFor="let items of cityList" [value]="items._id">{{items.name}}</option>
+                            </select>
+                            <div *ngIf="submitted && fs.city.errors" class="field-error">
+                                <div *ngIf="fs.city.errors.required">City is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-field animation a4 form-control" id="email"
+                                formControlName="email" placeholder="Corporate Email ID*"
+                                [ngClass]="{ 'is-invalid': submitted && fs.email.errors }">
+                            <div *ngIf="submitted && fs.email.errors" class="field-error">
+                                <div *ngIf="fs.email.errors.required">Email is required</div>
+                                <div *ngIf="fs.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-field animation a4 form-control" id="pincode"
+                                placeholder="Postal Code*" formControlName="pincode"
+                                [ngClass]="{ 'is-invalid': submitted && fs.pincode.errors }" minlength="4"
+                                maxlength="10">
+                            <div *ngIf="submitted && fs.pincode.errors" class="field-error">
+                                <div *ngIf="fs.pincode.errors.required">Postal Code is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" numbersOnly class="form-field animation a4 form-control" id="phonenumber"
+                                placeholder="Phone Number*" formControlName="phonenumber"
+                                [ngClass]="{ 'is-invalid': submitted && fs.phonenumber.errors }" minlength="10"
+                                maxlength="12">
+                            <div *ngIf="submitted && fs.phonenumber.errors" class="field-error">
+                                <div *ngIf="fs.phonenumber.errors.required">Phonenumber is required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" *ngIf="ID">
+                        <div class="form-group">
+                            <select class="form-select form-field animation a4 form-control" formControlName="isActive"
+                                id="isActive" [ngClass]="{ 'is-invalid': submitted && fs.isActive.errors }">
+                                <option value='1'>Active</option>
+                                <option value='0'>Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div *ngIf="error" class="field-error col-md-12 mt-2">{{ error }}</div>
+                    <div *ngIf="editAccess" class="animation a6 col-md-6 pt-3 pb-4">
+                        <button type="submit" class="btn btn-primary add-btn"
+                            [disabled]="isLoading">{{getLoading()}}</button>
+                        <span class="cancelleft"><button type="button" class="btn btn-primary cancel-btn"
+                                (click)="goBack()">Cancel</button></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->

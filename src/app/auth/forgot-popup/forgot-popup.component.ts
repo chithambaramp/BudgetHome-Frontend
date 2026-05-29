@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { AuthService } from 'src/app/shared/_service/auth.service';
+import { AuthService } from 'src/app/shared/_services/auth.service';
 
 @Component({
   selector: 'app-forgot-popup',

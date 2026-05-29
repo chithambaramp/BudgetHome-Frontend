@@ -13,7 +13,7 @@ export class AuthService {
   private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject<any>({});
   public currentUser: Observable<any>;
 
-  constructor(public router: Router, public service: BaseService) {
+  constructor(public service: BaseService, private router: Router) {
     let currentUser: any = localStorage.getItem('currentUser');
     this.currentUserSubject.next(JSON.parse(currentUser || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();

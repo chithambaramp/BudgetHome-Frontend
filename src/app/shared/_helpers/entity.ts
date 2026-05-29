@@ -1,7 +1,7 @@
 export enum PATH {
   LOGIN = 'login',
   USER = 'user',
-  EXPENSE = 'expense',
+  EXPENSES = 'expenses',
   INCOME = 'income',
   BUDGET = 'budget',
   REPORT = 'report',

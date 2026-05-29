@@ -204,4 +204,9 @@
     .sidebar.collapsed li {
         justify-content: normal;
     }
+
+    /* Arroe Rotate in Mobile */
+    .sidebar li.open .arrow {
+        transform: rotate(-92deg);
+    }
 }
