@@ -210,3 +210,13 @@
         transform: rotate(-92deg);
     }
 }
+
+// Childmenu active Parentmenu also active Css (But this Css Only Approach for Modernweb browsers)
+li:has(.sub-menu li.active-sub)>.main-menu {
+    background: $white;
+    color: #3134b1;
+    border-radius: 10px;
+    transform: translateX(4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-weight: 500;
+}

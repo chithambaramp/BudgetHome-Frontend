@@ -47,36 +47,18 @@ export class LeftnavComponent implements OnInit {
       route: '/report',
     },
     {
-      title: 'Settings 1',
+      title: 'Settings',
       icon: 'fa-solid fa-gear',
       open: false,
       route: '/settings', // ✅ parent route (important)
       children: [
         {
-          title: 'Profile 1',
+          title: 'Profile',
           route: '/settings/profile',
           icon: 'fa-solid fa-user'
         },
         {
-          title: 'Preferences 1',
-          route: '/settings/preferences',
-          icon: 'fa-solid fa-sliders'
-        }
-      ]
-    },
-    {
-      title: 'Settings 2',
-      icon: 'fa-solid fa-gear',
-      open: false,
-      route: '/settings', // ✅ parent route (important)
-      children: [
-        {
-          title: 'Profile 2',
-          route: '/settings/profile',
-          icon: 'fa-solid fa-user'
-        },
-        {
-          title: 'Preferences 2',
+          title: 'Preferences',
           route: '/settings/preferences',
           icon: 'fa-solid fa-sliders'
         }
