@@ -8,29 +8,21 @@
   min-height: 100vh;
   display: flex;
   background: #f5f7fb;
-  font-family: "Inter", sans-serif;
+  font-family: Poppins-Regular;
 }
 
 /* LEFT SIDE */
 .login-left {
   width: 50%;
-  background:
-    linear-gradient(135deg,
-      rgba(49, 52, 177, 0.95),
-      rgba(144, 16, 169, 0.9)),
-    url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200');
-
+  background: linear-gradient(135deg, rgb(23 26 203 / 90%), rgb(144 16 169 / 15%)), url(../../../assets/images/login-banner.jpg);
+  // background: linear-gradient(135deg, rgb(23 26 203 / 93%), rgb(144 16 169 / 25%)), url(../../../assets/images/login-banner2.jpg);
   background-size: cover;
   background-position: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 60px;
-
   color: #fff;
-
   position: relative;
   overflow: hidden;
 }
