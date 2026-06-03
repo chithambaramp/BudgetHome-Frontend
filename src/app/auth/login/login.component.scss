@@ -1,3 +1,5 @@
+@import "./../../../app/core/styles/variable";
+
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +24,7 @@
   align-items: center;
   justify-content: center;
   padding: 60px;
-  color: #fff;
+  color: $white;
   position: relative;
   overflow: hidden;
 }
@@ -78,13 +80,10 @@
   display: flex;
   align-items: center;
   gap: 14px;
-
   background: rgba(255, 255, 255, 0.1);
   padding: 16px 20px;
   border-radius: 16px;
-
   backdrop-filter: blur(12px);
-
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -109,12 +108,9 @@
 .login-card {
   width: 100%;
   max-width: 430px;
-
-  background: #fff;
+  background: $white;
   border-radius: 28px;
-
   padding: 42px;
-
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
@@ -136,6 +132,7 @@
   font-size: 15px;
 }
 
+// Form CSS
 .form-group {
   margin-bottom: 24px;
 }
@@ -164,26 +161,25 @@
 .input-group input {
   width: 100%;
   height: 56px;
-
   border: 1px solid #e1e4f0;
-  border-radius: 16px;
-
+  border-radius: 16px !important;
   padding: 0 18px 0 50px;
-
   font-size: 15px;
-
-  transition: all 0.25s ease;
-
+  font-weight: 500;
+  color: #1F2937;
   background: #fafbff;
+  transition: all 0.25s ease;
+}
+
+.input-group input::placeholder {
+  color: #9CA3AF;
+  font-size: 14px;
 }
 
 .input-group input:focus {
   outline: none;
-
   border-color: #3134b1;
-
-  background: #fff;
-
+  background: $white;
   box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08);
 }
 
@@ -191,7 +187,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-bottom: 28px;
 }
 
@@ -226,7 +221,7 @@
 
   background: linear-gradient(135deg, #3134b1, #9010a9);
 
-  color: #fff;
+  color: $white;
   font-size: 16px;
   font-weight: 600;
 
