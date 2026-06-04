@@ -280,14 +280,14 @@ input[type="textarea"]:disabled {
 .containerChkBox {
     display: block;
     position: relative;
-    padding-left: 26px;
-    margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-family: Poppins-Regular;
+    padding-left: 18px !important;
+    line-height: 1.2;
 }
 
 /* Hide the browser's default checkbox */
@@ -303,8 +303,8 @@ input[type="textarea"]:disabled {
     position: absolute;
     top: 0;
     left: 0;
-    height: 17px;
-    width: 17px;
+    height: 15px;
+    width: 15px;
     background: #ffffff;
     border: 1px solid #a2a8b2;
     box-sizing: border-box;
@@ -318,7 +318,8 @@ input[type="textarea"]:disabled {
 
 /* When the checkbox is checked, add a blue background */
 .containerChkBox input:checked~.checkmark {
-    background-color: $primary-color;
+    // background: linear-gradient(135deg, #3134b1, #9010a9);
+    background-color: #9010a9;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -335,11 +336,11 @@ input[type="textarea"]:disabled {
 
 /* Style the checkmark/indicator */
 .containerChkBox .checkmark:after {
-    left: 5px;
+    left: 4px;
     top: 1px;
     width: 5px;
-    height: 10px;
-    border: solid white;
+    height: 9px;
+    border: solid $white;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
