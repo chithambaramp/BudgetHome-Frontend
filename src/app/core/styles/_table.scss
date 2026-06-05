@@ -283,3 +283,81 @@ table {
 //   { title: 'Shopping', value: 7000, icon: '🛍️', color: '#ec4899' },
 //   { title: 'Bills', value: 6000, icon: '📄', color: '#6b7280' }
 // ];
+
+
+// /* ================= CheckBox UI ================= */
+//<div class="checkbox-group">
+    // <label class="containerChkBox chkboxlabeltxt">Option1
+    //         <input type="checkbox" formControlName="option1"/>
+    //         <span class="checkmark"></span>
+    // </label>
+
+    // <label class="containerChkBox chkboxlabeltxt">Option2
+    //         <input type="checkbox" formControlName="option2"/>
+    //         <span class="checkmark"></span>
+    // </label>
+//</div>
+
+// .chkboxlabeltxt {
+// font-size: 13px;
+// color: #4b5563;
+// }
+
+// /* ================= Horizontal CheckBox UI ================= */
+// .checkbox-group{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 10px;
+// }
+
+// /* ================= Verticle CheckBox UI ================= */
+// .checkbox-group{
+    // display: flex;
+    // flex-direction: column;
+    // gap: 4px;
+// }
+
+
+// /* ================= RadioButton UI ================= */
+        // <div class="radio-group">
+
+        //   <div class="radio-item">
+        //     <input id="neckAdjustment1" type="radio" value="sideBending" formControlName="neckAdjustment"
+        //       name="neckAdjustment">
+
+        //     <label for="neckAdjustment1" class="radiobtnlabeltxt">
+        //       Side Bending
+        //     </label>
+        //   </div>
+
+        //   <div class="radio-item">
+        //     <input id="neckAdjustment2" type="radio" value="normal" formControlName="neckAdjustment"
+        //       name="neckAdjustment">
+
+        //     <label for="neckAdjustment2" class="radiobtnlabeltxt">
+        //       Normal
+        //     </label>
+        //   </div>
+
+        // </div>
+
+// .radiobtnlabeltxt {
+// font-size: 13px;
+// color: #4b5563;
+// }
+
+// /* ================= Horizontal RadioButton UI ================= */
+// .radio-group{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 10px;
+// }
+
+// /* ================= Verticle RadioButton UI ================= */
+// .radio-group{
+    // display: flex;
+    // flex-direction: column;
+    // gap: 4px;
+// }
