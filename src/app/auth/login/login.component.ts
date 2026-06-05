@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   show: boolean = false;
   LoginForm!: FormGroup;
   submitted: boolean = false;
-  isLoading!: boolean;
+  isLoading = signal(false);
   error!: string;
   constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {
 
@@ -36,9 +36,6 @@ export class LoginComponent implements OnInit {
 
   get f() { return this.LoginForm.controls; }
 
-  getLoading() {
-    return this.isLoading ? 'Loading...' : 'Login'
-  }
 
   isEmailValid = () => {
     return this.LoginForm.controls['email'].valid
@@ -68,7 +65,11 @@ export class LoginComponent implements OnInit {
   onSubmit = () => {
     this.submitted = true;
     if (this.submitted) {
-      this.router.navigate(['expenses']);
+      this.isLoading.set(true);
+      setTimeout(() => {
+        this.isLoading.set(false);
+        this.router.navigate(['expenses']);
+      }, 2000);
       return;
     }
     if (this.LoginForm.invalid) {
@@ -77,21 +78,17 @@ export class LoginComponent implements OnInit {
     // if (!this.isPrivacyPolicyValid()) {
     //   return;
     // }
-    this.isLoading = true;
     this.submitted = false;
     this.error = '';
     this.auth.login(this.LoginForm.value).subscribe(
       (result: any) => {
         if (result.statusCode == 200) {
-          this.isLoading = false;
 
         } else {
-          this.isLoading = false;
           this.error = result.message;
         }
       },
       (error: any) => {
-        this.isLoading = false;
         this.error = error;
       },
       () => {
@@ -104,4 +101,5 @@ export class LoginComponent implements OnInit {
   openPrivacyPolicy(val: any) {
     this.service.openModalWithComponent(PrivacyPolicyComponent, val);
   }
+
 }
