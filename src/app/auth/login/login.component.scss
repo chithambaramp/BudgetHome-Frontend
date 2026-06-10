@@ -136,7 +136,7 @@
   opacity: 0.5;
 }
 
-// Form CSS
+/* Form CSS Start */
 .form-group {
   margin-bottom: 24px;
 }
@@ -186,6 +186,8 @@
   background: $white;
   box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08);
 }
+
+/* Form CSS End */
 
 .login-options {
   display: flex;
