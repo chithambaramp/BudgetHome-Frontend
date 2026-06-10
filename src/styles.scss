@@ -248,35 +248,75 @@ input[type="textarea"]:disabled {
     border-radius: 10px;
 }
 
-.add-btn,
-.add-btn:hover {
-    border-radius: 8px;
-    background-color: $primary-color;
-    border-color: $primary-color;
-    font-family: Poppins-Medium;
-    text-align: center;
+/* addBtn Start */
+.add-btn {
+    width: 155px;
     height: 40px;
-    font-size: 14px;
-    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3134b1, #9010a9);
     color: $white;
-    width: 155px;
-}
-
-.cancel-btn,
-.cancel-btn:hover {
-    border-radius: 8px;
-    background-color: $white;
-    border-color: $primary-color;
-    font-family: Poppins-Medium;
-    text-align: center;
-    height: 40px;
     font-size: 14px;
-    font-weight: 500;
-    color: $primary-color;
-    width: 155px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(49, 52, 177, 0.28);
+    transition: all 0.25s ease;
 }
 
-/* custom checkbox Start*/
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 24px rgba(49, 52, 177, 0.22),
+        0 24px 40px rgba(49, 52, 177, 0.15),
+        0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.add-btn:disabled {
+    // background: linear-gradient(135deg, #bfc2d8, #d3d5e0);
+    // color: #6b7280;
+    cursor: not-allowed;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: none;
+    opacity: 0.7;
+}
+
+/* addBtn End */
+
+/* cancelBtn Start */
+.cancel-btn {
+    width: 155px;
+    height: 40px;
+    border: 1px solid #3134b1;
+    border-radius: 8px;
+    background: $white;
+    color: #3134b1;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(49, 52, 177, 0.28);
+    transition: all 0.25s ease;
+}
+
+.cancel-btn:hover {
+    // transform: translateY(-2px);
+    box-shadow:
+        0 12px 24px rgba(49, 52, 177, 0.22),
+        0 24px 40px rgba(49, 52, 177, 0.15),
+        0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cancel-btn:disabled {
+    // background: linear-gradient(135deg, #bfc2d8, #d3d5e0);
+    // color: #6b7280;
+    cursor: not-allowed;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: none;
+    opacity: 0.7;
+}
+
+/* cancelBtn End */
+
+/* custom checkbox Start */
 .containerChkBox {
     display: block;
     position: relative;
@@ -347,9 +387,9 @@ input[type="textarea"]:disabled {
     transform: rotate(45deg);
 }
 
-/* custom checkbox End*/
+/* custom checkbox End */
 
-/* custom radiobtn Start*/
+/* custom radiobtn Start */
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
@@ -402,9 +442,9 @@ input[type="textarea"]:disabled {
     transform: scale(1);
 }
 
-/* custom radiobtn End*/
+/* custom radiobtn End */
 
-/* custom toggle Start*/
+/* custom toggle Start */
 .switch {
     position: relative;
     display: inline-block;
@@ -452,7 +492,7 @@ input:focus+.slider {
     box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.15);
 }
 
-/* custom toggle End*/
+/* custom toggle End */
 
 
 .nodata {

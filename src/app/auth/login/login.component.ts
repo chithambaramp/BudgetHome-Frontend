@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
       setTimeout(() => {
         this.isLoading.set(false);
         this.router.navigate(['expenses']);
-      }, 2000);
+      }, 200);
       return;
     }
     if (this.LoginForm.invalid) {
