@@ -408,8 +408,8 @@ input[type="textarea"]:disabled {
 .switch {
     position: relative;
     display: inline-block;
-    width: 32px;
-    height: 12.5px;
+    width: 48px;
+    height: 26px;
     cursor: pointer;
 }
 
@@ -421,54 +421,35 @@ input[type="textarea"]:disabled {
 
 .slider {
     position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    inset: 0;
+    background: #c9cfda;
+    border-radius: 999px;
+    transition: all 0.3s ease;
 }
 
 .slider:before {
+    content: '';
     position: absolute;
-    content: "";
-    height: 23px;
-    width: 23px;
-    left: -9px;
-    bottom: 5px;
-    top: -6px;
-    background-color: $white;
-    box-shadow: 0 0 6px 0 rgb(0 0 0 / 16%);
-    transition: 0.4s;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
 input:checked+.slider {
-    background-color: #c4c1ee;
+    background: linear-gradient(135deg, #3134b1, #9010a9);
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px $primary-color;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-input:checked+.slider:before {
-    background: $primary-color;
+    box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.15);
 }
 
 /* custom toggle End*/
