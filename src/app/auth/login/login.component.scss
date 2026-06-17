@@ -285,3 +285,38 @@
   }
 
 }
+
+/* Animation-CSS-Start */
+.brand-section {
+  animation: slideInLeft 0.9s ease-out forwards;
+}
+
+.login-card {
+  animation: slideInRight 0.9s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Animation-CSS-End */
