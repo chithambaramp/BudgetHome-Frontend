@@ -1,45 +1,99 @@
 @import "../../../../app/core/styles/variable";
 
-.heading {
+.confirm-modal {
     font-family: Poppins-Regular;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 21px;
-    align-items: center;
-    color: $primary-font-color;
-    text-transform: capitalize;
-}
-
-.question {
-    font-family: Poppins-Regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
-    color: #17263F;
-}
-
-.description {
-    font-family: Poppins-Regular;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 19px;
-    color: $secondary-font-color;
-}
-
-.form-area {
-    padding: 35px;
-}
-
-img.closeicon {
-    float: right;
+    background: $white;
+    border-radius: 18px;
     padding: 10px;
-    cursor: pointer;
 }
 
-@media (min-width: 768px) {
-    button {
-        width: 165px !important;
-    }
+/* HEADER */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    margin: 0;
+    color: #1f2937;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Poppins-Medium;
+}
+
+/* CLOSE */
+
+.close-btn {
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.close-btn:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+/* BODY */
+
+
+.modal-question {
+    color: #111827;
+    font-size: 16px;
+    font-family: Poppins-Medium;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.modal-description {
+    color: #6b7280;
+    font-size: 13px;
+    font-family: Poppins-Regular;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* CANCEL Btn*/
+
+.cancel-btn {
+    font-family: Poppins-Regular;
+    min-width: 110px;
+    height: 42px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    color: #374151;
+    box-shadow: none;
+}
+
+.cancel-btn:hover {
+    box-shadow: 0 14px 28px rgba(49, 52, 177, 0.28);
+}
+
+/* CONFIRM Btn*/
+
+.add-btn {
+    font-family: Poppins-Regular;
+    min-width: 110px;
+    height: 42px;
+    border-radius: 10px;
+}
+
+.add-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(49, 52, 177, 0.28);
 }

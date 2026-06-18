@@ -250,13 +250,14 @@ input[type="textarea"]:disabled {
 
 /* addBtn Start */
 .add-btn {
-    width: 155px;
+    min-width: 155px;
     height: 40px;
     border: none;
     border-radius: 8px;
     background: linear-gradient(135deg, #3134b1, #9010a9);
     color: $white;
     font-size: 14px;
+    font-family: Poppins-Regular;
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 14px 28px rgba(49, 52, 177, 0.28);
@@ -284,13 +285,14 @@ input[type="textarea"]:disabled {
 
 /* cancelBtn Start */
 .cancel-btn {
-    width: 155px;
+    min-width: 155px;
     height: 40px;
     border: 1px solid #3134b1;
     border-radius: 8px;
     background: $white;
     color: #3134b1;
     font-size: 14px;
+    font-family: Poppins-Regular;
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 14px 28px rgba(49, 52, 177, 0.28);

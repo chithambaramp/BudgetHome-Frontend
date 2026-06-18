@@ -1,27 +1,45 @@
-<div class="main-content-wrap">
-  <div>
-    <img src="../../../../assets/images/cross.svg" class="closeicon" (click)="bsModalRef.hide()">
+<div class="confirm-modal">
+
+  <!-- Header -->
+  <div class="modal-header">
+    <h4 class="modal-title">
+      <span *ngIf="Data?.title">{{ Data?.title }}</span>
+    </h4>
+
+    <button type="button" class="close-btn" (click)="bsModalRef.hide()">
+
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="form-area">
-    <span *ngIf="Data.title" class="heading">{{Data?.title}}</span>
-    <div class="row">
-      <div *ngIf="Data.question" class="col-md-12 mt-2 question">{{Data?.question}}</div>
-      <div *ngIf="Data.description" class="col-md-12 mt-2 description">{{Data?.description}}</div>
-      <!-- <div *ngIf="Data.yesBtn" class="text-center col-md-6 mt-4">
-                <button (click)="yes()" type="submit"
-                    class="btn btn-default add-form-btn yesbtn">{{Data?.yesBtn}}</button>
-            </div>
-            <div *ngIf="Data.noBtn" class="text-center col-md-6 mt-4">
-                <button (click)="bsModalRef.hide()" class="btn btn-default add-form-btn no-btn">{{Data?.noBtn}}</button>
-            </div> -->
-      <ul class="action">
-        <li *ngIf="Data.noBtn">
-          <button class="cancel" (click)="bsModalRef.hide()">{{Data?.noBtn}}</button>
-        </li>
-        <li *ngIf="Data.yesBtn">
-          <button class="save" (click)="yes()">{{Data?.yesBtn}}</button>
-        </li>
-      </ul>
+
+  <!-- Body -->
+  <div class="modal-body">
+
+    <div *ngIf="Data?.question" class="modal-question">
+
+      {{ Data?.question }}
     </div>
+
+    <div *ngIf="Data?.description" class="modal-description">
+
+      {{ Data?.description }}
+    </div>
+
   </div>
+
+  <!-- Footer -->
+  <div class="modal-footer">
+
+    <button *ngIf="Data?.noBtn" class="cancel-btn" (click)="bsModalRef.hide()">
+
+      {{ Data?.noBtn }}
+    </button>
+
+    <button *ngIf="Data?.yesBtn" class="add-btn" (click)="yes()">
+
+      {{ Data?.yesBtn }}
+    </button>
+
+  </div>
+
 </div>
