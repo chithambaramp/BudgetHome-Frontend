@@ -165,6 +165,7 @@
   transform: translateY(-50%);
   color: #7d7d94;
   font-size: 15px;
+  opacity: 0.8;
 }
 
 .input-group input {
@@ -197,7 +198,7 @@
   left: auto !important;
   right: 16px;
   cursor: pointer;
-  color: #6b7280 !important;
+  opacity: 0.6 !important;
   transition: color 0.2s ease;
 }
 
@@ -298,6 +299,10 @@
 
   .login-header h2 {
     font-size: 28px;
+  }
+
+  .login-options {
+    flex-direction: column;
   }
 
 }
