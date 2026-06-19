@@ -11,10 +11,8 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  password: string = '';
-  show: boolean = false;
   LoginForm!: FormGroup;
-  submitted: boolean = false;
+  showPassword = signal(false);
   isLoading = signal(false);
   error!: string;
   constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {
@@ -22,9 +20,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.password = 'password';
     this.buildForm();
   }
+
+  togglePassword(): void {
+    this.showPassword.update(value => !value);
+  }
+
 
   buildForm() {
     this.LoginForm = this.formBuilder.group({
@@ -34,37 +36,9 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  get f() { return this.LoginForm.controls; }
-
-
-  isEmailValid = () => {
-    return this.LoginForm.controls['email'].valid
-  }
-
-  isPassValid = () => {
-    return this.LoginForm.controls['password'].valid
-  }
-
-  isPrivacyPolicyValid = () => {
-    return this.LoginForm.controls['privacypolicy'].value
-  }
-
-  Form(field: any) {
-    return this.LoginForm.controls[field].value;
-  }
-
-  isValid(): boolean {
-    return this.LoginForm.valid
-  }
-
-  onClickPassword(bool: boolean) {
-    bool ? this.password = 'password' : this.password = 'text';
-    this.show = !this.show;
-  }
-
   onSubmit = () => {
-    this.submitted = true;
-    if (this.submitted) {
+    let submitted = true;
+    if (submitted) {
       this.isLoading.set(true);
       setTimeout(() => {
         this.isLoading.set(false);
@@ -78,7 +52,6 @@ export class LoginComponent implements OnInit {
     // if (!this.isPrivacyPolicyValid()) {
     //   return;
     // }
-    this.submitted = false;
     this.error = '';
     this.auth.login(this.LoginForm.value).subscribe(
       (result: any) => {

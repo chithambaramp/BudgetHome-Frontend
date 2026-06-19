@@ -154,6 +154,8 @@
 
 .input-group {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .input-group i {
@@ -170,8 +172,8 @@
   height: 56px;
   border: 1px solid #e1e4f0;
   border-radius: 16px !important;
-  padding: 0 18px 0 50px;
-  font-size: 15px;
+  padding: 0 35px 0 50px;
+  font-size: 14px;
   font-weight: 500;
   color: #1F2937;
   background: #fafbff;
@@ -188,6 +190,19 @@
   border-color: #3134b1;
   background: $white;
   box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08);
+}
+
+.password-toggle {
+  position: absolute !important;
+  left: auto !important;
+  right: 16px;
+  cursor: pointer;
+  color: #6b7280 !important;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #3134b1 !important;
 }
 
 /* Form CSS End */

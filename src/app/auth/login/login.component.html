@@ -59,7 +59,10 @@
 
           <div class="input-group">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" placeholder="Enter your password" />
+            <input [type]="showPassword() ? 'text' : 'password'" placeholder="Enter your password" />
+            <i class="password-toggle" [ngClass]="showPassword() ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'"
+              (click)="togglePassword()">
+            </i>
           </div>
         </div>
 
