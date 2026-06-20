@@ -125,6 +125,13 @@ html {
     font-family: Poppins-Regular;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;

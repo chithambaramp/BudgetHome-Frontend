@@ -11,6 +11,7 @@
   display: flex;
   background: #f5f7fb;
   font-family: Poppins-Regular;
+  overflow: hidden;
 }
 
 /* LEFT SIDE */
@@ -303,7 +304,7 @@
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 410px) {
   .chkboxlabeltxt {
     display: none;
   }
