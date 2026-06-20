@@ -301,10 +301,12 @@
     font-size: 28px;
   }
 
-  .login-options {
-    flex-direction: column;
-  }
+}
 
+@media (max-width: 768px) {
+  .chkboxlabeltxt {
+    display: none;
+  }
 }
 
 /* Animation-CSS-Start */
