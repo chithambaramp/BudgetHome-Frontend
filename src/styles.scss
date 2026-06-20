@@ -115,21 +115,36 @@
     src: url("../src/assets/fonts/Karla-Medium.ttf");
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     min-height: 100vh;
     background-color: #f4f7fa !important;
     overflow-x: hidden;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
 }
 
 html {
     font-family: Poppins-Regular;
+    scroll-behavior: smooth;
 }
 
 html,
 body {
     height: 100%;
     margin: 0;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 ::-webkit-scrollbar {
