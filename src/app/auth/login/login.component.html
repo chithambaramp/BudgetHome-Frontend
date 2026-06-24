@@ -41,7 +41,7 @@
         <p>Login to continue managing your finances</p>
       </div>
 
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
         <!-- Email -->
         <div class="form-group">
@@ -49,7 +49,20 @@
 
           <div class="input-group">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" placeholder="Enter your email" />
+            <input type="email" formControlName="email" placeholder="Enter your email"
+              [class.input-error]="f['email'].touched && f['email'].invalid" />
+          </div>
+
+          <div class="field-error" *ngIf="f['email'].touched && f['email'].invalid">
+
+            <span *ngIf="f['email'].errors?.['required']">
+              Email is required
+            </span>
+
+            <span *ngIf="f['email'].errors?.['email']">
+              Enter a valid email address
+            </span>
+
           </div>
         </div>
 
@@ -59,11 +72,25 @@
 
           <div class="input-group">
             <i class="fa-solid fa-lock"></i>
-            <input [type]="showPassword() ? 'text' : 'password'" placeholder="Enter your password" />
+            <input [type]="showPassword() ? 'text' : 'password'" formControlName="password"
+              placeholder="Enter your password" [class.input-error]="f['password'].touched && f['password'].invalid" />
             <i class="password-toggle" [ngClass]="showPassword() ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'"
               (click)="togglePassword()">
             </i>
           </div>
+
+          <div class="field-error" *ngIf="f['password'].touched && f['password'].invalid">
+
+            <span *ngIf="f['password'].errors?.['required']">
+              Password is required
+            </span>
+
+            <span *ngIf="f['password'].errors?.['minlength']">
+              Password must be at least 8 characters
+            </span>
+
+          </div>
+
         </div>
 
         <!-- Remember -->
@@ -79,7 +106,7 @@
         </div>
 
         <!-- Login Button -->
-        <button type="submit" class="login-btn" (click)="onSubmit()" [disabled]="isLoading()">
+        <button type="submit" class="login-btn" [disabled]="isLoading()">
           {{ isLoading() ? 'Loading...' : 'Login' }}
         </button>
 

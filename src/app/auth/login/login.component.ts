@@ -11,11 +11,11 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  LoginForm!: FormGroup;
+  loginForm!: FormGroup;
   showPassword = signal(false);
   isLoading = signal(false);
   error!: string;
-  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {
+  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {
 
   }
 
@@ -23,17 +23,19 @@ export class LoginComponent implements OnInit {
     this.buildForm();
   }
 
+  buildForm() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
+  }
+
   togglePassword(): void {
     this.showPassword.update(value => !value);
   }
 
-
-  buildForm() {
-    this.LoginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{7,15}$/)]],
-      privacypolicy: ['', []]
-    })
+  get f() {
+    return this.loginForm.controls;
   }
 
   onSubmit = () => {
@@ -46,14 +48,14 @@ export class LoginComponent implements OnInit {
       }, 200);
       return;
     }
-    if (this.LoginForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
     // if (!this.isPrivacyPolicyValid()) {
     //   return;
     // }
     this.error = '';
-    this.auth.login(this.LoginForm.value).subscribe(
+    this.auth.login(this.loginForm.value).subscribe(
       (result: any) => {
         if (result.statusCode == 200) {
 
@@ -69,10 +71,6 @@ export class LoginComponent implements OnInit {
         // No errors, route to new page here
       }
     );
-  }
-
-  openPrivacyPolicy(val: any) {
-    this.service.openModalWithComponent(PrivacyPolicyComponent, val);
   }
 
 }

@@ -217,7 +217,7 @@ input:focus {
     outline: none !important;
 }
 
-.is-invalid {
+.input-error {
     border: 1px solid $error-color !important;
 }
 
@@ -225,6 +225,8 @@ input:focus {
     color: $error-color;
     font-family: Poppins-Regular;
     font-size: 12px;
+    font-weight: 500;
+    position: absolute;
 }
 
 input[type="text"]:disabled,

@@ -1,40 +1,79 @@
 @import "./variable";
 
-//form css 
-.form {
-  max-width: 100%;
+/* Form CSS Start */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3134b1;
+}
+
+.input-group {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
-.form-field {
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  color: #7d7d94;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.input-group input {
   width: 100%;
-  height: 48px;
-  padding: 13px 20.1px 14px 16px;
-  border-radius: 10px;
-  border: solid 1px #d4d4d4;
-  background-color: $white;
-  outline: 0;
-  transition: .2s;
-  margin-top: 24px;
-  font-family: Poppins-Regular;
-
-  &::placeholder {
-    font-family: Poppins-Regular;
-    font-size: 15px;
-    color: $secondary-font-color;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: none !important;
-  }
+  height: 56px;
+  border: 1px solid #e1e4f0;
+  border-radius: 16px !important;
+  padding: 0 35px 0 50px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2937;
+  background: #fafbff;
 }
 
-.is-invalid {
-  border: 1px solid $error-color !important;
+.input-group input::placeholder {
+  color: #9CA3AF;
+  font-size: 14px;
 }
 
-.form-field:focus {
-  border-color: $primary-color;
+.input-group input:focus {
+  outline: none;
+  border-color: #3134b1;
+  background: $white;
+  box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08);
 }
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: #d4dee7 !important;
+  border-color: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.password-toggle {
+  position: absolute !important;
+  left: auto !important;
+  right: 16px;
+  cursor: pointer;
+  opacity: 0.6 !important;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #3134b1 !important;
+}
+
+/* Form CSS End */
