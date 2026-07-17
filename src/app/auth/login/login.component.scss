@@ -195,6 +195,12 @@
   box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08);
 }
 
+/* Input focus + error */
+.input-group input.input-error:focus {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.2) !important;
+}
+
 .password-toggle {
   position: absolute !important;
   left: auto !important;

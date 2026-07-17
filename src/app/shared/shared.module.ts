@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { ConfirmationPopupComponent } from './_common/confirmation-popup/confirmation-popup.component';
 import { NumbersOnlyDirective } from './_directives/numbers-only.directive';
 import { DisableCutCopyPasteDirective } from './_directives/disable-copy-paste.directive';
@@ -43,6 +44,7 @@ import { TotalPipe, BalancePipe, CurrencyFormatPipe, NumberFormatPipe, SearchPip
     BsDropdownModule,
     TooltipModule,
     ModalModule,
+    NgSelectModule,
   ],
   exports: [
     ConfirmationPopupComponent,
@@ -72,6 +74,7 @@ import { TotalPipe, BalancePipe, CurrencyFormatPipe, NumberFormatPipe, SearchPip
     BsDropdownModule,
     TooltipModule,
     ModalModule,
+    NgSelectModule,
   ],
   providers: [],
 })

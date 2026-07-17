@@ -56,6 +56,12 @@
   box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08);
 }
 
+/* Input focus + error */
+.input-group input.input-error:focus {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.2) !important;
+}
+
 input:disabled,
 textarea:disabled,
 select:disabled {
@@ -148,7 +154,123 @@ select:focus {
   transform: translateY(-50%) !important;
 }
 
+/* ================= ng-select dropdown css start ================= */
+::ng-deep .ng-select-container {
+  width: 100% !important;
+  min-height: 48px !important;
+  border: 1px solid #e1e4f0 !important;
+  border-radius: 12px !important;
+  padding: 6px 2px;
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2937 !important;
+  background: #fafbff;
+}
+
+::ng-deep .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+  background: linear-gradient(135deg, #3134b1, #9010a9);
+  color: $white;
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+::ng-deep .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {
+  top: auto;
+  font-family: Poppins-Regular;
+  color: #9CA3AF;
+  font-size: 14px;
+}
+
+::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+  top: auto !important;
+}
+
+::ng-deep .ng-select.ng-select-focused .ng-select-container {
+  border-color: #3134b1 !important;
+  box-shadow: 0 0 0 4px rgba(49, 52, 177, 0.08) !important;
+}
+
+::ng-deep .ng-select .ng-clear-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Error */
+::ng-deep .ng-select.ng-select-input-error .ng-select-container {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1) !important;
+}
+
+/* Error + Focus */
+::ng-deep .ng-select.ng-select-input-error.ng-select-focused .ng-select-container {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Error - Dropdown Panel */
+::ng-deep .ng-select.ng-select-input-error .ng-dropdown-panel {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1) !important;
+}
+
+/* Error + Focus - Dropdown Panel */
+::ng-deep .ng-select.ng-select-input-error.ng-select-focused .ng-dropdown-panel {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.2) !important;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  background-color: #fff;
+  padding: 8px 10px;
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1F2937 !important;
+  margin: 2px;
+  border-radius: 10px !important;
+}
+
+/* Dropdown panel */
+::ng-deep .ng-dropdown-panel {
+  border: 1px solid #3134b1 !important;
+  background: #fff;
+  overflow: hidden;
+  box-shadow:
+    0 12px 24px rgba(17, 24, 39, 0.08),
+    0 4px 8px rgba(17, 24, 39, 0.05) !important;
+}
+
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked {
+  color: #fff !important;
+  background: linear-gradient(135deg, #3134b1, #9010a9);
+}
+
+/* Dropdown opens below */
+::ng-deep .ng-select.ng-select-bottom.ng-select-opened>.ng-select-container {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+::ng-deep .ng-select.ng-select-bottom .ng-dropdown-panel {
+  border-radius: 0 0 12px 12px !important;
+}
+
+/* Dropdown opens above */
+::ng-deep .ng-select.ng-select-top.ng-select-opened>.ng-select-container {
+  border-radius: 0 0 12px 12px !important;
+}
+
+::ng-deep .ng-select.ng-select-top .ng-dropdown-panel {
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* ================= ng-select dropdown css end ================= */
+
 /* Form CSS End */
+
 
 
 
@@ -273,3 +395,37 @@ select:focus {
 //   </div>
 
 // </div>
+
+
+
+
+// /* ================= ng-Select Dropdown UI (Single & Multiple) ================= */
+// <div class="form-group">
+//   <label>City</label>
+
+//   <ng-select [multiple]="true" [items]="cities" bindLabel="name" bindValue="id" formControlName="selectedCity"
+//     placeholder="Select City" [class.ng-select-input-error]="f['selectedCity'].touched && f['selectedCity'].invalid">
+//   </ng-select>
+
+//   <div class="field-error" *ngIf="f['selectedCity'].touched && f['selectedCity'].invalid">
+//     <span *ngIf="f['selectedCity'].errors?.['required']">
+//       City is required
+//     </span>
+//   </div>
+// </div>
+
+
+//  multipleSelect = [multiple]="true"
+//  singleSelect = [multiple]="false"
+
+
+// cities = [ 
+//   { id: 1, name: 'Chennai' },
+//   { id: 2, name: 'Bangalore' },
+//   { id: 3, name: 'Hyderabad' },
+//   { id: 4, name: 'Mumbai' }
+// ];
+
+
+//  multipleSelect = selectedCity: ['', [Validators.required]]
+//  singleSelect = selectedCity: [null, [Validators.required]]
