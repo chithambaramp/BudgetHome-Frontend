@@ -120,6 +120,7 @@
   box-shadow:
     0 10px 40px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
 }
 
 .login-header {
@@ -351,3 +352,41 @@
 }
 
 /* Animation-CSS-End */
+
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #f5c2c7;
+  border-left: 10px solid #f5c2c7;
+  background: #fff5f5;
+  color: #b42318;
+  font-family: Poppins-Medium;
+  font-size: 14px;
+  font-weight: 500;
+  animation: fadeIn .3s ease;
+  position: absolute;
+  top: 82px;
+  left: 20px;
+  right: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+.error-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

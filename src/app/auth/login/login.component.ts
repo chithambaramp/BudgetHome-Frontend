@@ -38,39 +38,41 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
-  onSubmit = () => {
-    let submitted = true;
-    if (submitted) {
-      this.isLoading.set(true);
-      setTimeout(() => {
-        this.isLoading.set(false);
-        this.router.navigate(['expenses']);
-      }, 200);
-      return;
-    }
+  onSubmit(): void {
     if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
       return;
     }
-    // if (!this.isPrivacyPolicyValid()) {
-    //   return;
-    // }
-    this.error = '';
-    this.auth.login(this.loginForm.value).subscribe(
-      (result: any) => {
-        if (result.statusCode == 200) {
 
-        } else {
-          this.error = result.message;
+    this.error = '';
+    this.isLoading.set(true);
+
+    this.auth.login(this.loginForm.getRawValue()).subscribe({
+      next: (response: any) => {
+        this.isLoading.set(false);
+
+        if (response.statusCode === 200) {
+          this.router.navigate(['/expenses']);
+          return;
         }
+        this.showError(response.message);
       },
-      (error: any) => {
-        this.error = error;
-      },
-      () => {
-        // 'onCompleted' callback.
-        // No errors, route to new page here
+
+      error: (err: any) => {
+        this.isLoading.set(false);
+        this.showError(err);
       }
-    );
+
+    });
+  }
+
+  private errorTimer: any;
+  private showError(message: string): void {
+    this.error = message;
+    clearTimeout(this.errorTimer);
+    this.errorTimer = setTimeout(() => {
+      this.error = '';
+    }, 5000);
   }
 
 }

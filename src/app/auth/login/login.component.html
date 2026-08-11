@@ -41,6 +41,12 @@
         <p>Login to continue managing your finances</p>
       </div>
 
+      <!-- Error Message -->
+      <div class="login-error" *ngIf="error">
+        <span class="error-icon">⚠</span>
+        <span>{{ error }}</span>
+      </div>
+
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
         <!-- Email -->
