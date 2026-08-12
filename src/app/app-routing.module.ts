@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    // canMatch: [AuthGuard],
+    canMatch: [AuthGuard],
     children: [
       {
         path: 'expenses',

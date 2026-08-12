@@ -9,12 +9,12 @@
       <div class="profile-image">
         <!-- <img src="https://i.pravatar.cc/40" class="avatar" /> -->
         <!-- OR -->
-        <span class="userinitial">CU</span>
+        <span class="userinitial">{{service.userName() | initials}}</span>
       </div>
 
       <div class="profile-info">
-        <span class="username">Username</span>
-        <span class="userrole">Admin</span>
+        <span class="username">{{service.userName()}}</span>
+        <span class="userrole">{{service.Role()}}</span>
       </div>
       <!-- Dropdown Arrow -->
       <i class="fa-solid fa-chevron-down dropdown-arrow" [class.rotate]="isOpen">
