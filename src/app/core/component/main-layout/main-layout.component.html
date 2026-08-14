@@ -1,4 +1,5 @@
 <app-global-alert></app-global-alert>
+
 <div class="layout">
   <!-- Overlay only when Mobile Sidebar open -->
   <div class="sidebar-overlay-mobile" *ngIf="isCollapsed && isMobile" (click)="closeSidebar()">
@@ -19,6 +20,5 @@
   <!-- Collapse Sidebar SubMenu Overlay -->
   <div id="leftnav-submenu-overlay"></div>
 </div>
-<div *ngIf="service?.isLoading" class="loading-indicator">
-  <div class="spinner"></div>
-</div>
+
+<app-loader></app-loader>
