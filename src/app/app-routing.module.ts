@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { MainLayoutComponent } from './core/component/main-layout/main-layout.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { RoleGuard } from './core/guards/role.guard';
+import { UserRole } from './core/models/user-role.enum';
 import { ErrorPageComponent } from './auth/error-404/error-404.component';
 
 const routes: Routes = [
@@ -22,6 +24,10 @@ const routes: Routes = [
       {
         path: 'expenses',
         loadChildren: () => import('./feature/expenses/expenses.module').then((m) => m.ExpensesModule),
+        canMatch: [RoleGuard],
+        data: {
+          roles: [UserRole.USER]
+        }
       },
     ],
   },

@@ -12,6 +12,7 @@ export class AuthService {
 
   private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject<any>({});
   public currentUser: Observable<any>;
+  private logoutTimer?: ReturnType<typeof setTimeout>;
 
   constructor(public service: BaseService, private router: Router) {
     let currentUser: any = localStorage.getItem('currentUser');
@@ -131,7 +132,38 @@ export class AuthService {
     }
   }
 
-  logout() {
+  startTokenTimer(token: string): void {
+    this.clearTokenTimer();
+
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+
+      const expiresAt = payload.exp * 1000;
+      const timeout = expiresAt - Date.now();
+
+      if (timeout <= 0) {
+        this.logout();
+        return;
+      }
+
+      this.logoutTimer = setTimeout(() => {
+        this.logout();
+      }, timeout);
+
+    } catch {
+      this.logout();
+    }
+  }
+
+  clearTokenTimer(): void {
+    if (this.logoutTimer) {
+      clearTimeout(this.logoutTimer);
+      this.logoutTimer = undefined;
+    }
+  }
+
+  logout(): void {
+    this.clearTokenTimer();
     localStorage.removeItem('currentUser');
     localStorage.clear();
     this.currentUserSubject.next(null);

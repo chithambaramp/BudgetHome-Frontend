@@ -52,6 +52,8 @@ export class LoginComponent implements OnInit {
         this.isLoading.set(false);
 
         if (response.statusCode === 200) {
+          const token = response.data.access_token;
+          this.auth.startTokenTimer(token);
           this.router.navigate(['/expenses']);
           return;
         }
