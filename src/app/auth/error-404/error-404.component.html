@@ -1,13 +1,57 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 error-wrapper">
-      <section class="error-content">
-        <img src="assets/images/404-error.jpg" class="errorlogo">
-        <h1>Page not Found</h1>
-        <h2>Looks like this page is missing. Don't worry though. Our best man is on the case.<br>
-          Report error or back to home page.</h2>
-        <button type="button" class="btn btn-primary add-btn" (click)="onNavigate()">Back to Home</button>
-      </section>
+<div class="page-not-found">
+
+  <!-- Background Decorations -->
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+
+  <div class="error-container">
+
+    <!-- Animated 404 -->
+    <div class="error-code">
+      <span class="four">4</span>
+      <span class="zero">
+        <span class="zero-inner"></span>
+      </span>
+      <span class="four">4</span>
     </div>
+
+    <!-- Message -->
+    <div class="error-content">
+
+      <h1>Oops! Page Not Found</h1>
+
+      <p>
+        The page you're looking for doesn't exist or may have been moved.
+      </p>
+
+      <p class="sub-message">
+        Don't worry, let's get you back to somewhere useful.
+      </p>
+
+      <!-- Home Button -->
+      <button type="button" class="home-btn" (click)="goHome()">
+
+        <span class="home-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <path d="M3 10.5L12 3L21 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+
+            <path d="M5 9.5V21H19V9.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+
+            <path d="M9 21V14H15V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          </svg>
+        </span>
+
+        <span>Back to Home</span>
+
+        <span class="arrow">→</span>
+
+      </button>
+
+    </div>
+
   </div>
+
 </div>

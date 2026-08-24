@@ -10,17 +10,16 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
 })
 export class ErrorPageComponent implements OnInit {
 
-  currentUser: any;
   constructor(public service: BaseService, public auth: AuthService, private router: Router) {
+
   }
 
   ngOnInit(): void {
-    // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
   }
 
-  onNavigate() {
-    if (this.currentUser && this.currentUser.access_token) {
-      // this.router.navigate(['company']);
+  goHome() {
+    if (this.service.token()) {
       this.service.goBack();
       return
     }
