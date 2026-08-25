@@ -18,7 +18,7 @@ export class ErrorPageComponent implements OnInit {
 
   }
 
-  goHome() {
+  goHome(): void {
     if (this.service.token()) {
       this.service.goBack();
       return

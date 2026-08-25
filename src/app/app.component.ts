@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './shared/_services/auth.service';
 import { BaseService } from './shared/_services/baseStore.service';
+import { NetworkService } from './shared/_services/network.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { BaseService } from './shared/_services/baseStore.service';
 })
 export class AppComponent implements OnInit {
   title = 'BudgetHome';
-  constructor(public service: BaseService, public auth: AuthService) {
+  constructor(public service: BaseService, public auth: AuthService, private networkService: NetworkService) {
 
   }
 

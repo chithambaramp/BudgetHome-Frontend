@@ -5,6 +5,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { RoleGuard } from './core/guards/role.guard';
 import { UserRole } from './core/models/user-role.enum';
 import { ErrorPageComponent } from './auth/error-404/error-404.component';
+import { NetworkErrorComponent } from './auth/network-error/network-error.component';
 
 const routes: Routes = [
   {
@@ -12,10 +13,22 @@ const routes: Routes = [
     redirectTo: 'auth',
     pathMatch: 'full',
   },
+
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+
+  {
+    path: '404',
+    component: ErrorPageComponent
+  },
+
+  {
+    path: 'network-error',
+    component: NetworkErrorComponent
+  },
+
   {
     path: '',
     component: MainLayoutComponent,
@@ -31,8 +44,11 @@ const routes: Routes = [
       },
     ],
   },
-  { path: '404', component: ErrorPageComponent },
-  { path: '**', redirectTo: '404' },
+
+  {
+    path: '**',
+    redirectTo: '404'
+  },
 ];
 
 @NgModule({
