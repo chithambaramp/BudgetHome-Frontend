@@ -5,7 +5,7 @@
     justify-content: center;
     padding: 24px;
     background: #f7f7fb;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins-Regular';
 }
 
 .error-card {
@@ -36,71 +36,66 @@
 
 .error-code {
     margin-bottom: 10px;
-
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
-
     background: linear-gradient(135deg, #9010a9, #3134b1);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-h1 {
-    margin: 0 0 15px;
-    color: #222;
-    font-size: 30px;
-    font-weight: 700;
-}
-
-p {
-    margin: 0 auto 30px;
-    max-width: 420px;
-
-    color: #777;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-.error-actions {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-button {
-    min-width: 130px;
-    padding: 12px 20px;
-
-    border: none;
-    border-radius: 8px;
-
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-    transition: 0.2s ease;
-}
-
-.btn-primary {
-    color: #fff;
-    background: linear-gradient(135deg, #9010a9, #3134b1);
-
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(49, 52, 177, 0.25);
+.error-card {
+    h1 {
+        margin: 0 0 15px;
+        color: #222;
+        font-size: 30px;
+        font-weight: 700;
     }
-}
 
-.btn-secondary {
-    color: #333;
-    background: #eeeeee;
+    p {
+        margin: 0 auto 30px;
+        max-width: 420px;
+        color: #777;
+        font-size: 15px;
+        line-height: 1.7;
+    }
 
-    &:hover {
-        background: #e2e2e2;
+    .error-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        min-width: 130px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background: linear-gradient(135deg, #9010a9, #3134b1);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(49, 52, 177, 0.25);
+        }
+    }
+
+    .btn-secondary {
+        color: #333;
+        background: #eeeeee;
+
+        &:hover {
+            background: #e2e2e2;
+        }
     }
 }
 
@@ -108,17 +103,18 @@ button {
 
     .error-card {
         padding: 40px 20px;
-    }
 
-    h1 {
-        font-size: 25px;
-    }
+        h1 {
+            font-size: 25px;
+        }
 
-    .error-actions {
-        flex-direction: column;
+        .error-actions {
+            flex-direction: column;
 
-        button {
-            width: 100%;
+            button {
+                width: 100%;
+            }
         }
     }
+
 }
