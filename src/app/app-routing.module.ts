@@ -32,12 +32,12 @@ const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    // canMatch: [AuthGuard],
+    canMatch: [AuthGuard],
     children: [
       {
         path: 'expenses',
         loadChildren: () => import('./feature/expenses/expenses.module').then((m) => m.ExpensesModule),
-        // canMatch: [RoleGuard],
+        canMatch: [RoleGuard],
         data: {
           roles: [UserRole.USER]
         }

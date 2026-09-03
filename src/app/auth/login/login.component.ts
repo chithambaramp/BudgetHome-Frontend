@@ -39,10 +39,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(true){
-      this.router.navigate(['/expenses']);
-      return;
-    }
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
