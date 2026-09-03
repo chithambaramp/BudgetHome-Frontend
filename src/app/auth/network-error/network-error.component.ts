@@ -19,16 +19,22 @@ export class NetworkErrorComponent implements OnInit {
     }
 
     retry(): void {
-        if (navigator.onLine) {
-            window.location.reload();
-        }
+        this.goHome();
     }
 
     goHome(): void {
-        if (navigator.onLine && this.service.token()) {
-            this.service.goBack();
-            return
+        const isOnline = navigator.onLine;
+        const hasToken = !!this.service.token();
+
+        if (!isOnline) {
+            return;
         }
+
+        if (hasToken) {
+            this.service.goBack();
+            return;
+        }
+
         this.auth.logout();
     }
 }

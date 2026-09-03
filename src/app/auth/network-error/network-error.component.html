@@ -1,22 +1,44 @@
-<div class="error-page">
+<div class="network-page">
 
-    <div class="error-card">
+    <div class="network-card">
 
-        <div class="error-icon">
-            <span>⚡</span>
+        <!-- Illustration -->
+        <div class="signal-frame">
+
+            <div class="signal-icon">
+                <span class="signal-bar bar-1"></span>
+                <span class="signal-bar bar-2"></span>
+                <span class="signal-bar bar-3"></span>
+                <span class="signal-bar bar-4"></span>
+
+                <span class="signal-cut"></span>
+            </div>
+
+            <div class="error-badge">
+                ×
+            </div>
+
         </div>
 
-        <div class="error-code">
-            NETWORK ERROR
+        <!-- Content -->
+        <div class="error-content">
+
+            <span class="error-label">
+                NETWORK ERROR
+            </span>
+
+            <h1>
+                No Signal
+            </h1>
+
+            <p>
+                Your network connection has been interrupted.
+                Please check your internet connection and try again.
+            </p>
+
         </div>
 
-        <h1>Unable to connect</h1>
-
-        <p>
-            We couldn't connect to the server.
-            Please check your internet connection and try again.
-        </p>
-
+        <!-- Buttons -->
         <div class="error-actions">
 
             <button type="button" class="btn-primary" (click)="retry()">
