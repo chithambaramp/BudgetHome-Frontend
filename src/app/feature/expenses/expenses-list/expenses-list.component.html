@@ -1,21 +1,15 @@
-<table class="expense-table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Date</th>
-      <th>Category</th>
-      <th>Title</th>
-      <th>Amount (₹)</th>
-    </tr>
-  </thead>
+<h1 class="pagetitle">Expenses</h1>
+<div class="card-grid">
+  <div class="card" *ngFor="let card of cards">
 
-  <tbody>
-    <tr *ngFor="let item of expenses">
-      <td>{{ item.id }}</td>
-      <td>{{ item.date }}</td>
-      <td>{{ item.category }}</td>
-      <td>{{ item.title }}</td>
-      <td>{{ item.amount }}</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="card-header">
+      <span class="icon">{{ card.icon }}</span>
+      <span class="title">{{ card.title }}</span>
+    </div>
+
+    <div class="card-value">
+      ₹ {{ card.value }}
+    </div>
+
+  </div>
+</div>
