@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   @Output() sidebarToggle = new EventEmitter<void>();
   isOpen = false;
-  animatedTitle: string = 'Ergonomics';
+  animatedTitle: string = 'Assetpro';
 
   ngOnInit(): void {
 
