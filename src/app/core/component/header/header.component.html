@@ -1,7 +1,11 @@
 <header class="header">
   <div class="left">
     <button class="menu-btn" (click)="toggleSidebar()">☰</button>
-    <div class="logo">KNOWELLA</div>
+    <div class="logo animated-title">
+      <span *ngFor="let letter of animatedTitle.split(''); let i = index" [style.animation-delay]="i * 0.15 + 's'">
+        {{ letter === ' ' ? '\u00A0' : letter }}
+      </span>
+    </div>
   </div>
 
   <div class="right" (click)="toggleDropdown()" (appOutsideClick)="closeDropdown()">

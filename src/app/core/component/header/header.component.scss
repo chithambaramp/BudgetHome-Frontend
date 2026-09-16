@@ -194,3 +194,29 @@
 .user-profile:hover .userinitial {
     transform: scale(1.05);
 }
+
+/* Animated Title Start */
+.animated-title {
+    display: flex;
+    gap: 2px;
+}
+
+.animated-title span {
+    opacity: 0;
+    display: inline-block;
+    animation: letterShow 0.4s ease forwards;
+}
+
+@keyframes letterShow {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animated Title End */
