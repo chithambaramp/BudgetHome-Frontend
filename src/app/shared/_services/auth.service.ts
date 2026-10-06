@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { omitEmptyDeep } from '../_common/utils';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -8,16 +8,40 @@ import { BaseService } from "../../shared/_services/baseStore.service";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
 
   private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject<any>({});
   public currentUser: Observable<any>;
   private logoutTimer?: ReturnType<typeof setTimeout>;
+  private readonly CURRENT_USER_KEY = 'currentUser';
 
   constructor(public service: BaseService, private router: Router) {
     let currentUser: any = localStorage.getItem('currentUser');
     this.currentUserSubject.next(JSON.parse(currentUser || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
+
+    // Listen for changes from other browser tabs
+    window.addEventListener(
+      'storage',
+      this.handleStorageChange
+    );
+  }
+
+  // ==============================
+  // Listen for logout in other tabs
+  // ==============================
+  private handleStorageChange = (event: StorageEvent): void => {
+
+    if (
+      event.key === this.CURRENT_USER_KEY &&
+      event.newValue === null
+    ) {
+
+      // console.log('User logged out from another tab');
+      this.logout();
+
+    }
+
   }
 
   public get currentUserValue(): any {
@@ -168,6 +192,15 @@ export class AuthService {
     localStorage.clear();
     this.currentUserSubject.next(null);
     this.router.navigate(['/']);
+  }
+
+  ngOnDestroy(): void {
+
+    window.removeEventListener(
+      'storage',
+      this.handleStorageChange
+    );
+
   }
 
 }
