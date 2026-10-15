@@ -2,9 +2,18 @@
 
   <!-- Left Side Branding -->
   <div class="login-left">
+
+    <!-- Background Decorations -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+
     <div class="brand-section">
-      <div class="logo-circle">
-        <i class="fa-solid fa-wallet"></i>
+      <div class="logo-circle-wrapper">
+        <div class="logo-circle">
+          <i class="fa-solid fa-wallet"></i>
+        </div>
       </div>
 
       <h1>Budget Home</h1>
@@ -108,7 +117,7 @@
           </label> -->
 
           <label class="chkboxlabeltxt">Can't access your account?</label>
-          <a href="#">Reset your password</a>
+          <a>Reset your password</a>
         </div>
 
         <!-- Login Button -->
@@ -120,7 +129,7 @@
 
       <div class="login-footer">
         <span>Don't have an account?</span>
-        <a href="#">Create Account</a>
+        <a (click)="createAccount()">Create Account</a>
       </div>
 
     </div>

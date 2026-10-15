@@ -19,8 +19,10 @@
 /* LEFT SIDE */
 .login-left {
   width: 50%;
-  background: linear-gradient(135deg, rgb(23 26 203 / 90%), rgb(144 16 169 / 15%)), url(../../../assets/images/login-banner.jpg);
-  // background: linear-gradient(135deg, rgb(23 26 203 / 93%), rgb(144 16 169 / 25%)), url(../../../assets/images/login-banner2.jpg);
+  background: linear-gradient(145deg,
+      #9010a9 0%,
+      #5145df 48%,
+      #2346bd 100%);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -44,6 +46,12 @@
   position: relative;
   z-index: 2;
   max-width: 420px;
+}
+
+.logo-circle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-circle {
@@ -83,15 +91,39 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 16px 20px;
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 0px;
 }
 
 .feature-item i {
-  font-size: 18px;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  width: 55px;
+  height: 55px;
+}
+
+/* Track Expenses — Purple */
+
+.feature-item:nth-child(1) i {
+  background: linear-gradient(135deg, #a78bfa, #6d4aff);
+  border-color: rgba(221, 214, 254, 0.45);
+}
+
+/* Manage Budget — Blue */
+
+.feature-item:nth-child(2) i {
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  border-color: rgba(191, 219, 254, 0.45);
+}
+
+/* Financial Insights — Teal */
+
+.feature-item:nth-child(3) i {
+  background: linear-gradient(135deg, #2dd4bf, #0f9f91);
+  border-color: rgba(153, 246, 228, 0.45);
 }
 
 .feature-item span {
@@ -106,7 +138,6 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
-  background-image: url(../../../assets/images/login-banner-mobile.jpg);
   background-position: top;
   background-size: cover;
 }
@@ -389,4 +420,83 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+/* =========================================
+   Background Shapes
+========================================= */
+
+.shape {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(1px);
+
+  opacity: 0.45;
+}
+
+.shape-1 {
+  width: 250px;
+  height: 250px;
+
+  top: -120px;
+  left: -130px;
+
+  background: rgb(255 255 255 / 20%);
+
+  animation: floatShape 7s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 250px;
+  height: 250px;
+
+  bottom: -120px;
+  right: -130px;
+
+  background: rgb(255 255 255 / 20%);
+
+  animation: floatShape 9s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+
+  bottom: -120px;
+  left: -130px;
+
+  background: rgb(255 255 255 / 20%);
+
+  animation: floatShape 7s ease-in-out infinite;
+}
+
+.shape-4 {
+  width: 250px;
+  height: 250px;
+
+  top: -120px;
+  right: -130px;
+
+  background: rgb(255 255 255 / 20%);
+
+  animation: floatShape 9s ease-in-out infinite reverse;
+}
+
+
+@keyframes floatShape {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(20px, -20px);
+  }
+
 }

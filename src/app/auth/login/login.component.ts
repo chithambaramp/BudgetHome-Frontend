@@ -77,4 +77,8 @@ export class LoginComponent implements OnInit {
     }, 5000);
   }
 
+  createAccount() {
+    this.router.navigate(['/auth/signup']);
+  }
+
 }
