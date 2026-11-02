@@ -1,9 +1,9 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
+import { OtpBoxComponent } from '../otp-box/otp-box.component';
 
 @Component({
   selector: 'app-signup',
@@ -13,6 +13,7 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
   showPassword = signal(false);
+  showConfirmPassword = signal(false);
   isLoading = signal(false);
   error!: string;
   constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {
@@ -25,13 +26,38 @@ export class SignupComponent implements OnInit {
 
   buildForm() {
     this.signupForm = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-    });
+      password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,15}$/)]],
+      confirmPassword: ['', [Validators.required]],
+    },
+      {
+        validators: this.passwordMatchValidator(),
+      }
+    );
+  }
+
+  passwordMatchValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const password = control.get('password')?.value;
+      const confirmPassword = control.get('confirmPassword')?.value;
+
+      if (!password || !confirmPassword) {
+        return null;
+      }
+
+      return password === confirmPassword
+        ? null
+        : { passwordMismatch: true };
+    };
   }
 
   togglePassword(): void {
     this.showPassword.update(value => !value);
+  }
+
+  toggleConfirmPassword(): void {
+    this.showConfirmPassword.update(value => !value);
   }
 
   get f() {
@@ -47,14 +73,12 @@ export class SignupComponent implements OnInit {
     this.error = '';
     this.isLoading.set(true);
 
-    this.auth.login(this.signupForm.getRawValue()).subscribe({
+    this.auth.signup(this.signupForm.getRawValue()).subscribe({
       next: (response: any) => {
         this.isLoading.set(false);
 
-        if (response.statusCode === 200) {
-          const token = response.data.access_token;
-          this.auth.startTokenTimer(token);
-          this.router.navigate(['/expenses']);
+        if (response.statusCode === 201) {
+          this.openOtpModal();
           return;
         }
         this.showError(response.message);
@@ -80,5 +104,18 @@ export class SignupComponent implements OnInit {
   login() {
     this.router.navigate(['/auth/login']);
   }
-  
+
+  openOtpModal() {
+    let contents = {
+      email: this.signupForm.get('email')?.value
+    };
+    let bsModalRef = this.service.openModalWithComponent(OtpBoxComponent, contents);
+    this.signupForm.reset();
+    bsModalRef.content.event.subscribe((res: any) => {
+      if (res) {
+        // this.onSubmit();
+      }
+    });
+  }
+
 }

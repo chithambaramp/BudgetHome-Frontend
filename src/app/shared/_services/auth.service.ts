@@ -78,6 +78,33 @@ export class AuthService implements OnDestroy {
     }))
   }
 
+  generateOtp(data: any): Observable<any> {
+    const buildPostBody = () => {
+      return omitEmptyDeep({
+        "email": data.email
+      });
+    };
+    return this.service.create(buildPostBody(), '', `user/generateOtp`,).pipe(map(user => {
+      if (user) {
+        return user;
+      }
+    }))
+  }
+
+  verifyOtp(data: any): Observable<any> {
+    const buildPostBody = () => {
+      return omitEmptyDeep({
+        "email": data.email,
+        "otp": data.otp
+      });
+    };
+    return this.service.create(buildPostBody(), '', `user/verifyOtp`,).pipe(map(user => {
+      if (user) {
+        return user;
+      }
+    }))
+  }
+
   resetPassword(data: any, linkid: any): Observable<any> {
     const buildPostBody = () => {
       return omitEmptyDeep({

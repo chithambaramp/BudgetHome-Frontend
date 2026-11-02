@@ -6,6 +6,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ConfirmationPopupComponent } from './_common/confirmation-popup/confirmation-popup.component';
+import { SuccessPopupComponent } from './_common/success-popup/success-popup.component';
 import { NumbersOnlyDirective } from './_directives/numbers-only.directive';
 import { DisableCutCopyPasteDirective } from './_directives/disable-copy-paste.directive';
 import { OutsideClickDirective } from './_directives/outside-click.directive';
@@ -16,6 +17,7 @@ import { TotalPipe, BalancePipe, CurrencyFormatPipe, NumberFormatPipe, SearchPip
 @NgModule({
   declarations: [
     ConfirmationPopupComponent,
+    SuccessPopupComponent,
     NumbersOnlyDirective,
     DisableCutCopyPasteDirective,
     OutsideClickDirective,
@@ -48,6 +50,7 @@ import { TotalPipe, BalancePipe, CurrencyFormatPipe, NumberFormatPipe, SearchPip
   ],
   exports: [
     ConfirmationPopupComponent,
+    SuccessPopupComponent,
     NumbersOnlyDirective,
     DisableCutCopyPasteDirective,
     OutsideClickDirective,

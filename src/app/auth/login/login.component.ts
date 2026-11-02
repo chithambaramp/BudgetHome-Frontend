@@ -1,9 +1,9 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
+import { OtpBoxComponent } from '../otp-box/otp-box.component';
 
 @Component({
   selector: 'app-login',
@@ -62,6 +62,12 @@ export class LoginComponent implements OnInit {
 
       error: (err: any) => {
         this.isLoading.set(false);
+
+        if (err === 'EMAIL_NOT_VERIFIED') {
+          this.openOtpModal();
+          return;
+        }
+
         this.showError(err);
       }
 
@@ -79,6 +85,18 @@ export class LoginComponent implements OnInit {
 
   createAccount() {
     this.router.navigate(['/auth/signup']);
+  }
+
+  openOtpModal() {
+    let contents = {
+      email: this.loginForm.get('email')?.value
+    };
+    let bsModalRef = this.service.openModalWithComponent(OtpBoxComponent, contents);
+    bsModalRef.content.event.subscribe((res: any) => {
+      if (res) {
+        this.onSubmit();
+      }
+    });
   }
 
 }

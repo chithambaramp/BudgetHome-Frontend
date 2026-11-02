@@ -176,7 +176,7 @@
 
 /* Form CSS Start */
 .form-group {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
@@ -384,6 +384,7 @@
 
 /* Animation-CSS-End */
 
+/*Error-Msg-Start */
 .login-error {
   display: flex;
   align-items: center;
@@ -422,6 +423,7 @@
   }
 }
 
+/*Error-Msg-End */
 
 /* =========================================
    Background Shapes
