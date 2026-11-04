@@ -12,9 +12,15 @@ export class SuccessPopupComponent implements OnInit {
   constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit(): void {
+
   }
+
   yes() {
     this.event.emit(true);
     this.bsModalRef.hide();
+  }
+
+  goToLogin() {
+    this.yes();
   }
 }

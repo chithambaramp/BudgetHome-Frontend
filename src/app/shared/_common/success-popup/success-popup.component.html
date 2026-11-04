@@ -1,45 +1,17 @@
-<div class="confirm-modal">
-
-  <!-- Header -->
-  <div class="modal-header">
-    <h4 class="modal-title">
-      <span *ngIf="Data?.title">{{ Data?.title }}</span>
-    </h4>
-
-    <button type="button" class="close-btn" (click)="bsModalRef.hide()">
-
-      <i class="fa-solid fa-xmark"></i>
-    </button>
+<div class="verification-success">
+  <div class="success-icon">
+    <i class="fa-solid fa-circle-check"></i>
   </div>
 
-  <!-- Body -->
-  <div class="modal-body">
+  <h4>Email Verified Successfully!</h4>
 
-    <div *ngIf="Data?.question" class="modal-question">
+  <p>
+    Your BudgetHome account is ready.
+    You can now log in and start managing your expenses.
+  </p>
 
-      {{ Data?.question }}
-    </div>
-
-    <div *ngIf="Data?.description" class="modal-description">
-
-      {{ Data?.description }}
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <div class="modal-footer">
-
-    <button *ngIf="Data?.noBtn" class="cancel-btn" (click)="bsModalRef.hide()">
-
-      {{ Data?.noBtn }}
-    </button>
-
-    <button *ngIf="Data?.yesBtn" class="add-btn" (click)="yes()">
-
-      {{ Data?.yesBtn }}
-    </button>
-
-  </div>
-
+  <button type="button" class="btn-continue" (click)="goToLogin()">
+    Continue to Login
+    <i class="fa-solid fa-arrow-right ms-2"></i>
+  </button>
 </div>

@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 import { OtpBoxComponent } from '../otp-box/otp-box.component';
+import { SuccessPopupComponent } from 'src/app/shared/_common/success-popup/success-popup.component';
 
 @Component({
   selector: 'app-signup',
@@ -113,7 +114,12 @@ export class SignupComponent implements OnInit {
     this.signupForm.reset();
     bsModalRef.content.event.subscribe((res: any) => {
       if (res) {
-        // this.onSubmit();
+        let bsModalRefSignup = this.service.openModalWithComponent(SuccessPopupComponent);
+        bsModalRefSignup.content.event.subscribe((close: any) => {
+          if (close) {
+            this.login();
+          }
+        });
       }
     });
   }
