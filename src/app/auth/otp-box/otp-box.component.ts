@@ -229,10 +229,13 @@ export class OtpBoxComponent implements OnInit, OnDestroy, AfterViewInit {
     this.error = '';
     this.verifying = true;
 
-    let data = {
+    let data: any = {
       email: this.Data.email,
       otp: otp
     };
+    if (this.Data?.forgot) {
+      data.signup = false;
+    }
     this.auth.verifyOtp(data).subscribe({
       next: (response: any) => {
         this.verifying = false;

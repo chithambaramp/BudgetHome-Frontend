@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 import { OtpBoxComponent } from '../otp-box/otp-box.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 @Component({
   selector: 'app-login',
@@ -64,7 +65,7 @@ export class LoginComponent implements OnInit {
         this.isLoading.set(false);
 
         if (err === 'EMAIL_NOT_VERIFIED') {
-          this.openOtpModal();
+          this.openOtpModel();
           return;
         }
 
@@ -87,7 +88,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/auth/signup']);
   }
 
-  openOtpModal() {
+  openOtpModel() {
     let contents = {
       email: this.loginForm.get('email')?.value
     };
@@ -99,4 +100,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  openReset() {
+    let bsModalRef = this.service.openModalWithComponent(ForgotPasswordComponent);
+  }
 }

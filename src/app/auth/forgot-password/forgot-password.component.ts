@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ForgotPopupComponent } from '../forgot-popup/forgot-popup.component';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
+import { OtpBoxComponent } from '../otp-box/otp-box.component';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-forgot-password',
@@ -11,76 +12,84 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
   styleUrls: ['./forgot-password.component.scss']
 })
 export class ForgotPasswordComponent implements OnInit {
-  password: string = '';
-  show: boolean = false;
   ForgotForm!: FormGroup;
-  submitted: boolean = false;
-  isLoading!: boolean;
+  isLoading = signal(false);
   error!: string;
-  constructor(public service: BaseService, public auth: AuthService, private router: Router, private formBuilder: FormBuilder) {
-    // if (this.auth.currentUserValue) {
-    //   this.router.navigate(['/']);
-    // }
+  constructor(public bsModalRef: BsModalRef, public service: BaseService, public auth: AuthService, private router: Router, private formBuilder: FormBuilder) {
+
   }
 
   ngOnInit(): void {
     this.buildForm();
   }
 
-  emailPattern = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
   buildForm() {
-
     this.ForgotForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      email: ['', [Validators.required, Validators.email]],
     })
   }
-  get f() { return this.ForgotForm.controls; }
 
-  getLoading() {
-    return this.isLoading ? 'Loading...' : 'Send Reset Link'
+  get f() {
+    return this.ForgotForm.controls;
   }
 
-
-  Form(field: any) {
-    return this.ForgotForm.controls[field].value;
-  }
-
-  onSubmit = () => {
+  onSubmit(): void {
     if (this.ForgotForm.invalid) {
       this.ForgotForm.markAllAsTouched();
       return;
     }
-    this.isLoading = true;
-    this.auth.forgotPassword(this.ForgotForm.value).subscribe(
-      (result: any) => {
-        if (result.statusCode == 200) {
-          this.isLoading = false;
-          let linkcode = result.data.link;
-          if (linkcode) {
-            linkcode = linkcode.split('/')
-            linkcode = linkcode[linkcode.length - 1]
-          }
-          let bsModalRef = this.service.openModalWithComponent(ForgotPopupComponent, '', '', 'forgot');
-          bsModalRef.content.event.subscribe((res: any) => {
-            if (res) {
-              this.onSubmit();
-            }
-          });
-          //this.router.navigate([`auth/users/reset-password/${linkcode}`]);
-        } else {
-          this.isLoading = false;
-          this.error = result.message;
+
+    this.error = '';
+    this.isLoading.set(true);
+
+    this.auth.validEmail(this.ForgotForm.getRawValue()).subscribe({
+      next: (response: any) => {
+        this.isLoading.set(false);
+
+        if (response.statusCode === 200) {
+          this.openOtpModel();
+          this.closeModel();
+          return;
         }
+        this.showError(response.message);
       },
-      (error: any) => {
-        this.isLoading = false;
-        this.error = error;
-      },
-      () => {
-        // 'onCompleted' callback.
-        // No errors, route to new page here
+
+      error: (err: any) => {
+        this.isLoading.set(false);
+        this.showError(err);
       }
-    );
+
+    });
   }
 
+  private errorTimer: any;
+  private showError(message: string): void {
+    this.error = message;
+    clearTimeout(this.errorTimer);
+    this.errorTimer = setTimeout(() => {
+      this.error = '';
+    }, 5000);
+  }
+
+  login() {
+    this.router.navigate(['/auth/login']);
+    this.closeModel();
+  }
+
+  openOtpModel() {
+    let contents = {
+      email: this.ForgotForm.get('email')?.value,
+      forgot: true
+    };
+    let bsModalRef = this.service.openModalWithComponent(OtpBoxComponent, contents);
+    bsModalRef.content.event.subscribe((res: any) => {
+      if (res) {
+        // openResetPassword-Popup
+      }
+    });
+  }
+
+  closeModel() {
+    this.bsModalRef.hide();
+  }
 }

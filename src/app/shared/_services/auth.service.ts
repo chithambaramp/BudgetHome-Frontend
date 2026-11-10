@@ -78,6 +78,20 @@ export class AuthService implements OnDestroy {
     }))
   }
 
+  resetPassword(data: any, linkid: any): Observable<any> {
+    const buildPostBody = () => {
+      return omitEmptyDeep({
+        "code": linkid,
+        "password": data.password
+      });
+    };
+    return this.service.create(buildPostBody(), '', `user/change-password`,).pipe(map(user => {
+      if (user) {
+        return user;
+      }
+    }))
+  }
+
   generateOtp(data: any): Observable<any> {
     const buildPostBody = () => {
       return omitEmptyDeep({
@@ -92,27 +106,20 @@ export class AuthService implements OnDestroy {
   }
 
   verifyOtp(data: any): Observable<any> {
-    const buildPostBody = () => {
-      return omitEmptyDeep({
-        "email": data.email,
-        "otp": data.otp
-      });
-    };
-    return this.service.create(buildPostBody(), '', `user/verifyOtp`,).pipe(map(user => {
+    return this.service.create(data, '', `user/verifyOtp`,).pipe(map(user => {
       if (user) {
         return user;
       }
     }))
   }
 
-  resetPassword(data: any, linkid: any): Observable<any> {
+  validEmail(data: any): Observable<any> {
     const buildPostBody = () => {
       return omitEmptyDeep({
-        "code": linkid,
-        "password": data.password
+        "email": data.email
       });
     };
-    return this.service.create(buildPostBody(), '', `user/change-password`,).pipe(map(user => {
+    return this.service.create(buildPostBody(), '', `user/validEmail`,).pipe(map(user => {
       if (user) {
         return user;
       }

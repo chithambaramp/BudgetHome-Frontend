@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 import { OtpBoxComponent } from '../otp-box/otp-box.component';
 import { SuccessPopupComponent } from 'src/app/shared/_common/success-popup/success-popup.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 @Component({
   selector: 'app-signup',
@@ -79,7 +80,7 @@ export class SignupComponent implements OnInit {
         this.isLoading.set(false);
 
         if (response.statusCode === 201) {
-          this.openOtpModal();
+          this.openOtpModel();
           return;
         }
         this.showError(response.message);
@@ -106,7 +107,7 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['/auth/login']);
   }
 
-  openOtpModal() {
+  openOtpModel() {
     let contents = {
       email: this.signupForm.get('email')?.value
     };
@@ -122,6 +123,10 @@ export class SignupComponent implements OnInit {
         });
       }
     });
+  }
+
+  openReset() {
+    let bsModalRef = this.service.openModalWithComponent(ForgotPasswordComponent);
   }
 
 }

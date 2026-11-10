@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ForgotPopupComponent } from '../forgot-popup/forgot-popup.component';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 
@@ -49,7 +48,6 @@ export class ResetPasswordComponent implements OnInit {
   get f() { return this.ResetPasswordForm.controls; }
 
   getLoading() {
-    // this.service.openModalWithComponent(ForgotPopupComponent, '', '', 'reset');
     return this.isLoading ? 'Loading...' : 'Set New Password'
   }
 
@@ -91,7 +89,6 @@ export class ResetPasswordComponent implements OnInit {
         if (result.statusCode == 200) {
           this.isLoading = false;
           this.router.navigate(['auth/forgot-password']);
-          this.service.openModalWithComponent(ForgotPopupComponent, '', '', 'reset');
         } else {
           this.isLoading = false;
           this.error = result.message;
