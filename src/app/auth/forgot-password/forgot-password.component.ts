@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
 import { OtpBoxComponent } from '../otp-box/otp-box.component';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ResetPasswordComponent } from '../reset-password/reset-password.component';
 
 @Component({
   selector: 'app-forgot-password',
@@ -15,7 +16,7 @@ export class ForgotPasswordComponent implements OnInit {
   ForgotForm!: FormGroup;
   isLoading = signal(false);
   error!: string;
-  constructor(public bsModalRef: BsModalRef, public service: BaseService, public auth: AuthService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(public bsModalRef: BsModalRef, public service: BaseService, public auth: AuthService, private router: Router, private fb: FormBuilder) {
 
   }
 
@@ -24,7 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   buildForm() {
-    this.ForgotForm = this.formBuilder.group({
+    this.ForgotForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
     })
   }
@@ -84,7 +85,7 @@ export class ForgotPasswordComponent implements OnInit {
     let bsModalRef = this.service.openModalWithComponent(OtpBoxComponent, contents);
     bsModalRef.content.event.subscribe((res: any) => {
       if (res) {
-        // openResetPassword-Popup
+        let bsModalRef = this.service.openModalWithComponent(ResetPasswordComponent, contents);
       }
     });
   }

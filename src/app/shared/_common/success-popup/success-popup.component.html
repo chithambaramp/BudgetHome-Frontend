@@ -3,12 +3,18 @@
     <i class="fa-solid fa-circle-check"></i>
   </div>
 
-  <h4>Email Verified Successfully!</h4>
+  <h4 *ngIf="!Data?.reset">Email Verified Successfully!</h4>
+  <h4 *ngIf="Data?.reset">Password Reset Successfully!</h4>
 
-  <p>
+  <p *ngIf="!Data?.reset">
     Your BudgetHome account is ready.
     You can now log in and start managing your expenses.
   </p>
+  <p *ngIf="Data?.reset">
+    Your BudgetHome account password has been updated successfully.
+    You can now log in using your new password and continue managing your expenses.
+  </p>
+
 
   <button type="button" class="btn-continue" (click)="goToLogin()">
     Continue to Login

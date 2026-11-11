@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, signal } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/_services/auth.service';
 import { BaseService } from 'src/app/shared/_services/baseStore.service';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { SuccessPopupComponent } from 'src/app/shared/_common/success-popup/success-popup.component';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,98 +12,113 @@ import { BaseService } from 'src/app/shared/_services/baseStore.service';
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit {
-
-  ResetPasswordForm!: FormGroup;
-  isLoading!: boolean;
-  error: string = '';
-  show = true;
-  confirmshow = true;
-  password: string = '';
-  confirmPassword: string = '';
-  linkID: any;
-  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {
+  Data: any;
+  ResetForm!: FormGroup;
+  showPassword = signal(false);
+  showConfirmPassword = signal(false);
+  isLoading = signal(false);
+  error!: string;
+  constructor(public bsModalRef: BsModalRef, public service: BaseService, public auth: AuthService, private router: Router, private fb: FormBuilder) {
 
   }
 
   ngOnInit(): void {
     this.buildForm();
-    this.password = 'password';
-    this.confirmPassword = 'password';
-    this.linkID = this.route.snapshot.paramMap.get('id');
   }
 
   buildForm() {
-
-    this.ResetPasswordForm = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,16}$/)]],
+    this.ResetForm = this.fb.group({
+      password: ['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{6,15}$/)]],
       confirmPassword: ['', [Validators.required]],
-    }, { validators: this.checkPasswords })
-  }
-
-  checkPasswords(group: FormGroup) {
-    // const password = group.get('password').value;
-    // const confirmPassword = group.get('confirmPassword').value;
-
-    // return password === confirmPassword ? null : { notSame: true }
-  }
-
-  get f() { return this.ResetPasswordForm.controls; }
-
-  getLoading() {
-    return this.isLoading ? 'Loading...' : 'Set New Password'
-  }
-
-
-  Form(field: any) {
-    return this.ResetPasswordForm.controls[field].value;
-  }
-
-
-  onClick(bool: boolean) {
-    if (bool) {
-      this.password = 'text';
-      this.show = false;
-    } else {
-      this.password = 'password';
-      this.show = true;
-    }
-  }
-
-  onClickConfirm(bool: boolean) {
-    if (bool) {
-      this.confirmPassword = 'text';
-      this.confirmshow = false;
-    } else {
-      this.confirmPassword = 'password';
-      this.confirmshow = true;
-    }
-  }
-
-  onSubmit = () => {
-
-    if (this.ResetPasswordForm.invalid) {
-      this.ResetPasswordForm.markAllAsTouched();
-      return;
-    }
-    this.isLoading = true;
-    this.auth.resetPassword(this.ResetPasswordForm.value, this.linkID).subscribe(
-      (result: any) => {
-        if (result.statusCode == 200) {
-          this.isLoading = false;
-          this.router.navigate(['auth/forgot-password']);
-        } else {
-          this.isLoading = false;
-          this.error = result.message;
-        }
-      },
-      (error: any) => {
-        this.isLoading = false;
-        this.error = error;
-      },
-      () => {
-        // 'onCompleted' callback.
-        // No errors, route to new page here
+    },
+      {
+        validators: this.passwordMatchValidator(),
       }
     );
+  }
+
+  passwordMatchValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const password = control.get('password')?.value;
+      const confirmPassword = control.get('confirmPassword')?.value;
+
+      if (!password || !confirmPassword) {
+        return null;
+      }
+
+      return password === confirmPassword
+        ? null
+        : { passwordMismatch: true };
+    };
+  }
+
+  togglePassword(): void {
+    this.showPassword.update(value => !value);
+  }
+
+  toggleConfirmPassword(): void {
+    this.showConfirmPassword.update(value => !value);
+  }
+
+  get f() {
+    return this.ResetForm.controls;
+  }
+
+  onSubmit(): void {
+    if (this.ResetForm.invalid) {
+      this.ResetForm.markAllAsTouched();
+      return;
+    }
+
+    this.error = '';
+    this.isLoading.set(true);
+    let req: any = {
+      "email": this.Data?.email,
+      "newPassword": this.ResetForm.get('password')?.value
+    }
+
+    this.auth.resetPassword(req).subscribe({
+      next: (response: any) => {
+        this.isLoading.set(false);
+
+        if (response.statusCode === 200) {
+          this.openSuccessModel();
+          this.closeModel();
+          return;
+        }
+        this.showError(response.message);
+      },
+
+      error: (err: any) => {
+        this.isLoading.set(false);
+        this.showError(err);
+      }
+
+    });
+  }
+
+  private errorTimer: any;
+  private showError(message: string): void {
+    this.error = message;
+    clearTimeout(this.errorTimer);
+    this.errorTimer = setTimeout(() => {
+      this.error = '';
+    }, 5000);
+  }
+
+  openSuccessModel() {
+    let contents = {
+      reset: true
+    };
+    let bsModalRef = this.service.openModalWithComponent(SuccessPopupComponent, contents);
+    bsModalRef.content.event.subscribe((res: any) => {
+      if (res) {
+        this.router.navigate(['/auth/login']);
+      }
+    });
+  }
+
+  closeModel() {
+    this.bsModalRef.hide();
   }
 }

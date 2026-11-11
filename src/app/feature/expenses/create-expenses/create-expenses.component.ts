@@ -17,7 +17,7 @@ export class CreateExpensesComponent implements OnInit {
   submitted = false;
   isLoading!: boolean;
   ID: any;
-  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) {
+  constructor(public service: BaseService, public auth: AuthService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) {
 
   }
 

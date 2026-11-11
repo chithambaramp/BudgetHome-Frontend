@@ -65,27 +65,19 @@ export class AuthService implements OnDestroy {
     }))
   }
 
-  forgotPassword(data: any): Observable<any> {
+  signup(data: any): Observable<any> {
     const buildPostBody = () => {
-      return omitEmptyDeep({
-        "email": data.email
-      });
+      return omitEmptyDeep(data);
     };
-    return this.service.create(buildPostBody(), '', `user/reset-password`,).pipe(map(user => {
+    return this.service.create(buildPostBody(), '', `user/signup`).pipe(map(user => {
       if (user) {
         return user;
       }
     }))
   }
 
-  resetPassword(data: any, linkid: any): Observable<any> {
-    const buildPostBody = () => {
-      return omitEmptyDeep({
-        "code": linkid,
-        "password": data.password
-      });
-    };
-    return this.service.create(buildPostBody(), '', `user/change-password`,).pipe(map(user => {
+  resetPassword(data: any): Observable<any> {
+    return this.service.create(data, '', `user/resetPassword`,).pipe(map(user => {
       if (user) {
         return user;
       }
@@ -120,17 +112,6 @@ export class AuthService implements OnDestroy {
       });
     };
     return this.service.create(buildPostBody(), '', `user/validEmail`,).pipe(map(user => {
-      if (user) {
-        return user;
-      }
-    }))
-  }
-
-  signup(data: any): Observable<any> {
-    const buildPostBody = () => {
-      return omitEmptyDeep(data);
-    };
-    return this.service.create(buildPostBody(), '', `user/signup`).pipe(map(user => {
       if (user) {
         return user;
       }
